@@ -1,0 +1,39 @@
+.toggle {
+  display: none;
+}
+
+.toggle-label {
+  display: inline-block;
+  width: 60px;
+  height: 30px;
+  border-radius: 30px;
+  background-color: var(--toggle-bg);
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.toggle-thumb {
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background-color: var(--toggle-fg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.3s ease, background-color 0.3s ease;
+  font-size: 14px;
+  color: var(--toogle-icon-color);
+}
+
+.toggle:checked + .toggle-label .toggle-thumb {
+  transform: translateX(30px);
+  background-color: var(--toggle-fg);
+}
+
+.toggle-thumb:hover svg {
+  transform: rotate(-20deg);
+}

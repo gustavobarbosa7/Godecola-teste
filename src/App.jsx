@@ -1,4 +1,5 @@
-import { ThemeProvider } from './context/ThemeContext';
+import ThemeProvider from './context/Theme/ThemeProvider';
+
 import { Router } from './routes/Router';
 import './App.css';
 

@@ -1,15 +1,41 @@
-.header {   
+.header {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  background-color: var(--background-color);
+  background: linear-gradient(to right, #ff5800, #890078);
   transition: background-color 0.25s ease-in-out;
-  padding: 10px 10px;
-  height: 100px;
+  padding: 20px 20px;
+  height: 120px;
 }
 
-.logo {
+.header img {
+  filter: var(--logo-filter);
+}
+
+.logoDesktop {
   height: 100px;
   cursor: pointer;
+}
+
+.header-right {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 20px;
+}
+
+.logoMobile {
+  height: 130px;
+  cursor: pointer;
+  display: none;
+}
+
+@media (max-width: 700px) {
+  .logoDesktop {
+    display: none;
+  }
+  .logoMobile {
+    display: block;
+  }
 }

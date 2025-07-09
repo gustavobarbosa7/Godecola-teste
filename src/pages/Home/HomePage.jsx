@@ -10,6 +10,7 @@ const HomePage = () => {
       <div className='box'>
         <h2>This is a box =P</h2>
       </div>
+      
     </div>
   )
 }

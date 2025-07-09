@@ -1,0 +1,73 @@
+.footerDesktop {
+  display: flex;
+  justify-content: center;
+  align-items: top;
+  padding: 20px;
+  flex-direction: row;
+  gap: 50px;
+  background-color: var(--footer-bg);
+}
+
+.logoIco {
+  width: 30px;
+  height: auto;
+}
+.logoIco2 {
+  width: 100px;
+  height: auto;
+}
+
+.logoIco3 {
+  width: 90px;
+  height: auto;
+  filter: var(--logo-filter);
+}
+
+.groupIco {
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  align-items: center;
+}
+
+.groupLink {
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.groupLink p {
+  color: var(--text-footer);
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.groupNames {
+  display: flex;
+  gap: 5px;
+  flex-direction: row;
+  align-items: center;
+  cursor: pointer;
+  padding-left: 10px;
+}
+
+.groupNames .iconGithub,
+.groupNames a {
+  color: var(--text-footer);
+  font-size: 14px;
+}
+
+.groupNames a {
+  text-decoration: none;
+}
+
+.groupNames:hover .iconGithub,
+.groupNames:hover a {
+  color: var(--orange-avanade);
+}
+
+@media (max-width: 700px) {
+  .footerDesktop {
+    gap: 20px;
+  }
+}

@@ -1,0 +1,15 @@
+.HeaderLoginButtonCss {
+  background-color: var(--background-color);
+  color: var(--icons-login-color);
+  padding: 10px;
+  text-align: center;
+  font-size: 27px;
+  cursor: pointer;
+  border-radius: 25px;
+  gap: 15px;
+  display: flex;
+}
+
+.HeaderLoginButtonCss:hover {
+  background-color: var(--icons-login-hover);
+}

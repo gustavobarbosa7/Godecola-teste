@@ -1,17 +1,8 @@
-import React, { createContext, useContext, useMemo, useCallback } from 'react';
-import useLocalStorage from '../hooks/useLocalStorage';
+import { useMemo, useCallback } from 'react';
+import useLocalStorage from '../../hooks/useLocalStorage';
+import { ThemeContext } from './ThemeContext';
 
-const ThemeContext = createContext(undefined);
-
-export const useTheme = () => {
-  const context = useContext(ThemeContext);
-  if (context === undefined) {
-    throw new Error('useTheme deve ser usado dentro de um ThemeProvider');
-  }
-  return context;
-};
-
-export const ThemeProvider = ({ children }) => {
+const ThemeProvider = ({ children }) => {
   const prefersDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches;
   const [isDark, setIsDark] = useLocalStorage('isDark', prefersDarkMode);
 
@@ -32,3 +23,5 @@ export const ThemeProvider = ({ children }) => {
     </ThemeContext.Provider>
   );
 };
+
+export default ThemeProvider;

@@ -16,6 +16,9 @@
   --logo-filter: none;
   --icons-login-color: #666666;
   --icons-login-hover: #dcdcdc;
+  --text-footer: #4c4c4c;
+  --orange-avanade: #FF5800;
+  --footer-bg:#ffffff;
 }
 
 [data-theme="dark"] {
@@ -29,4 +32,7 @@
   --logo-filter: invert(100%);
   --icons-login-color: #ffffff;
   --icons-login-hover: #3b3b3b;
+  --text-footer: #cccccc;
+  --orange-avanade: #DC4600;
+  --footer-bg:#0a0a0a;
 }

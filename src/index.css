@@ -9,6 +9,7 @@
   --background-color: #f6f6f6;
   --foreground-color: #003cff;
   --primary-text-color: #0a0a0a;
+  --background-form-color: #c5c2c2;
   --secondary-text-color: #ffffff;
   --toggle-bg: #f3f1d7;
   --toggle-fg: #ffd000;
@@ -25,6 +26,7 @@
   --background-color: #1E1E1E;
   --foreground-color: #567aff;
   --primary-text-color: #f6f6f6;
+  --background-form-color: #c5c2c2;
   --secondary-text-color: #0a0a0a;
   --toggle-bg: #1E1E1E;
   --toggle-fg: #00a6ff;

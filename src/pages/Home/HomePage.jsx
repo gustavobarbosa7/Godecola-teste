@@ -1,6 +1,6 @@
 import './HomePage.css'
-import Carousel from '../../components/CarouselHome/CarouselHome'
-import packagesData from '../../components/CarouselHome/travels.mock.json'
+import Carousel from '../../components/Carousel/CarouselHome'
+import packagesData from '../../components/Carousel/travels.mock.json'
 import { useState, useEffect, useRef } from 'react'
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { FaArrowAltCircleRight } from "react-icons/fa";
@@ -95,7 +95,7 @@ const HomePage = () => {
             <>
               {nationalArrows.left && (
                 <div
-                  className='carousel-arrow left'
+                  className='carousel-arrow-left'
                   onClick={() => scrollCarousel('left', nationalCarouselRef)}
                 >
                   <FaArrowAltCircleLeft />
@@ -103,7 +103,7 @@ const HomePage = () => {
               )}
               {nationalArrows.right && (
                 <div
-                  className='carousel-arrow right'
+                  className='carousel-arrow-right'
                   onClick={() => scrollCarousel('right', nationalCarouselRef)}
                 >
                   <FaArrowAltCircleRight />
@@ -124,7 +124,7 @@ const HomePage = () => {
             <>
               {internationalArrows.left && (
                 <div
-                  className='carousel-arrow left'
+                  className='carousel-arrow-left'
                   onClick={() => scrollCarousel('left', internationalCarouselRef)}
                 >
                   <FaArrowAltCircleLeft />
@@ -132,7 +132,7 @@ const HomePage = () => {
               )}
               {internationalArrows.right && (
                 <div
-                  className='carousel-arrow right'
+                  className='carousel-arrow-right'
                   onClick={() => scrollCarousel('right', internationalCarouselRef)}
                 >
                   <FaArrowAltCircleRight />
@@ -154,7 +154,7 @@ const HomePage = () => {
             <>
               {promoArrows.left && (
                 <div
-                  className='carousel-arrow left'
+                  className='carousel-arrow-left'
                   onClick={() => scrollCarousel('left', promoCarouselRef)}
                 >
                   <FaArrowAltCircleLeft />
@@ -162,7 +162,7 @@ const HomePage = () => {
               )}
               {promoArrows.right && (
                 <div
-                  className='carousel-arrow right'
+                  className='carousel-arrow-right'
                   onClick={() => scrollCarousel('right', promoCarouselRef)}
                 >
                   <FaArrowAltCircleRight />

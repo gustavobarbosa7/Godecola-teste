@@ -10,23 +10,27 @@
   --foreground-color: #003cff;
   --primary-text-color: #0a0a0a;
   --background-form-color: #c5c2c2;
-  --secondary-text-color: #ffffff;
+  --secondary-text-color: #ffffff;  
   --toggle-bg: #f3f1d7;
   --toggle-fg: #ffd000;
   --toogle-icon-color: #f6f6f6;
   --logo-filter: none;
   --icons-login-color: #666666;
-  --icons-login-hover: #dcdcdc;
+  --icons-login-hover: #e5e5e5;
   --text-footer: #4c4c4c;
   --orange-avanade: #FF5800;
   --footer-bg:#ffffff;
+  --no-active-tab: #aaa;
+  --tab-hover:#555;
+  --text-card-package: #666666;
+}
 }
 
 [data-theme="dark"] {
   --background-color: #1E1E1E;
   --foreground-color: #567aff;
-  --primary-text-color: #f6f6f6;
-  --background-form-color: #c5c2c2;
+  --primary-text-color: #ffffff;
+  --background-form-color: #c5c2c2;  
   --secondary-text-color: #0a0a0a;
   --toggle-bg: #1E1E1E;
   --toggle-fg: #00a6ff;
@@ -37,4 +41,7 @@
   --text-footer: #cccccc;
   --orange-avanade: #DC4600;
   --footer-bg:#0a0a0a;
+  --no-active-tab: #555;
+  --tab-hover:#aaa;
+  --text-card-package: #999999;
 }

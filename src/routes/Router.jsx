@@ -6,6 +6,8 @@ import LoginPage from '../pages/Login/LoginPage'
 import RecoveryPasswordPage from '../pages/RecoveryPassword/RecoveryPasswordPage'
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
+import PackageDetailsPage from '../pages/PackageDetails/PackageDetailsPage'
+import SearchPackagesPage from '../pages/SearchPackages/SearchPackagesPage'
 
 export const Router = () => {
   return (
@@ -16,6 +18,8 @@ export const Router = () => {
         <Route path="/signup" element={<SignUpPage />} />
         <Route path="/login" element={<LoginPage />} />
         <Route path="/recoverypassword" element={<RecoveryPasswordPage />} />
+        <Route path="/package-details" element={<PackageDetailsPage />} />
+        <Route path="/search-packages" element={<SearchPackagesPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

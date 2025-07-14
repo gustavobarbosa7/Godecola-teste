@@ -1,0 +1,183 @@
+[
+  {
+    "id": 1,
+    "title": "Casa na Praia em Ubatuba",
+    "price": "R$ 589 por 2 noites",
+    "rating": 4.9,
+    "imageSrc": "https://hansenimoveis.com/wp-content/uploads/2022/02/CO653-3.jpg ",
+    "type": "nacional",
+    "isPromo": true
+  },
+  {
+    "id": 2,
+    "title": "Chalé Aconchegante em Campos do Jordão",
+    "price": "R$ 450 por 2 noites",
+    "rating": 4.7,
+    "imageSrc": "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
+    "type": "nacional",
+    "isPromo": false
+
+  },
+  {
+    "id": 3,
+    "title": "Flat no Centro de São Paulo",
+    "price": "R$ 320 por diária",
+    "rating": 4.5,
+    "imageSrc": "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
+    "type": "nacional",
+    "isPromo": true
+  },
+  {
+    "id": 4,
+    "title": "Pousada Charmosa em Paraty",
+    "price": "R$ 390 por 2 noites",
+    "rating": 4.8,
+    "imageSrc": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
+    "type": "nacional",
+    "isPromo": false
+  },
+  {
+    "id": 5,
+    "title": "Hotel Fazenda em Socorro",
+    "price": "R$ 420 por pessoa",
+    "rating": 4.6,
+    "imageSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
+    "type": "nacional",
+    "isPromo": false
+  },
+  {
+    "id": 6,
+    "title": "Camping Luxo em Bonito - MS",
+    "price": "R$ 280 por pessoa",
+    "rating": 4.9,
+    "imageSrc": "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
+    "type": "nacional",
+    "isPromo": false
+  },
+  {
+    "id": 7,
+    "title": "Apartamento de frente para o mar em Floripa",
+    "price": "R$ 650 por diária",
+    "rating": 4.9,
+    "imageSrc": "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
+    "type": "nacional",
+    "isPromo": false
+  },
+  {
+    "id": 8,
+    "title": "Hostel Estilo Europeu em Ouro Preto",
+    "price": "R$ 150 por pessoa",
+    "rating": 4.4,
+    "imageSrc": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
+    "type": "nacional",
+    "isPromo": true
+  },
+  {
+    "id": 9,
+    "title": "Sítio com Piscina em Atibaia",
+    "price": "R$ 700 por dia inteiro",
+    "rating": 4.7,
+    "imageSrc": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
+    "type": "nacional",
+    "isPromo": false
+  },
+  {
+    "id": 10,
+    "title": "Suíte Master em resort em Natal",
+    "price": "R$ 890 por diária",
+    "rating": 4.9,
+    "imageSrc": "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg",
+    "type": "nacional",
+    "isPromo": false
+  },
+  {
+    "id": 11,
+    "title": "Pacote Paris - França",
+    "price": "R$ 1.200 por pessoa",
+    "rating": 4.8,
+    "imageSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
+    "type": "internacional",
+    "isPromo": true
+  },
+  {
+    "id": 12,
+    "title": "Viagem para Cancún - México",
+    "price": "R$ 1.400 por pessoa",
+    "rating": 4.9,
+    "imageSrc": "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp",
+    "type": "internacional",
+    "isPromo": false
+  },
+  {
+    "id": 13,
+    "title": "Explorando Nova York - EUA",
+    "price": "R$ 1.800 por pessoa",
+    "rating": 4.7,
+    "imageSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
+    "type": "internacional",
+    "isPromo": false
+  },
+  {
+    "id": 14,
+    "title": "Aventura nas Cataratas do Iguaçu - Argentina",
+    "price": "R$ 900 por pessoa",
+    "rating": 4.6,
+    "imageSrc": "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg",
+    "type": "internacional",
+    "isPromo": false
+  },
+  {
+    "id": 15,
+    "title": "Lua de mel em Bali - Indonésia",
+    "price": "R$ 2.100 por pessoa",
+    "rating": 4.9,
+    "imageSrc": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s",
+    "type": "internacional",
+    "isPromo": false
+  },
+  {
+    "id": 16,
+    "title": "Tour pela Tailândia",
+    "price": "R$ 1.300 por pessoa",
+    "rating": 4.8,
+    "imageSrc": "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg",
+    "type": "internacional",
+    "isPromo": true
+  },
+  {
+    "id": 17,
+    "title": "Férias em Roma - Itália",
+    "price": "R$ 1.600 por pessoa",
+    "rating": 4.7,
+    "imageSrc": "https://babies.constancezahn.com/wp-content/uploads/2016/11/ferias-em-roma-com-crianca-coliseu-01.jpg",
+    "type": "internacional",
+    "isPromo": false
+  },
+  {
+    "id": 18,
+    "title": "Deserto e luxo em Dubai",
+    "price": "R$ 2.500 por pessoa",
+    "rating": 4.9,
+    "imageSrc": "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
+    "type": "internacional",
+    "isPromo": false
+  },
+  {
+    "id": 19,
+    "title": "Cultura e gastronomia no Japão",
+    "price": "R$ 2.200 por pessoa",
+    "rating": 4.8,
+    "imageSrc": "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
+    "type": "internacional",
+    "isPromo": true
+  },
+  {
+    "id": 20,
+    "title": "Road trip pela Califórnia - EUA",
+    "price": "R$ 1.700 por pessoa",
+    "rating": 4.7,
+    "imageSrc": "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg",
+    "type": "internacional",
+    "isPromo": false
+  }
+]

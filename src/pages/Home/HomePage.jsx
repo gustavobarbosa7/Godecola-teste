@@ -1,6 +1,6 @@
 import './HomePage.css'
 import Carousel from '../../components/Carousel/CarouselHome'
-import packagesData from '../../components/Carousel/travels.mock.json'
+import packagesData from '../../travels.mock.json'
 import { useState, useEffect, useRef } from 'react'
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { FaArrowAltCircleRight } from "react-icons/fa";

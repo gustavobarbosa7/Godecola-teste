@@ -13,3 +13,11 @@ export const goToLogin = navigate => {
 export const goToSignUp = navigate => {
   navigate('/signup')
 }
+
+export const goPackageDetails = navigate => {
+  navigate('/package-details')
+}
+
+export const goToSearchPackages = navigate => {
+  navigate('/search-packages')
+}

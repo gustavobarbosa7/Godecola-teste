@@ -5,6 +5,8 @@ import SignUpPage from '../pages/SignUp/SignUpPage'
 import LoginPage from '../pages/Login/LoginPage'
 import { Header } from '../components/Header/Header'
 import { Footer } from '../components/Footer/Footer'
+import PackageDetailsPage from '../pages/PackageDetails/PackageDetailsPage'
+import SearchPackagesPage from '../pages/SearchPackages/SearchPackagesPage'
 
 export const Router = () => {
   return (
@@ -13,7 +15,9 @@ export const Router = () => {
       <Routes>
         <Route index element={<HomePage />} />
         <Route path="/signup" element={<SignUpPage />} />
-        <Route path="/login" element={<LoginPage />} />
+        <Route path="/login" element={<LoginPage />} />        
+        <Route path="/package-details" element={<PackageDetailsPage />} />
+        <Route path="/search-packages" element={<SearchPackagesPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

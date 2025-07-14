@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 export default function LoginPage() {
   return (
-    <div className="container">
+    <div className="Logincontainer">
 
       {/* lado direito da tela */}
       <div className="left">

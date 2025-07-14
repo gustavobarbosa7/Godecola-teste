@@ -82,7 +82,8 @@
   width: 100%;
 }
 
-.carousel-arrow {
+.carousel-arrow-left,
+.carousel-arrow-right {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
@@ -92,18 +93,23 @@
   border-radius: 50%;
   cursor: pointer;
   z-index: 10;
+  background-color: none;
 }
 
-.carousel-arrow:hover {
+.carousel-arrow-left:hover {
   color: var(--tab-hover);
 }
 
-.carousel-arrow.left {
-  left: -50px;
+.carousel-arrow-left {
+  left: -45px;
 }
 
-.carousel-arrow.right {
-  right: -50px;
+.carousel-arrow-right:hover {
+  color: var(--tab-hover);
+}
+
+.carousel-arrow-right {
+  right: -45px;
 }
 
 @media (max-width: 700px) {

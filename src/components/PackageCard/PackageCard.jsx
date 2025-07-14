@@ -19,7 +19,7 @@ export const PackageCard = ({ title, price, rating, imageSrc }) => {
 
   return (
     <Card
-      sx={{ maxWidth: 300, borderRadius: '16px', position: 'relative', backgroundColor: 'var(--footer-bg)' }}
+      sx={{ width: 300, borderRadius: '16px', position: 'relative', backgroundColor: 'var(--footer-bg)' }}
       className='packageCard'
       onClick={() => goPackageDetails(navigate)}
     >

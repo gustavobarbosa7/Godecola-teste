@@ -1,0 +1,10 @@
+.PackageDetailsNotFound{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--background-color);
+  min-height: 450px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-size: larger;
+}

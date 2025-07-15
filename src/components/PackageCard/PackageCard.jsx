@@ -7,9 +7,9 @@ import { IoStar } from 'react-icons/io5'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
 import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { goPackageDetails } from '../../routes/coordinator'
+import { goToPackageDetails } from '../../routes/coordinator'
 
-export const PackageCard = ({ title, price, rating, imageSrc }) => {
+export const PackageCard = ({ id, title, price, rating, imageSrc }) => {
   const [isFavorited, setIsFavorited] = useState(false)
   const navigate = useNavigate()
 
@@ -21,7 +21,7 @@ export const PackageCard = ({ title, price, rating, imageSrc }) => {
     <Card
       sx={{ width: 300, borderRadius: '16px', position: 'relative', backgroundColor: 'var(--footer-bg)' }}
       className='packageCard'
-      onClick={() => goPackageDetails(navigate)}
+      onClick={() => goToPackageDetails(navigate, id)}
     >
       <div
         onClick={e => {

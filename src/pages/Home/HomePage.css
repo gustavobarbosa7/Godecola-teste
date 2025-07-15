@@ -88,12 +88,9 @@
   top: 50%;
   transform: translateY(-50%);
   color: var(--no-active-tab);
-  padding: 10px;
   font-size: 25px;
-  border-radius: 50%;
   cursor: pointer;
   z-index: 10;
-  background-color: none;
 }
 
 .carousel-arrow-left:hover {
@@ -112,7 +109,7 @@
   right: -45px;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 768px) {
   .tab-h2 {
     font-size: 1.4em;
     margin: 0 5px;

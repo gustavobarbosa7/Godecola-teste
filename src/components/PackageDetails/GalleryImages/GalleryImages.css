@@ -1,0 +1,90 @@
+.galleryImages-container {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 30px;
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.galleryCarousel-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1330px;
+    overflow: visible;
+}
+
+.galleryCarousel-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.galleryCarousel-arrow-left,
+.galleryCarousel-arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--no-active-tab);
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.galleryCarousel-arrow-left:hover {
+    color: var(--tab-hover);
+}
+
+.galleryCarousel-arrow-left {
+    left: -40px;
+}
+
+.galleryCarousel-arrow-right:hover {
+    color: var(--tab-hover);
+}
+
+.galleryCarousel-arrow-right {
+    right: -40px;
+}
+
+.galleryPaginationDots {
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.dot {
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background-color: var(--no-active-tab);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.dot:hover {
+    background-color: var(--tab-hover);
+}
+
+.dot.active {
+    background-color: var(--orange-avanade);
+}
+
+@media (max-width: 768px) {
+    .galleryImages-container {
+        padding-top: 0px;
+        padding-left: 0px;
+        padding-right: 0px;
+    }
+}

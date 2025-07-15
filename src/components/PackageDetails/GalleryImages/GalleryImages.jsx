@@ -1,0 +1,113 @@
+import "./GalleryImages.css";
+import CarouselPackageDetails from "../../../components/PackageDetails/Carousel/CarouselPackageDetails";
+import { useState, useEffect, useRef } from "react";
+import { FaArrowAltCircleLeft } from "react-icons/fa";
+import { FaArrowAltCircleRight } from "react-icons/fa";
+import useScrollArrows from "../../../hooks/useScrollArrows";
+
+const GalleryImages = ({ packageData }) => {
+    const [isMobile, setIsMobile] = useState(false);
+    const [currentIndex, setCurrentIndex] = useState(0);
+
+    const arrowsRef = useRef(null);
+    const arrows = useScrollArrows(arrowsRef);
+
+    useEffect(() => {
+        const handleResize = () => {
+            setIsMobile(window.innerWidth < 768);
+        };
+
+        handleResize();
+        window.addEventListener("resize", handleResize);
+        return () => window.removeEventListener("resize", handleResize);
+    }, []);
+
+    const scrollCarousel = (direction, ref) => {
+        if (!ref.current) return;
+
+        const scrollAmount = isMobile ? 300 : 400;
+
+        ref.current.scrollBy({
+            left: direction === "right" ? scrollAmount : -scrollAmount,
+            behavior: "smooth",
+        });
+    };
+
+    useEffect(() => {
+        const handleScroll = () => {
+            if (!arrowsRef.current) return;
+
+            const container = arrowsRef.current;
+            const imageWidth = container.clientWidth;
+            const index = Math.round(container.scrollLeft / imageWidth);
+
+            setCurrentIndex(index);
+        };
+
+        const refCopy = arrowsRef.current;
+        refCopy.addEventListener("scroll", handleScroll);
+
+        return () => {
+            refCopy.removeEventListener("scroll", handleScroll);
+        };
+    }, []);
+
+    const scrollToIndex = (index) => {
+        if (!arrowsRef.current) return;
+
+        const container = arrowsRef.current;
+        const imageWidth = container.clientWidth;
+        const targetScrollLeft = index * imageWidth;
+
+        container.scrollTo({
+            left: targetScrollLeft,
+            behavior: "smooth",
+        });
+
+        setCurrentIndex(index);
+    };
+
+    return (
+        <div className='galleryImages-container'>
+            {packageData?.galleryImages?.length > 0 && (
+                <div className="galleryCarousel-wrapper">
+                    <div className="galleryCarousel-container">
+                        <CarouselPackageDetails packageData={packageData} ref={arrowsRef} />
+                    </div>
+                    {!isMobile && (
+                        <div className="galleryArrowsDots">
+                            {arrows.left && (
+                                <div
+                                    className="galleryCarousel-arrow-left"
+                                    onClick={() => scrollCarousel("left", arrowsRef)}
+                                >
+                                    <FaArrowAltCircleLeft />
+                                </div>
+                            )}
+                            {arrows.right && (
+                                <div
+                                    className="galleryCarousel-arrow-right"
+                                    onClick={() => scrollCarousel("right", arrowsRef)}
+                                >
+                                    <FaArrowAltCircleRight />
+                                </div>
+                            )}
+                            <div className="galleryPaginationDots">
+                                {packageData.galleryImages.map((_, index) => (
+                                    <button
+                                        key={index}
+                                        className={`dot ${index === currentIndex ? "active" : ""}`}
+                                        onClick={() => scrollToIndex(index)}
+                                        aria-label={`Ir para imagem ${index + 1}`}
+                                    />
+                                ))}
+                            </div>
+                        </div>
+                    )}
+                </div>
+            )}
+        </div>
+    );
+};
+
+export default GalleryImages;

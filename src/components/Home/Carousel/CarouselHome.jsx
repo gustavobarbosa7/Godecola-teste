@@ -1,12 +1,12 @@
 import Box from "@mui/joy/Box";
-import { PackageCard } from "../PackageCard/PackageCard";
+import { PackageCard } from "../../PackageCard/PackageCard";
 import { forwardRef } from "react";
 import './CarouselHome.css'
 
 const Carousel = forwardRef(({ packages }, ref) => {
     if (!packages || packages.length === 0) {
         return (
-            <Box sx={{ p: 2, textAlign: "center" }}>Nenhum pacote para exibir.</Box>
+            <div className="PackageNotFound">Nenhum pacote para exibir.</div>
         );
     }
 
@@ -30,10 +30,11 @@ const Carousel = forwardRef(({ packages }, ref) => {
             {packages.map((item) => (
                 <PackageCard
                     key={item.id}
+                    id={item.id}
                     title={item.title}
                     price={item.price}
                     rating={item.rating}
-                    imageSrc={item.imageSrc}
+                    imageSrc={item.galleryImages[0]}
                 />
             ))}
         </Box>

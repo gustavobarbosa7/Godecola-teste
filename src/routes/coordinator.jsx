@@ -18,8 +18,8 @@ export const goToSignUp = navigate => {
   navigate('/signup')
 }
 
-export const goPackageDetails = navigate => {
-  navigate('/package-details')
+export const goToPackageDetails = (navigate, id) => {
+  navigate(`/package-details/${id}`)
 }
 
 export const goToSearchPackages = navigate => {

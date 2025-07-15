@@ -1,5 +1,5 @@
 import './HomePage.css'
-import Carousel from '../../components/Carousel/CarouselHome'
+import Carousel from '../../components/Home/Carousel/CarouselHome'
 import packagesData from '../../travels.mock.json'
 import { useState, useEffect, useRef } from 'react'
 import { FaArrowAltCircleLeft } from "react-icons/fa";
@@ -9,7 +9,7 @@ import Card from '@mui/material/Card'
 import { useNavigate } from 'react-router-dom'
 import { goToSearchPackages } from '../../routes/coordinator'
 import { IoSearch } from "react-icons/io5";
-import useShuffledArray from '../../hooks/useShuffledArray'; 
+import useShuffledArray from '../../hooks/useShuffledArray';
 
 const HomePage = () => {
   const navigate = useNavigate()

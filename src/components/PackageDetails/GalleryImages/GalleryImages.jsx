@@ -1,13 +1,20 @@
 import "./GalleryImages.css";
 import CarouselPackageDetails from "../../../components/PackageDetails/Carousel/CarouselPackageDetails";
 import { useState, useEffect, useRef } from "react";
-import { FaArrowAltCircleLeft } from "react-icons/fa";
-import { FaArrowAltCircleRight } from "react-icons/fa";
+import { FaArrowLeft, FaArrowAltCircleLeft, FaArrowAltCircleRight, FaHeart, FaRegHeart } from 'react-icons/fa'
 import useScrollArrows from "../../../hooks/useScrollArrows";
+import { useNavigate } from 'react-router-dom'
+import { goToHome } from '../../../routes/coordinator'
 
 const GalleryImages = ({ packageData }) => {
     const [isMobile, setIsMobile] = useState(false);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [isFavorited, setIsFavorited] = useState(false)
+    const navigate = useNavigate()
+
+    const toggleFavorite = () => {
+        setIsFavorited(!isFavorited)
+    }
 
     const arrowsRef = useRef(null);
     const arrows = useScrollArrows(arrowsRef);
@@ -71,6 +78,24 @@ const GalleryImages = ({ packageData }) => {
         <div className='galleryImages-container'>
             {packageData?.galleryImages?.length > 0 && (
                 <div className="galleryCarousel-wrapper">
+                    {isMobile && (
+                        <div className="FaArrowLeft" onClick={() => goToHome(navigate)}>
+                            <FaArrowLeft />
+                        </div>
+                    )}
+                    <div
+                        onClick={e => {
+                            e.stopPropagation()
+                            toggleFavorite()
+                        }}
+                        style={{ cursor: 'pointer' }}
+                    >
+                        {isFavorited ? (
+                            <FaHeart className='hearthIconGI' />
+                        ) : (
+                            <FaRegHeart className='hearthIconGI2' />
+                        )}
+                    </div>
                     <div className="galleryCarousel-container">
                         <CarouselPackageDetails packageData={packageData} ref={arrowsRef} />
                     </div>

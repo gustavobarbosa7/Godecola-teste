@@ -1,0 +1,10 @@
+.ExpandableButton {
+    color: var(--foreground-color);
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 15px;
+}
+
+.ExpandableButton:hover {
+    color: var(--orange-avanade);
+}

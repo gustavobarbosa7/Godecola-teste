@@ -1,0 +1,11 @@
+.ReviewContainer {
+    display: flex;    
+    padding: 30px;
+    background-color: var(--background-color);
+    flex-direction: column;
+}
+
+.ReviewCardContainer {
+    display: flex;
+    flex-direction: row;
+}

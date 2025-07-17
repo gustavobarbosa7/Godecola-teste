@@ -25,3 +25,7 @@ export const goToPackageDetails = (navigate, id) => {
 export const goToSearchPackages = navigate => {
   navigate('/search-packages')
 }
+
+export const goToReviews = (navigate, commentId, packageId) => {
+  navigate(`/all-reviews?packageId=${packageId}&highlightId=${commentId}`);
+};

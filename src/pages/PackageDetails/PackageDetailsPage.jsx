@@ -3,16 +3,17 @@ import GalleryImages from "../../components/PackageDetails/GalleryImages/Gallery
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import packagesData from '../../travels.mock.json'
+import ReviewCarousel from '../../components/ReviewCarousel/ReviewCarousel';
 
 const PackageDetailsPage = () => {
   const { id } = useParams();
+  const numericId = Number(id);
   const [packageDetail, setPackageDetail] = useState(null);
 
   useEffect(() => {
-    const numericId = Number(id);
     const foundPackage = packagesData.find(pkg => pkg.id === numericId);
     setPackageDetail(foundPackage);
-  }, [id]);
+  }, [numericId]);
 
   if (!packageDetail) {
     return (
@@ -25,6 +26,7 @@ const PackageDetailsPage = () => {
   return (
     <div className='PackageDetailsContainer'>
       <GalleryImages packageData={packageDetail} />
+      <ReviewCarousel packageId={numericId} />
     </div>
   )
 }

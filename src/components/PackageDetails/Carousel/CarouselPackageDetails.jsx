@@ -26,6 +26,8 @@ const CarouselPackageDetails = forwardRef(({ packageData }, ref) => {
                 "::-webkit-scrollbar": { display: "none" },
             }}
         >
+            <iframe width="100%" maxHeight="700" src="https://www.youtube.com/embed/4Du8kIqGK1k?si=KS38o8QPJRsE67ev&amp;start=4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            
             {packageData.galleryImages.map((imageUrl, index) => (
                 <img
                     key={index}

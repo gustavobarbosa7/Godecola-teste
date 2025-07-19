@@ -5,7 +5,7 @@ import Avatar from '@mui/joy/Avatar';
 import RatingStars from '../RatingStars'
 import ExpandableText from '../ExpandableText';
 
-export const ReviewCard = ({ review }) => {
+export const ReviewCard = ({ review, length }) => {
     const { id, userName, review_date, rating, comment, userCreatedAt, packageId } = review;
 
     return (
@@ -17,7 +17,7 @@ export const ReviewCard = ({ review }) => {
                     <p>• {useTimeAgo(review_date)} atrás</p>
                 </div>
 
-                <ExpandableText text={comment} maxLines={4} commentId={id} packageId={packageId}/>
+                <ExpandableText text={comment} maxLines={4} commentId={id} packageId={packageId} />
 
                 <div className='reviewCard_user'>
                     <Avatar alt={userName} src={useRandomAvatar(userName)}
@@ -30,8 +30,7 @@ export const ReviewCard = ({ review }) => {
                 </div>
 
             </div>
-
-            <hr />
+            {length > 1 && <hr />}
         </div>
     )
 }

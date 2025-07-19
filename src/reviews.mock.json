@@ -64,7 +64,7 @@
     },
     {
         "id": 8,
-        "packageId": 3,
+        "packageId": 5,
         "userName": "Rafael Souza",
         "userCreatedAt": "2023-05-10",
         "comment": "O chalé era acolhedor, mas estava frio demais e o aquecedor não funcionava direito.",
@@ -199,7 +199,7 @@
     },
     {
         "id": 23,
-        "packageId": 3,
+        "packageId": 5,
         "userName": "Carla Dias",
         "userCreatedAt": "2023-05-10",
         "comment": "Excelente localização e atendimento rápido. Recomendo para quem quer praticidade em São Paulo.",
@@ -622,7 +622,7 @@
     },
     {
         "id": 70,
-        "packageId": 3,
+        "packageId": 5,
         "userName": "Luiz Fernando",
         "userCreatedAt": "2023-05-10",
         "comment": "Localização excelente, ideal para quem viaja a trabalho em SP.",

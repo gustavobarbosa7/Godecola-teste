@@ -1,11 +1,101 @@
+.ReviewNotFound {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--background-color);
+    min-height: 450px;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    font-size: larger;
+}
+
 .ReviewContainer {
-    display: flex;    
-    padding: 30px;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
     background-color: var(--background-color);
     flex-direction: column;
 }
 
-.ReviewCardContainer {
+.reviews-wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 1330px;
     display: flex;
-    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    background-color: var(--footer-bg);
+    height: auto;
+    padding-bottom: 20px;
+    padding-top: 10px;
+}
+
+.ramo {
+    position: absolute;
+    height: 60px;
+    top: 25px;
+}
+
+.reviews-wrapper h1 {
+    font-size: 40px;
+    margin-bottom: 20px;
+}
+
+.review-arrow-left,
+.review-arrow-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--no-active-tab);
+    font-size: 25px;
+    cursor: pointer;
+    z-index: 10;
+}
+
+.review-arrow-left:hover {
+    color: var(--tab-hover);
+}
+
+.review-arrow-left {
+    left: -45px;
+}
+
+.review-arrow-right:hover {
+    color: var(--tab-hover);
+}
+
+.review-arrow-right {
+    right: -45px;
+}
+
+.reviewCarousel-container {
+    overflow: hidden;
+    width: 100%;
+}
+
+.reviewButton {
+    background-color: var(--background-color);
+    border-radius: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 15px;
+    margin-top: 10px;
+    color: var(--text-footer);
+}
+
+.reviewButton:hover {
+    cursor: pointer;
+    background-color: var(--icons-login-hover);
+
+}
+
+@media (max-width: 768px) {
+    .ReviewContainer {
+        padding: 0px;
+        padding-bottom: 30px;
+    }
 }

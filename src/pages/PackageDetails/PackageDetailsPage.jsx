@@ -3,7 +3,7 @@ import GalleryImages from "../../components/PackageDetails/GalleryImages/Gallery
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom'
 import packagesData from '../../travels.mock.json'
-import ReviewCarousel from '../../components/ReviewCarousel/ReviewCarousel';
+import ReviewCarousel from '../../components/Review/ReviewCarousel/ReviewCarousel'
 
 const PackageDetailsPage = () => {
   const { id } = useParams();

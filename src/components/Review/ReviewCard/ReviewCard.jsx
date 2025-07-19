@@ -1,9 +1,9 @@
 import './ReviewCard.css'
-import useTimeAgo from '../../hooks/useTimeAgo'
-import useRandomAvatar from '../../hooks/useRandomAvatar'
+import useTimeAgo from '../../../hooks/useTimeAgo'
+import useRandomAvatar from '../../../hooks/useRandomAvatar'
 import Avatar from '@mui/joy/Avatar';
-import RatingStars from './RatingStars'
-import ExpandableText from './ExpandableText';
+import RatingStars from '../RatingStars'
+import ExpandableText from '../ExpandableText';
 
 export const ReviewCard = ({ review }) => {
     const { id, userName, review_date, rating, comment, userCreatedAt, packageId } = review;

@@ -1,8 +1,11 @@
-.ReviewContainer{
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    justify-content: center;
+.AllReviewsContainer {
     background-color: var(--background-color);
+    width: 100%;
+    padding-top: 30px;
+}
+
+@media (max-width: 768px) {
+    .AllReviewsContainer {
+        padding-top: 10px;
+    }
 }

@@ -1,9 +1,10 @@
+import './AllReviewsPage.css'
 import { useEffect, useRef, useState } from 'react';
 import { useLocation } from 'react-router-dom';
 import Box from '@mui/material/Box';
 import Typography from '@mui/material/Typography';
 import reviewsData from '../../reviews.mock.json';
-import { ReviewCard } from '../../components/ReviewCard/ReviewCard';
+import { ReviewCardToPage } from '../../components/Review/ReviewCardToPage/ReviewCardToPage';
 
 const AllReviewsPage = () => {
     const location = useLocation();
@@ -42,39 +43,41 @@ const AllReviewsPage = () => {
 
 
     return (
-        <Box sx={{ p: 3, maxWidth: '800px', margin: 'auto' }}>
-            <Typography variant="h4" component="h1" gutterBottom>
-                Todas as Avaliações
-            </Typography>
-            {filteredReviews.length > 0 ? (
-                filteredReviews.map(review => (
-                    <Box
-                        key={review.id}
-
-                        ref={el => {
-                            if (el) {
-                                reviewRefs.current[review.id] = el;
-                            } else {
-                                delete reviewRefs.current[review.id];
-                            }
-                        }}
-                        sx={{
-
-                            border: (String(currentQueryParams.get('highlightId')) === String(review.id)) ? '2px solid #1976d2' : '1px solid #e0e0e0',
-                            borderRadius: '8px',
-                            marginBottom: '15px',
-                            p: 1
-                        }}
-                    >
-                        <ReviewCard review={review} />
-                    </Box>
-                ))
-            ) : (
-                <Typography variant="body1" sx={{ textAlign: 'center', mt: 4 }}>
-                    Nenhuma avaliação encontrada para este pacote.
+        <div className='AllReviewsContainer'>
+            <Box sx={{ p: 3, maxWidth: '800px', margin: 'auto' }}>
+                <Typography variant="h4" component="h1" gutterBottom sx={{ color: 'var(--primary-text-color)', marginBottom: '20px' }}>
+                    Todas as Avaliações
                 </Typography>
-            )}
-        </Box>
+                {filteredReviews.length > 0 ? (
+                    filteredReviews.map(review => (
+                        <Box
+                            key={review.id}
+
+                            ref={el => {
+                                if (el) {
+                                    reviewRefs.current[review.id] = el;
+                                } else {
+                                    delete reviewRefs.current[review.id];
+                                }
+                            }}
+                            sx={{
+                                border: (String(currentQueryParams.get('highlightId')) === String(review.id)) ? '2px solid var(--orange-avanade)' : '1px solid var(--icons-login-hover)',
+                                borderRadius: '8px',
+                                marginBottom: '15px',
+                                p: 1,
+                                backgroundColor: 'var(--footer-bg)'
+                            }}
+                        >
+                            <ReviewCardToPage review={review} />
+                        </Box>
+                    ))
+                ) : (
+                    <Typography variant="body1" sx={{ textAlign: 'center', mt: 4, color: 'var(--primary-text-color)' }}>
+                        Nenhuma avaliação encontrada para este pacote.
+                    </Typography>
+                )}
+            </Box>
+        </div>
     );
 };
 

@@ -1,6 +1,6 @@
 import { ReviewCard } from '../ReviewCard/ReviewCard';
 import './ReviewCarousel.css'
-import dataReview from '../../reviews.mock.json'
+import dataReview from '../../../reviews.mock.json'
 
 const ReviewCarousel = ({ packageId }) => {
     const filteredReviews = dataReview.filter(

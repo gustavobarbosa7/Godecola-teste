@@ -1,0 +1,8 @@
+.ReviewCardToPage {
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+}

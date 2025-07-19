@@ -1,5 +1,5 @@
 .ExpandableButton {
-    color: var(--foreground-color);
+    color: var(--no-active-tab);
     cursor: pointer;
     margin-left: 10px;
     font-size: 15px;

@@ -26,6 +26,10 @@ export const goToSearchPackages = navigate => {
   navigate('/search-packages')
 }
 
-export const goToReviews = (navigate, commentId, packageId) => {
+export const goToReviews = (navigate, packageId, commentId) => {
   navigate(`/all-reviews?packageId=${packageId}&highlightId=${commentId}`);
 };
+
+export const goBack = navigate => {
+  navigate(-1)
+}

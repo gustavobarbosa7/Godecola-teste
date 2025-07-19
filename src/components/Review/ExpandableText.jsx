@@ -45,7 +45,7 @@ const ExpandableText = ({ text, maxLines, commentId, packageId }) => {
             </Typography>
 
             <div className='ExpandableButton'
-                onClick={() => goToReviews(navigate, commentId, packageId)}
+                onClick={() => goToReviews(navigate, packageId, commentId)}
             >
                 Mostrar mais
             </div>

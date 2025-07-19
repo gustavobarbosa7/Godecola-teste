@@ -4,8 +4,40 @@
     padding-top: 30px;
 }
 
+.allReviews_Title {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.allReviews_Title_arrow {
+    color: var(--no-active-tab);
+    font-size: 25px;
+}
+
+.allReviews_Title_arrow:hover {
+    cursor: pointer;
+    color: var(--orange-avanade);
+}
+
+.allComments {
+    font-size: 40px;
+    color: var(--primary-text-color);
+}
+
 @media (max-width: 768px) {
     .AllReviewsContainer {
         padding-top: 10px;
+    }
+
+    .allComments {
+        font-size: 25px;
+    }
+
+    .allReviews_Title_arrow {
+        font-size: 18px;
     }
 }

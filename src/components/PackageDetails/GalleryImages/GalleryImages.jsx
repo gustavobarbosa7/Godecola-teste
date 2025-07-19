@@ -4,7 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { FaArrowLeft, FaArrowAltCircleLeft, FaArrowAltCircleRight, FaHeart, FaRegHeart } from 'react-icons/fa'
 import useScrollArrows from "../../../hooks/useScrollArrows";
 import { useNavigate } from 'react-router-dom'
-import { goToHome } from '../../../routes/coordinator'
+import { goBack } from '../../../routes/coordinator'
 
 const GalleryImages = ({ packageData }) => {
     const [isMobile, setIsMobile] = useState(false);
@@ -79,7 +79,7 @@ const GalleryImages = ({ packageData }) => {
             {packageData?.galleryImages?.length > 0 && (
                 <div className="galleryCarousel-wrapper">
                     {isMobile && (
-                        <div className="FaArrowLeft" onClick={() => goToHome(navigate)}>
+                        <div className="FaArrowLeft" onClick={() => goBack(navigate)}>
                             <FaArrowLeft />
                         </div>
                     )}

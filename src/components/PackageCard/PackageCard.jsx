@@ -3,6 +3,7 @@ import Card from '@mui/material/Card'
 import CardContent from '@mui/material/CardContent'
 import CardMedia from '@mui/material/CardMedia'
 import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box';
 import { IoStar } from 'react-icons/io5'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
 import { useState } from 'react'
@@ -19,7 +20,7 @@ export const PackageCard = ({ id, title, price, rating, imageSrc }) => {
 
   return (
     <Card
-      sx={{ width: 300, borderRadius: '16px', position: 'relative', backgroundColor: 'var(--footer-bg)' }}
+      sx={{ width: 300, height: 260, borderRadius: '16px', position: 'relative', backgroundColor: 'var(--footer-bg)' }}
       className='packageCard'
       onClick={() => goToPackageDetails(navigate, id)}
     >
@@ -39,20 +40,34 @@ export const PackageCard = ({ id, title, price, rating, imageSrc }) => {
 
       <CardMedia sx={{ height: 140 }} image={imageSrc} title={title} />
 
-      <CardContent>
-        <Typography gutterBottom variant='h6' component='div'
-          sx={{ color: 'var(--primary-text-color)' }}
+      <CardContent sx={{
+        display: 'flex',
+        flexDirection: 'column',
+        padding: 2,
+      }}>
+        <Box
+          sx={{
+            width: '100%'
+          }}
         >
-          {title}
-        </Typography>
+          <Typography
+            gutterBottom
+            variant='h6'
+            component='div'
+            sx={{ color: 'var(--primary-text-color)', mt: '-10px' }}
+          >
+            {title}
+          </Typography>
+        </Box>
         <div className='package-info'>
-          <Typography variant='body2' sx={{ color: 'var(--text-card-package)' }}>
-            {price}
-          </Typography>
-          <IoStar className='starIcon' />
-          <Typography variant='body2' sx={{ color: 'var(--text-card-package)' }}>
-            {rating}
-          </Typography>
+          <h3>
+            R$ {price}
+          </h3>
+          <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
+            <IoStar className='starIcon' />
+            <Typography variant='body2' sx={{ color: 'var(--text-card-package)' }}>
+              {rating}
+            </Typography></div>
         </div>
       </CardContent>
     </Card>

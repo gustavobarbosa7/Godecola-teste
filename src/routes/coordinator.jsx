@@ -30,6 +30,10 @@ export const goToReviews = (navigate, packageId, commentId) => {
   navigate(`/all-reviews?packageId=${packageId}&highlightId=${commentId}`);
 };
 
+export const goToBookings = navigate => {
+  navigate('/booking')
+}
+
 export const goBack = navigate => {
   navigate(-1)
 }

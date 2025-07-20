@@ -2,7 +2,7 @@
   {
     "id": 1,
     "title": "Casa na Praia em Ubatuba",
-    "price": "R$ 589 por 2 noites",
+    "price": 589,
     "rating": 4.9,
     "type": "nacional",
     "isPromo": true,
@@ -17,7 +17,7 @@
   {
     "id": 2,
     "title": "Chalé Aconchegante em Campos do Jordão",
-    "price": "R$ 450 por 2 noites",
+    "price": 450,
     "rating": 4.7,
     "type": "nacional",
     "isPromo": false,
@@ -27,12 +27,14 @@
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg"
-    ]
+    ],
+    "startDate": "2020-01-20",
+    "endDate": "2027-09-20"
   },
   {
     "id": 3,
     "title": "Flat no Centro de São Paulo",
-    "price": "R$ 320 por diária",
+    "price": 320,
     "rating": 4.5,
     "type": "nacional",
     "isPromo": true,
@@ -47,7 +49,7 @@
   {
     "id": 4,
     "title": "Pousada Charmosa em Paraty",
-    "price": "R$ 390 por 2 noites",
+    "price": 390,
     "rating": 4.8,
     "type": "nacional",
     "isPromo": false,
@@ -62,7 +64,7 @@
   {
     "id": 5,
     "title": "Hotel Fazenda em Socorro",
-    "price": "R$ 420 por pessoa",
+    "price": 420,
     "rating": 4.6,
     "type": "nacional",
     "isPromo": false,
@@ -77,7 +79,7 @@
   {
     "id": 6,
     "title": "Camping Luxo em Bonito - MS",
-    "price": "R$ 280 por pessoa",
+    "price": 280,
     "rating": 4.9,
     "type": "nacional",
     "isPromo": false,
@@ -92,7 +94,7 @@
   {
     "id": 7,
     "title": "Apartamento de frente para o mar em Floripa",
-    "price": "R$ 650 por diária",
+    "price": 650,
     "rating": 4.9,
     "type": "nacional",
     "isPromo": false,
@@ -107,7 +109,7 @@
   {
     "id": 8,
     "title": "Hostel Estilo Europeu em Ouro Preto",
-    "price": "R$ 150 por pessoa",
+    "price": 200,
     "rating": 4.4,
     "type": "nacional",
     "isPromo": true,
@@ -122,7 +124,7 @@
   {
     "id": 9,
     "title": "Sítio com Piscina em Atibaia",
-    "price": "R$ 700 por dia inteiro",
+    "price": 700,
     "rating": 4.7,
     "type": "nacional",
     "isPromo": false,
@@ -137,7 +139,7 @@
   {
     "id": 10,
     "title": "Suíte Master em resort em Natal",
-    "price": "R$ 890 por diária",
+    "price": 890,
     "rating": 4.9,
     "type": "nacional",
     "isPromo": false,
@@ -152,7 +154,7 @@
   {
     "id": 11,
     "title": "Pacote Paris - França",
-    "price": "R$ 1.200 por pessoa",
+    "price": 1200,
     "rating": 4.8,
     "type": "internacional",
     "isPromo": true,
@@ -167,7 +169,7 @@
   {
     "id": 12,
     "title": "Viagem para Cancún - México",
-    "price": "R$ 1.400 por pessoa",
+    "price": 1400,
     "rating": 4.9,
     "type": "internacional",
     "isPromo": false,
@@ -182,7 +184,7 @@
   {
     "id": 13,
     "title": "Explorando Nova York - EUA",
-    "price": "R$ 1.800 por pessoa",
+    "price": 1800,
     "rating": 4.7,
     "type": "internacional",
     "isPromo": false,
@@ -197,7 +199,7 @@
   {
     "id": 14,
     "title": "Aventura nas Cataratas do Iguaçu - Argentina",
-    "price": "R$ 900 por pessoa",
+    "price": 900,
     "rating": 4.6,
     "type": "internacional",
     "isPromo": false,
@@ -212,7 +214,7 @@
   {
     "id": 15,
     "title": "Lua de mel em Bali - Indonésia",
-    "price": "R$ 2.100 por pessoa",
+    "price": 2100,
     "rating": 4.9,
     "type": "internacional",
     "isPromo": false,
@@ -227,7 +229,7 @@
   {
     "id": 16,
     "title": "Tour pela Tailândia",
-    "price": "R$ 1.300 por pessoa",
+    "price": 1300,
     "rating": 4.8,
     "type": "internacional",
     "isPromo": true,
@@ -242,7 +244,7 @@
   {
     "id": 17,
     "title": "Férias em Roma - Itália",
-    "price": "R$ 1.600 por pessoa",
+    "price": 1600,
     "rating": 4.7,
     "type": "internacional",
     "isPromo": false,
@@ -257,7 +259,7 @@
   {
     "id": 18,
     "title": "Deserto e luxo em Dubai",
-    "price": "R$ 2.500 por pessoa",
+    "price": 2500,
     "rating": 4.9,
     "type": "internacional",
     "isPromo": false,
@@ -271,7 +273,7 @@
   {
     "id": 19,
     "title": "Cultura e gastronomia no Japão",
-    "price": "R$ 2.200 por pessoa",
+    "price": 2200,
     "rating": 4.8,
     "type": "internacional",
     "isPromo": true,
@@ -286,7 +288,7 @@
   {
     "id": 20,
     "title": "Road trip pela Califórnia - EUA",
-    "price": "R$ 1.700 por pessoa",
+    "price": 1700,
     "rating": 4.7,
     "type": "internacional",
     "isPromo": false,

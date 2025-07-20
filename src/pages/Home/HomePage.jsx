@@ -10,11 +10,12 @@ import { useNavigate } from 'react-router-dom'
 import { goToSearchPackages } from '../../routes/coordinator'
 import { IoSearch } from "react-icons/io5";
 import useShuffledArray from '../../hooks/useShuffledArray';
+import useIsMobile from '../../hooks/useIsMobile';
 
 const HomePage = () => {
   const navigate = useNavigate()
   const [activeTab, setActiveTab] = useState('nacional')
-  const [isMobile, setIsMobile] = useState(false)
+  const isMobile = useIsMobile()
 
   const nationalCarouselRef = useRef(null)
   const internationalCarouselRef = useRef(null)
@@ -28,16 +29,6 @@ const HomePage = () => {
   const internationalArrows = useScrollArrows(internationalCarouselRef);
   const promoArrows = useScrollArrows(promoCarouselRef);
 
-  // Detecta redimensionamento para mobile/desktop
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    handleResize()
-    window.addEventListener('resize', handleResize)
-    return () => window.removeEventListener('resize', handleResize)
-  }, [])
 
   // Função para rolar o carrossel
   const scrollCarousel = (direction, ref) => {

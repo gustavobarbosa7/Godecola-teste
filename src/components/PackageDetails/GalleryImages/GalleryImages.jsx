@@ -5,9 +5,10 @@ import { FaArrowLeft, FaArrowAltCircleLeft, FaArrowAltCircleRight, FaHeart, FaRe
 import useScrollArrows from "../../../hooks/useScrollArrows";
 import { useNavigate } from 'react-router-dom'
 import { goBack } from '../../../routes/coordinator'
+import useIsMobile from "../../../hooks/useIsMobile";
 
 const GalleryImages = ({ packageData }) => {
-    const [isMobile, setIsMobile] = useState(false);
+    const isMobile = useIsMobile()
     const [currentIndex, setCurrentIndex] = useState(0);
     const [isFavorited, setIsFavorited] = useState(false)
     const navigate = useNavigate()
@@ -18,16 +19,6 @@ const GalleryImages = ({ packageData }) => {
 
     const arrowsRef = useRef(null);
     const arrows = useScrollArrows(arrowsRef);
-
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
 
     const scrollCarousel = (direction, ref) => {
         if (!ref.current) return;

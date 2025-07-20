@@ -1,17 +1,18 @@
 import './ReviewCarousel.css';
 import dataReview from '../../../reviews.mock.json';
 import CarouselReview from './Carousel/CarouselReview';
-import { useState, useEffect, useRef } from "react";
+import { useRef } from "react";
 import { FaArrowAltCircleLeft, FaArrowAltCircleRight } from 'react-icons/fa';
 import useScrollArrows from "../../../hooks/useScrollArrows";
 import { useNavigate } from 'react-router-dom';
 import { goToReviews } from '../../../routes/coordinator'
 import ramoOliveira from '../../../assets/ramo-de-oliveira.png'
+import useIsMobile from '../../../hooks/useIsMobile';
 
 const ReviewCarousel = ({ packageId }) => {
     const navigate = useNavigate();
     const filteredReviews = dataReview.filter(review => review.packageId === packageId);
-    const [isMobile, setIsMobile] = useState(false);
+    const isMobile = useIsMobile()
 
     let averageRating = 0;
     if (filteredReviews.length > 0) {
@@ -21,15 +22,6 @@ const ReviewCarousel = ({ packageId }) => {
 
     const arrowsRef = useRef(null);
     const arrows = useScrollArrows(arrowsRef);
-    useEffect(() => {
-        const handleResize = () => {
-            setIsMobile(window.innerWidth < 768);
-        };
-
-        handleResize();
-        window.addEventListener("resize", handleResize);
-        return () => window.removeEventListener("resize", handleResize);
-    }, []);
 
     const scrollCarousel = (direction, ref) => {
         if (!ref.current) return;

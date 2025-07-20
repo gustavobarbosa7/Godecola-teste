@@ -12,14 +12,14 @@ export const Header = () => {
   const navigate = useNavigate()
 
   return (
-    <header className='header'>
+    <header className='header' >
       <img
         src={logoDesktop}
         alt='logotipo do Go Decola'
         className='logoDesktop'
         onClick={() => goToHome(navigate)}
       />
-            <img
+      <img
         src={logoMobile}
         alt='logotipo do Go Decola'
         className='logoMobile'

@@ -5,10 +5,15 @@ import { TbBrandCSharp } from 'react-icons/tb'
 import logoIco from '../../assets/go_decola_logo_01_v4.png'
 import logoAvanade from '../../assets/AvanadeLogo.png'
 import logoImpacta from '../../assets/impacta_logo.png'
+import useIsOnRoute from '../../hooks/useIsOnRoute'
 
 export const Footer = () => {
+  const isOnPackageDetailsPage = useIsOnRoute('/package-details/:id');
+
   return (
-    <div className='footerDesktop'>
+    <div className='footerDesktop' style={{
+      display: isOnPackageDetailsPage ? 'none' : 'flex'
+    }}>
       <div className='groupLink'>
         <div className='groupIco'>
           <img src={logoIco} alt='logotipo do Go Decola' className='logoIco' />

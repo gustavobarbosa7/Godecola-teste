@@ -9,6 +9,7 @@ import { Footer } from '../components/Footer/Footer'
 import PackageDetailsPage from '../pages/PackageDetails/PackageDetailsPage'
 import SearchPackagesPage from '../pages/SearchPackages/SearchPackagesPage'
 import AllReviewsPage from '../pages/Review/AllReviewsPage'
+import BookingPage from '../pages/Booking/BookingPage'
 
 export const Router = () => {
   return (
@@ -22,6 +23,7 @@ export const Router = () => {
         <Route path="/package-details/:id" element={<PackageDetailsPage />} />
         <Route path="/search-packages" element={<SearchPackagesPage />} />
         <Route path="/all-reviews" element={<AllReviewsPage />} />
+        <Route path="/booking" element={<BookingPage />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>
       <Footer />

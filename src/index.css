@@ -7,6 +7,7 @@
 
 :root {
   --background-color: #f6f6f6;
+  --background-color-invert: #1E1E1E;
   --foreground-color: #b900a0;
   --primary-text-color: #0a0a0a;
   --background-form-color: #c5c2c2;
@@ -19,6 +20,7 @@
   --icons-login-hover: #e5e5e5;
   --text-footer: #4c4c4c;
   --orange-avanade: #FF5800;
+  --orange-avanade-invert: #DC4600;
   --footer-bg:#ffffff;
   --no-active-tab: #aaa;
   --tab-hover:#555;
@@ -27,6 +29,7 @@
 
 [data-theme="dark"] {
   --background-color: #1E1E1E;
+  --background-color-invert: #f6f6f6;
   --foreground-color: #8A0078;
   --primary-text-color: #ffffff;
   --background-form-color: #c5c2c2;  
@@ -39,6 +42,7 @@
   --icons-login-hover: #3b3b3b;
   --text-footer: #cccccc;
   --orange-avanade: #DC4600;
+  --orange-avanade-invert: #FF5800;
   --footer-bg:#0a0a0a;
   --no-active-tab: #555;
   --tab-hover:#aaa;

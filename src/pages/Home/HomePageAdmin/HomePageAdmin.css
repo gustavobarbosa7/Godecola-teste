@@ -1,0 +1,9 @@
+.homepageAdmin-container {
+  background-color: var(--background-color);
+  display: flex;
+  align-items: start;
+  justify-content: flex-start;
+  flex-direction: column;
+  height: 80vh;
+  font-size: 20px;
+}

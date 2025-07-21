@@ -19,6 +19,8 @@
   transition: background-color 0.25s ease-in-out;
 }
 
+
+
 .title {
   color: var(--primary-text-color);
 }

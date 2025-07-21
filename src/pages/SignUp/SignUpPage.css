@@ -15,50 +15,24 @@
 
 .formSing {
   max-width: 600px;
-  border-radius: 20px;
   margin: 1rem;
   padding: 2rem;
   box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   background-color: var(--icons-login-hover);
+  border-radius: 5%;
 }
 
 .formText{
     display: flex;
+    text-align: center;
   flex-direction: column;
   width: 100%;
   scrollbar-width: thin; 
   scrollbar-color: #f15a29 transparent;
   padding: 5%;
-  color: var(--text-footer);
 
 }
 
-.input-group {
-  display: flex;
-  align-items: center;
-  margin-bottom: 1.5rem;
-  gap: 1rem;
-}
-
-.input-wrapper {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
-
-.input-wrapper span {
-  font-weight: bold;
-  margin-bottom: 0.3rem;
-}
-
-.input-wrapper input {
-  width: 100%;
-  padding: 0.9rem;
-  border-radius: 10px;
-  border: 1px solid #ccc;
-  background-color: var(--background-form-color);
-
-}
 
 
 .registered {
@@ -122,6 +96,7 @@ p {
 }
 
 
+
 @media (max-width: 768px) {
   .SingUpcontainer {
     padding: 2%;
@@ -132,8 +107,8 @@ p {
   border-radius: 20px;
   margin: 1rem;
   padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-  background-color: var(--icons-login-hover);
+  box-shadow: none;
+  background-color: transparent;
 }
 
 .Singup-between{

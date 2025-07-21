@@ -37,3 +37,7 @@ export const goToBookings = navigate => {
 export const goBack = navigate => {
   navigate(-1)
 }
+
+export const goToHomeAdmin = navigate => {
+  navigate('/home-admin')
+}

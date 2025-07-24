@@ -5,6 +5,7 @@ import { useParams } from 'react-router-dom'
 import packagesData from '../../travels.mock.json'
 import ReviewCarousel from '../../components/Review/ReviewCarousel/ReviewCarousel'
 import { BookButton } from '../../components/Book/BookButton/BookButton';
+import Description from '../../components/PackageDetails/Description/Description';
 
 const PackageDetailsPage = () => {
   const { id } = useParams();
@@ -27,6 +28,8 @@ const PackageDetailsPage = () => {
   return (
     <div className='PackageDetailsContainer'>
       <GalleryImages packageData={packageDetail} />
+     {/* descrição do serviço do pacote a baixo */}
+      <Description packageData={packageDetail} />
       <ReviewCarousel packageId={numericId} />
       <BookButton packageData={packageDetail} />.
     </div>

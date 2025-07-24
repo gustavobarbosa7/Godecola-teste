@@ -58,7 +58,7 @@
   color: var(--no-active-tab);
   font-weight: normal;
   margin: 0 10px;
-  padding-bottom: 20px;
+  padding-top: 25px;
 }
 
 .h2Promo {
@@ -118,6 +118,7 @@
 
   .tab-separator {
     font-size: 1.4em;
+    padding-top: 45px;
   }
 
   .h2Promo {

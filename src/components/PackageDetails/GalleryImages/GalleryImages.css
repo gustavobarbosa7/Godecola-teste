@@ -107,13 +107,15 @@
 }
 
 .dot {
+    all: unset;
     width: 15px;
     height: 15px;
-    border-radius: 50%;
+    border-radius: 100%;
     background-color: var(--no-active-tab);
     border: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
+    display: inline-block;
 }
 
 .dot:hover {

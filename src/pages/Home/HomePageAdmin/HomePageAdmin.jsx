@@ -187,7 +187,7 @@ const HomePageAdmin = () => {
 
 
             <Box sx={{
-                p: 3,
+                p: isMobile ? 0: 3,
                 border: isMobile ? 'none' : '1px solid var(--no-active-tab)'
                 , borderRadius: '8px', height: '100%', width: '100%', backgroundColor: 'var(--footer-bg)'
             }}>

@@ -2,7 +2,11 @@
   {
     "id": 1,
     "title": "Casa na Praia em Ubatuba",
+    "description": "Desfrute de dias incríveis em uma casa aconchegante, a poucos metros da Praia Grande em Ubatuba/SP. Ideal para casais, com piscina, Wi-Fi, ar-condicionado e um ambiente pet friendly. O refúgio perfeito para relaxar com conforto e praticidade.",
     "price": 589,
+    "destination": "Ubatuba/Sp",
+    "startDate" :"2025-08-09",
+    "endDate" :"2025-08-20",
     "rating": 4.9,
     "type": "nacional",
     "isPromo": true,
@@ -12,12 +16,34 @@
       "https://hansenimoveis.com/wp-content/uploads/2022/02/CO653-3.jpg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://hansenimoveis.com/wp-content/uploads/2022/02/CO653-3.jpg"
-    ]
+    ],
+    "amenities": {
+      "id":1,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": false,
+      "hasRestaurant": false,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": false,
+      "numberGuests": 2,
+      "numberBaths": 2,
+      "numberBeds": 1
+    },
+    "lat": -23.4335,
+    "lng": -45.0833
+
   },
+  
   {
     "id": 2,
     "title": "Chalé Aconchegante em Campos do Jordão",
+    "description": "Experimente o charme da serra em um chalé intimista em Campos do Jordão. Perfeito para uma escapada romântica com lareira, conforto e fácil acesso ao centro turístico da cidade. Um refúgio tranquilo em meio às montanhas.",
     "price": 450,
+    "destination": "Campos do Jordão/Sp",
+    "startDate": "2020-01-20",
+    "endDate": "2027-09-20",
     "rating": 4.7,
     "type": "nacional",
     "isPromo": false,
@@ -28,13 +54,36 @@
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg"
     ],
-    "startDate": "2020-01-20",
-    "endDate": "2027-09-20"
+    "amenities": {
+      "id":2,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": false,
+      "hasGym": false,
+      "hasRestaurant": false,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": false,
+      "numberGuests": 2,
+      "numberBaths": 1,
+      "numberBeds": 1
+    },
+    "lat": -22.7383,
+    "lng": -45.5920
   },
+
+
   {
     "id": 3,
     "title": "Flat no Centro de São Paulo",
+    "description": "Hospede-se no coração de São Paulo com todo o conforto de um flat completo. Próximo à Av. Paulista, com academia, piscina, café da manhã incluso e ideal para quem busca localização estratégica e estrutura moderna",
     "price": 320,
+     "destination": "São Paulo/Sp",
+    "startDate": "2025-11-22",
+    "endDate": "2026-03-23",
+    "numberGuests": 2,
+    "numberBaths": 1,
+    "numberBeds": 1,
     "rating": 4.5,
     "type": "nacional",
     "isPromo": true,
@@ -44,12 +93,34 @@
       "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
       "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
       "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706"
-    ]
+    ],
+    "amenities": {
+      "id":3,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": false,
+      "hasPetFriendly": false,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 2,
+      "numberBaths": 1,
+      "numberBeds": 1
+    },
+    "lat": -23.5505,
+    "lng": -46.6333
   },
+
+
   {
     "id": 4,
     "title": "Pousada Charmosa em Paraty",
+    "description": "Relaxe em uma pousada encantadora próxima às praias e ao centro histórico de Paraty/RJ. Com piscina, restaurante e estrutura para toda a família, este é o destino ideal para quem busca cultura, natureza e charme colonial.",
     "price": 390,
+    "destination": "Rio de Janeiro/RJ",
+    "startDate": "2025-12-10",
+    "endDate": "2026-04-20",
     "rating": 4.8,
     "type": "nacional",
     "isPromo": false,
@@ -59,12 +130,35 @@
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1"
-    ]
+    ],
+    "amenities": {
+      "id":4,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 4,
+      "numberBaths": 2,
+      "numberBeds": 3
+    },
+    "lat": -23.2221,
+    "lng": -44.7176
   },
+
+
+
   {
     "id": 5,
     "title": "Hotel Fazenda em Socorro",
+    "description": "Curta o melhor do interior paulista em um hotel fazenda acolhedor em Socorro/SP. Cercado por natureza, com piscina, restaurante e atividades para todas as idades, é perfeito para quem deseja fugir da rotina em meio ao verde.",
     "price": 420,
+    "destination": "Socorro/SP",
+    "startDate": "2025-12-29",
+    "endDate": "2026-12-30",
     "rating": 4.6,
     "type": "nacional",
     "isPromo": false,
@@ -74,12 +168,38 @@
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s"
-    ]
+    ],
+    "amenities": {
+      "id":5,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 3,
+      "numberBaths": 2,
+      "numberBeds": 3
+    },
+    "lat": -22.5903,
+    "lng": -46.5251
   },
+
+
+
   {
     "id": 6,
     "title": "Camping Luxo em Bonito - MS",
+    "description": "Para os amantes da natureza com conforto, esse camping em Bonito oferece uma experiência única! Aproveite a infraestrutura moderna, localização privilegiada e viva dias de aventura cercado pelas belezas naturais do Mato Grosso do Sul.",
     "price": 280,
+    "destination": "Bonito/MS",
+    "startDate": "2025-12-30",
+    "endDate": "2027-12-31",
+    "numberGuests": 4,
+    "numberBaths": 2,
+    "numberBeds": 1,
     "rating": 4.9,
     "type": "nacional",
     "isPromo": false,
@@ -89,12 +209,34 @@
       "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
       "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
       "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg"
-    ]
+    ],
+    "amenities": {
+      "id":6,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": false,
+      "hasGym": true,
+      "hasRestaurant": false,
+      "hasPetFriendly": true,
+      "hasAirConditioning": false,
+      "hasBreakfastIncluded": false,
+      "numberGuests": 4,
+      "numberBaths": 2,
+      "numberBeds": 1
+    },
+    "lat": -21.1261,
+    "lng": -56.4844
   },
+
+
   {
     "id": 7,
     "title": "Apartamento de frente para o mar em Floripa",
+    "description": "Acorde com o som do mar neste apartamento moderno em Florianópolis/SC. Com vista panorâmica, piscina, academia e fácil acesso às principais praias da ilha, é ideal para quem busca sofisticação e contato com a natureza.",
     "price": 650,
+     "destination": "Floripa/SC",
+    "startDate": "2025-02-10",
+    "endDate": "2028-07-02",
     "rating": 4.9,
     "type": "nacional",
     "isPromo": false,
@@ -104,12 +246,34 @@
       "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
       "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
       "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true"
-    ]
+    ],
+    "amenities": {
+      "id":7,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": false,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": false,
+      "numberGuests": 5,
+      "numberBaths": 2,
+      "numberBeds": 3
+      
+    },
+    "lat": -27.5954,
+    "lng": -48.5480
   },
+
+
   {
     "id": 8,
     "title": "Hostel Estilo Europeu em Ouro Preto",
+    "description": "Sinta-se na Europa em pleno Brasil! Este hostel charmoso em Ouro Preto/MG oferece conforto, gastronomia local e uma arquitetura que remete ao velho continente. Uma opção econômica e elegante no coração histórico de Minas Gerais.",
     "price": 200,
+    "startDate": "2025-08-08",
+    "endDate": "2029-06-20",
     "rating": 4.4,
     "type": "nacional",
     "isPromo": true,
@@ -119,12 +283,33 @@
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1"
-    ]
+    ],
+    "amenities": {
+      "id":8,
+      "hasWifi": true,
+      "hasParking": false,
+      "hasPool": false,
+      "hasGym": false,
+      "hasRestaurant": true,
+      "hasPetFriendly": false,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": false,
+      "numberGuests": 2,
+      "numberBaths": 1,
+      "numberBeds": 2
+    },
+     "lat": -20.3850,
+     "lng": -43.5038
   },
+
+
   {
     "id": 9,
     "title": "Sítio com Piscina em Atibaia",
+    "description": "Ideal para famílias e grupos, este sítio em Atibaia/SP conta com piscina, áreas verdes e ambiente acolhedor para momentos inesquecíveis com quem você ama. A poucos quilômetros de São Paulo, oferece o descanso que você procura.",
     "price": 700,
+    "startDate": "2025-10-02",
+    "endDate": "2030-04-10",
     "rating": 4.7,
     "type": "nacional",
     "isPromo": false,
@@ -134,12 +319,33 @@
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1"
-    ]
+    ],
+     "amenities": {
+      "id":9,
+      "hasWifi": true,
+      "hasParking": false,
+      "hasPool": true,
+      "hasGym": false,
+      "hasRestaurant": false,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": false,
+      "numberGuests": 4,
+      "numberBaths": 3,
+      "numberBeds": 3
+    },
+    "lat": -23.1171,
+    "lng": -46.5563
   },
+
+
   {
     "id": 10,
     "title": "Suíte Master em resort em Natal",
+    "description": "Descubra o paraíso nordestino com conforto premium! Esta suíte master em resort em Natal/RN oferece café da manhã, piscina, ar-condicionado e localização privilegiada à beira-mar. Uma experiência única na Cidade do Sol.",
     "price": 890,
+    "startDate": "2025-06-06",
+    "endDate": "2028-06-05",
     "rating": 4.9,
     "type": "nacional",
     "isPromo": false,
@@ -149,12 +355,32 @@
       "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg",
       "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg",
       "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg"
-    ]
+    ],
+    "amenities": {
+      "id":10,
+      "hasWifi": true,
+      "hasParking": false,
+      "hasPool": true,
+      "hasGym": false,
+      "hasRestaurant": false,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 4,
+      "numberBaths": 2,
+      "numberBeds": 3
+    },
+    "lat": -5.7945,
+    "lng": -35.2110
   },
+
   {
     "id": 11,
     "title": "Pacote Paris - França",
+    "description": "Viva o romantismo da Cidade Luz! Este pacote inclui hospedagem com ar-condicionado, café da manhã e fácil acesso aos principais pontos turísticos como a Torre Eiffel, Champs-Élysées e o Louvre. Ideal para uma viagem inesquecível a dois.",
     "price": 1200,
+    "startDate": "2026-05-22",
+    "endDate": "2029-06-13",
     "rating": 4.8,
     "type": "internacional",
     "isPromo": true,
@@ -164,12 +390,33 @@
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s"
-    ]
+    ],
+    "amenities": {
+      "id":11,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": false,
+      "hasGym": false,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 3,
+      "numberBaths": 2,
+      "numberBeds": 2
+    },
+    "lat": 48.8566,
+    "lng": 2.3522
   },
+
+
   {
     "id": 12,
     "title": "Viagem para Cancún - México",
+    "description": "Aproveite as águas cristalinas do Caribe com este pacote exclusivo para Cancún. Hospedagem completa com estrutura para relaxar, restaurante e localização próxima às praias paradisíacas. Um paraíso tropical com muito conforto.",
     "price": 1400,
+      "startDate": "2029-11-11",
+    "endDate": "2029-12-13",
     "rating": 4.9,
     "type": "internacional",
     "isPromo": false,
@@ -179,12 +426,33 @@
       "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp",
       "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp",
       "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp"
-    ]
+    ],
+    "amenities": {
+      "id":12,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": false,
+      "hasGym": false,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 2,
+      "numberBaths": 2,
+      "numberBeds": 2
+    },
+    "lat": 21.1619,
+    "lng": -86.8515
   },
+
+
   {
     "id": 13,
     "title": "Explorando Nova York - EUA",
+    "description": "Descubra a energia única da Big Apple! Com hospedagem bem localizada, estrutura completa e café da manhã incluso, você poderá explorar Manhattan, a Times Square e Central Park com estilo e conforto.",
     "price": 1800,
+    "startDate": "2027-08-22",
+    "endDate": "2029-07-13",
     "rating": 4.7,
     "type": "internacional",
     "isPromo": false,
@@ -194,12 +462,32 @@
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s"
-    ]
+    ],
+    "amenities": {
+      "id":13,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 4,
+      "numberBaths": 2,
+      "numberBeds": 2
+    },
+    "lat": 40.7128,
+    "lng": -74.0060
   },
+
   {
     "id": 14,
     "title": "Aventura nas Cataratas do Iguaçu - Argentina",
+    "description": "Mergulhe na natureza com este pacote para as Cataratas do Iguaçu, lado argentino. Ideal para aventureiros e apaixonados por paisagens exuberantes, com hospedagem próxima ao parque nacional e restaurante típico incluso.",
     "price": 900,
+    "startDate": "2028-05-12",
+    "endDate": "2029-05-12",
     "rating": 4.6,
     "type": "internacional",
     "isPromo": false,
@@ -209,12 +497,32 @@
       "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg",
       "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg",
       "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg"
-    ]
+    ],
+    "amenities": {
+      "id":14,
+      "hasWifi": true,
+      "hasParking": false,
+      "hasPool": false,
+      "hasGym": false,
+      "hasRestaurant": true,
+      "hasPetFriendly": false,
+      "hasAirConditioning": false,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 4,
+      "numberBaths": 1,
+      "numberBeds": 3
+    },
+    "lat": -25.5972,
+    "lng": -54.5781
+
   },
   {
     "id": 15,
     "title": "Lua de mel em Bali - Indonésia",
+    "description": "Celebre o amor em um dos destinos mais românticos do mundo! Este pacote para Bali oferece luxo, paisagens de tirar o fôlego, piscina e estrutura ideal para casais. Um verdadeiro paraíso para lua de mel inesquecível. ",
     "price": 2100,
+    "startDate": "2029-02-02",
+    "endDate": "2029-06-13",
     "rating": 4.9,
     "type": "internacional",
     "isPromo": false,
@@ -224,12 +532,31 @@
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s"
-    ]
+    ],
+    "amenities": {
+      "id":15,
+      "hasWifi": true,
+      "hasParking": false,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 2,
+      "numberBaths": 1,
+      "numberBeds": 3
+    },
+    "lat": -8.3405,
+    "lng": 115.0920
   },
   {
     "id": 16,
     "title": "Tour pela Tailândia",
+    "description": "Explore templos exóticos, praias deslumbrantes e cultura vibrante neste tour completo pela Tailândia. Com hospedagem confortável e café da manhã incluso, prepare-se para uma jornada mágica no sudeste asiático", 
     "price": 1300,
+    "startDate": "2026-04-21",
+    "endDate": "2027-12-03",
     "rating": 4.8,
     "type": "internacional",
     "isPromo": true,
@@ -239,12 +566,33 @@
       "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg",
       "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg",
       "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg"
-    ]
+    ],
+    "amenities": {
+      "id":16,
+      "hasWifi": true,
+      "hasParking": false,
+      "hasPool": false,
+      "hasGym": false,
+      "hasRestaurant": true,
+      "hasPetFriendly": false,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+       "numberGuests": 4,
+       "numberBaths": 2,
+       "numberBeds": 3
+    },
+    "lat": 13.7563,
+    "lng": 100.5018
   },
+
+
   {
     "id": 17,
     "title": "Férias em Roma - Itália",
+    "description": "Descubra o melhor da história, arte e gastronomia em Roma! Este pacote oferece acomodação no centro da capital italiana, perfeita para explorar o Coliseu, o Vaticano e degustar a autêntica culinária italiana.", 
     "price": 1600,
+    "startDate": "2026-10-17",
+    "endDate": "2027-06-03",
     "rating": 4.7,
     "type": "internacional",
     "isPromo": false,
@@ -254,12 +602,33 @@
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg"
-    ]
+    ],
+    "amenities": {
+      "id":17,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 4,
+      "numberBaths": 2,
+      "numberBeds": 3
+    },
+    "lat": 41.9028,
+    "lng": 12.4964
   },
+
+
   {
     "id": 18,
     "title": "Deserto e luxo em Dubai",
+    "description": "Conheca uma das cidades mais famosas do mundo e em luxo", 
     "price": 2500,
+    "startDate": "2025-09-22",
+    "endDate": "2026-08-05",
     "rating": 4.9,
     "type": "internacional",
     "isPromo": false,
@@ -268,12 +637,33 @@
       "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
       "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
       "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
-      "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg"    ]
+      "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg"   
+       ],
+       "amenities": {
+      "id":18,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 5,
+      "numberBaths": 2,
+      "numberBeds": 3
+    },
+    "lat": 25.2048,
+    "lng": 55.2708
   },
+
   {
     "id": 19,
     "title": "Cultura e gastronomia no Japão",
+    "description": "Uma das Gastronomia mais ricas no mundo", 
     "price": 2200,
+    "startDate": "2027-11-12",
+    "endDate": "2028-07-09",
     "rating": 4.8,
     "type": "internacional",
     "isPromo": true,
@@ -283,12 +673,31 @@
       "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
       "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
       "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg"
-    ]
+    ],
+    "amenities": {
+      "id":19,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "numberGuests": 5,
+      "numberBaths": 1,
+      "numberBeds": 3
+    },
+    "lat": 34.6694,
+    "lng": 135.5012
   },
   {
     "id": 20,
     "title": "Road trip pela Califórnia - EUA",
+    "description": "Uma trip incrivel te aguarda na California - EUA",
     "price": 1700,
+    "startDate": "2025-12-12",
+    "endDate": "2029-11-28",
     "rating": 4.7,
     "type": "internacional",
     "isPromo": false,
@@ -298,6 +707,23 @@
       "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg",
       "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg",
       "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg"
-    ]
+    ],
+    "amenities": {
+      "id":20,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": false,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": false,
+      "numberGuests": 4,
+      "numberBaths": 3,
+      "numberBeds": 2
+    },
+    "lat": 36.3615,
+    "lng": -121.8563
+  
   }
 ]

@@ -10,6 +10,10 @@ export const goToLogin = navigate => {
   navigate('/login')
 }
 
+export const goToRecPassMail = navigate => {
+  navigate('/recpassmail')
+}
+
 export const goToRecoveryPassword = navigate => {
   navigate('/recoverypassword')
 }

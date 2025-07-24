@@ -4,6 +4,6 @@
   align-items: start;
   justify-content: flex-start;
   flex-direction: column;
-  height: 80vh;
+  height: auto;
   font-size: 20px;
 }

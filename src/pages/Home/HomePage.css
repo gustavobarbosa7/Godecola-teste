@@ -29,6 +29,7 @@
   justify-content: center;
   align-items: center;
   margin: 10px 0 10px;
+
 }
 
 .tab-h2 {
@@ -36,7 +37,6 @@
   font-weight: normal;
   color: var(--no-active-tab);
   cursor: pointer;
-  transition: color 0.3s ease, font-weight 0.3s ease;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -58,6 +58,7 @@
   color: var(--no-active-tab);
   font-weight: normal;
   margin: 0 10px;
+  padding-bottom: 20px;
 }
 
 .h2Promo {

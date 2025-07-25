@@ -1,14 +1,15 @@
 import api from "./api";
 
-const login = async (credentials) => {
-  const response = await api.post("/Auth/signin", credentials);
-  const { token } = response.data;
 
-  if (token) {
-    localStorage.setItem("token", token);
+export const login = async (credentials) => {
+  try {
+    const response = await api.post('/Auth/signin', credentials);
+    return response.data;
+    
+  } catch (error) {
+    console.error('Login error:', error.response?.data || error.message);
+    throw error;
   }
-
-  return response.data;
 };
 
 const logout = async () => {

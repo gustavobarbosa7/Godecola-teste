@@ -2,8 +2,7 @@ import "./LoginPage.css";
 import logo from "../../assets/go_decola_logo_01.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { goToRecPassMail } from "../../routes/coordinator";
-import { goToSignUp } from "../../routes/coordinator";
+import { goToRecPassMail, goToSignUp, goToHome } from "../../routes/coordinator";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import InputLabel from "@mui/material/InputLabel";
@@ -16,7 +15,8 @@ import Input from "@mui/material/Input";
 import LockIcon from "@mui/icons-material/Lock";
 import { useForm } from "../../hooks/useForm";
 import { useDispatch } from "react-redux";
-import { loginSucess } from "../../store/authSlice";
+import { loginSuccess } from "../../store/authSlice";
+import { fetchCurrentUser } from '../../store/userActions'
 import { login } from "../../services/authService";
 import { parseJwt } from "../../utils/jwt";
 
@@ -26,8 +26,7 @@ export default function LoginPage() {
     email: "",
     password: "",
   });
-
-  const handleSubmit = async (e) => {
+const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
@@ -35,16 +34,23 @@ export default function LoginPage() {
         email: form.email,
         password: form.password,
       });
+
       const { token } = response;
       const payload = parseJwt(token);
-      const userId = payload?.nameid || null;
+      const userId = payload?.nameid || payload?.sub || null;
 
-      dispatch(loginSucess({ token, userId }));
+      if (!userId) throw new Error('ID do usuário não encontrado no token');
+
+      dispatch(loginSuccess({ token, userId }));
+      dispatch(fetchCurrentUser());
+      
       resetForm();
+      goToHome(navigate)
     } catch (error) {
+      console.error('Erro no login:', error);
       return (
         error.response?.data?.message ||
-        "Falha no login. Verifique suas credenciais."
+        'Falha no login. Verifique suas credenciais.'
       );
     }
   };

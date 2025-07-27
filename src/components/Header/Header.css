@@ -22,20 +22,39 @@
   display: flex;
   flex-direction: row;
   align-items: center;
-  gap: 20px;
+  gap: 10px;
+}
+
+.fa-heart-icon {
+  color: var(--secondary-text-color);
+  margin-right: 10px;
+}
+
+.fa-heart-icon:hover {
+  cursor: pointer;
+  color: red;
 }
 
 .logoMobile {
-  height: 130px;
+  height: 120px;
   cursor: pointer;
   display: none;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 765px) {
   .logoDesktop {
     display: none;
   }
+
   .logoMobile {
     display: block;
+  }
+
+  .fa-heart-icon {
+    margin-right: 5px;
+  }
+
+  .header-right {
+    gap: 0px;
   }
 }

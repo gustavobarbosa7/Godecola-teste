@@ -3,7 +3,7 @@ import api from "./api";
 
 export const login = async (credentials) => {
   try {
-    const response = await api.post('/Auth/signin', credentials);
+    const response = await api.post('/auth/signin', credentials);
     return response.data;
     
   } catch (error) {
@@ -13,12 +13,12 @@ export const login = async (credentials) => {
 };
 
 const logout = async () => {
-  await api.post("/Auth/signout");
+  await api.post("/auth/signout");
   localStorage.removeItem("token");
 };
 
 const signup = async (userData) => {
-  const response = await api.post("/Auth/signup", userData);
+  const response = await api.post("/auth/signup", userData);
   return response.data;
 };
 

@@ -13,7 +13,7 @@ export const Toggle = ({ handleChange, isChecked }) => {
         checked={isChecked}
       />
       <label htmlFor='check' className='toggle-label'>
-        <Tooltip title={isChecked ? 'Dark Mode' : 'Light Mode'} placement='bottom'>
+        <Tooltip title={isChecked ? 'Dark Mode' : 'Light Mode'} placement='bottom' arrow>
           <span className='toggle-thumb'>
             {isChecked ? <FaMoon /> : <FaSun />}
           </span>

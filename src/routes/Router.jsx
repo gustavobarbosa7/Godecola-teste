@@ -12,6 +12,9 @@ import SearchPackagesPage from '../pages/SearchPackages/SearchPackagesPage'
 import AllReviewsPage from '../pages/Review/AllReviewsPage'
 import BookingPage from '../pages/Booking/BookingPage'
 import HomePageAdmin from '../pages/Home/HomePageAdmin/HomePageAdmin'
+import ProfilePage from '../pages/Profile/ProfilePage'
+import WishListPage from '../pages/WishList/WishListPage'
+import HistoryPage from '../pages/History/HistoryPage'
 
 export const Router = () => {
   return (
@@ -27,6 +30,9 @@ export const Router = () => {
         <Route path="/search-packages" element={<SearchPackagesPage />} />
         <Route path="/all-reviews" element={<AllReviewsPage />} />
         <Route path="/booking" element={<BookingPage />} />
+        <Route path="/profile" element={<ProfilePage />} />
+        <Route path="/wishlist" element={<WishListPage />} />
+        <Route path="/history" element={<HistoryPage />} />
         <Route path="/home-admin" element={<HomePageAdmin />} />
         <Route path="*" element={<ErrorPage />} />
       </Routes>

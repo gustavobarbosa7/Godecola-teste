@@ -48,3 +48,11 @@
   --tab-hover:#aaa;
   --text-card-package: #999999;
 }
+
+.MuiTooltip-tooltip {
+  background-color: #555 !important;
+  color: white !important;
+  font-size: 0.9rem !important;
+  padding: 8px 12px !important;
+  border-radius: 4px !important;
+}

@@ -45,3 +45,15 @@ export const goBack = navigate => {
 export const goToHomeAdmin = navigate => {
   navigate('/home-admin')
 }
+
+export const goToProfile = navigate => {
+  navigate('/profile')
+}
+
+export const goToWishList = navigate => {
+  navigate('/wishlist')
+}
+
+export const goToHistory = navigate => {
+  navigate('/history')
+}

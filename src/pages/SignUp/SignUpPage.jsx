@@ -1,6 +1,7 @@
 import "./SignUpPage.css";
-import { Link } from "react-router-dom";
-import * as React from "react";
+import { useNavigate } from "react-router-dom";
+import { goToLogin } from "../../routes/coordinator";
+import { useState } from "react";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import Input from "@mui/material/Input";
@@ -12,11 +13,22 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 const SignUpPage = () => {
-  const [showPassword, setShowPassword] = React.useState(false);
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => event.preventDefault();
   const handleMouseUpPassword = (event) => event.preventDefault();
+
+
+  const handleMouseDownPassword = (event) => {
+    event.preventDefault();
+  };
+
+  const handleMouseUpPassword = (event) => {
+    event.preventDefault();
+  };
+
 
   return (
     <Box
@@ -106,7 +118,6 @@ const SignUpPage = () => {
               inputProps={{ maxLength: 11 }}
               required
             />
-
             <b>ou</b>
 
             {/* Campo Passaporte */}
@@ -120,14 +131,15 @@ const SignUpPage = () => {
             />
 
             <div className="Singup-between">
-              <Link to="/Login" className="registered">
+              <div onClick={() => goToLogin(navigate)} className="registered">
                 Já sou cadastrado
-              </Link>
+              </div>
 
               <button type="submit" className="singup-btn">
                 CADASTRAR
               </button>
             </div>
+
           </div>
         </div>
       </div>

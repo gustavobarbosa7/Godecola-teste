@@ -11,6 +11,9 @@ import FormControl from "@mui/material/FormControl";
 import TextField from "@mui/material/TextField";
 import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
+import { CustomTextfield } from "../../components/CustomInputs/CustomTextfield";
+import {useForm} from "../../hooks/useForm";
+import  {CustomNumericField} from "../../components/CustomInputs/CustomNumericField";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
@@ -21,18 +24,28 @@ const SignUpPage = () => {
   const handleMouseUpPassword = (event) => event.preventDefault();
 
 
-  const handleMouseDownPassword = (event) => {
-    event.preventDefault();
-  };
+  const { form, onChangeForm, resetForm } = useForm({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    phone: "",
+    cpf: "",
+    passaport: ""
+  })
 
-  const handleMouseUpPassword = (event) => {
+  // onde vai ser a logica de envio do formulário
+  const handleSubmit = async (event) => {
     event.preventDefault();
+    // Aqui você pode adicionar a lógica para enviar os dados do formulário
+    resetForm(); // Reseta o formulário após o envio
   };
 
 
   return (
     <Box
       component="form"
+      onSubmit={handleSubmit}
       sx={{ "& .MuiTextField-root": { m: 1, width: "auto" } }}
       noValidate
       autoComplete="off"
@@ -42,32 +55,33 @@ const SignUpPage = () => {
           <h2>CADASTRA - SE</h2>
           <div className="formText">
             {/* Campo Nome */}
-            <TextField
-              sx={{ input: { color: "var(--primary-text-color)" } }}
-              id="inputNome"
+            <CustomTextfield
+              value={form.firstName}
+              onChange={onChangeForm}
+              name="firstName"
               label="Nome"
-              color="warning"
-              variant="standard"
+
               required
             />
 
+
             {/* Campo Sobrenome */}
-            <TextField
-              sx={{ input: { color: "var(--primary-text-color)" } }}
-              id="inputSobrenome"
+            <CustomTextfield
+              value={form.lastName}
+              onChange={onChangeForm}
+              name="lastName"
               label="Sobrenome"
-              color="warning"
-              variant="standard"
+
               required
             />
 
             {/* Campo Email */}
-            <TextField
-              sx={{ input: { color: "var(--primary-text-color)" } }}
-              id="inputEmail"
+            <CustomTextfield
+              value={form.email}
+              onChange={onChangeForm}
+              name="email"
               label="E-mail"
-              color="warning"
-              variant="standard"
+
               required
             />
 
@@ -78,7 +92,7 @@ const SignUpPage = () => {
               </InputLabel>
               <Input
                 sx={{ color: "var(--primary-text-color)" }}
-                id="standard-adornment-password"
+                name="password"
                 color="warning"
                 type={showPassword ? "text" : "password"}
                 endAdornment={
@@ -99,12 +113,12 @@ const SignUpPage = () => {
             </FormControl>
 
             {/* Campo Telefone */}
-            <TextField
-              sx={{ input: { color: "var(--primary-text-color)" } }}
-              id="telefone"
+            <CustomNumericField
+              value={form.phone}
+              onChange={onChangeForm}
               label="Telefone"
-              color="warning"
-              variant="standard"
+              name="phone"
+              mask="(00) 00000-0000"
               required
             />
 

@@ -14,10 +14,12 @@ import VisibilityOff from "@mui/icons-material/VisibilityOff";
 
 const SignUpPage = () => {
   const navigate = useNavigate();
-
   const [showPassword, setShowPassword] = useState(false);
 
   const handleClickShowPassword = () => setShowPassword((show) => !show);
+  const handleMouseDownPassword = (event) => event.preventDefault();
+  const handleMouseUpPassword = (event) => event.preventDefault();
+
 
   const handleMouseDownPassword = (event) => {
     event.preventDefault();
@@ -26,6 +28,7 @@ const SignUpPage = () => {
   const handleMouseUpPassword = (event) => {
     event.preventDefault();
   };
+
 
   return (
     <Box
@@ -37,29 +40,33 @@ const SignUpPage = () => {
       <div className="SingUpcontainer">
         <div className="formSing">
           <h2>CADASTRA - SE</h2>
-          <form className="formText">
+          <div className="formText">
             {/* Campo Nome */}
             <TextField
-              sx={{
-                input: { color: "var( --primary-text-color)" },
-              }}
-              id="InputName"
+              sx={{ input: { color: "var(--primary-text-color)" } }}
+              id="inputNome"
               label="Nome"
               color="warning"
-              multilinemaxRows={4}
+              variant="standard"
+              required
+            />
+
+            {/* Campo Sobrenome */}
+            <TextField
+              sx={{ input: { color: "var(--primary-text-color)" } }}
+              id="inputSobrenome"
+              label="Sobrenome"
+              color="warning"
               variant="standard"
               required
             />
 
             {/* Campo Email */}
             <TextField
-              sx={{
-                input: { color: "var( --primary-text-color)" },
-              }}
-              id="Inputemail"
+              sx={{ input: { color: "var(--primary-text-color)" } }}
+              id="inputEmail"
               label="E-mail"
               color="warning"
-              multilinemaxRows={4}
               variant="standard"
               required
             />
@@ -70,7 +77,7 @@ const SignUpPage = () => {
                 Senha
               </InputLabel>
               <Input
-                sx={{ color: "var( --primary-text-color)" }}
+                sx={{ color: "var(--primary-text-color)" }}
                 id="standard-adornment-password"
                 color="warning"
                 type={showPassword ? "text" : "password"}
@@ -78,9 +85,7 @@ const SignUpPage = () => {
                   <InputAdornment position="end">
                     <IconButton
                       aria-label={
-                        showPassword
-                          ? "hide the password"
-                          : "display the password"
+                        showPassword ? "Ocultar senha" : "Mostrar senha"
                       }
                       onClick={handleClickShowPassword}
                       onMouseDown={handleMouseDownPassword}
@@ -95,42 +100,32 @@ const SignUpPage = () => {
 
             {/* Campo Telefone */}
             <TextField
-              sx={{
-                input: { color: "var( --primary-text-color)" },
-              }}
+              sx={{ input: { color: "var(--primary-text-color)" } }}
               id="telefone"
               label="Telefone"
               color="warning"
-              multilinemaxRows={4}
               variant="standard"
               required
             />
-            <br></br>
 
             {/* Campo CPF */}
             <TextField
-              sx={{
-                input: { color: "var( --primary-text-color)" },
-              }}
+              sx={{ input: { color: "var(--primary-text-color)" } }}
               id="cpf"
               label="CPF"
               color="warning"
-              multilinemaxRows={4}
               variant="standard"
-              inputProps={{ maxlength: 11 }}
+              inputProps={{ maxLength: 11 }}
               required
             />
             <b>ou</b>
 
             {/* Campo Passaporte */}
             <TextField
-              sx={{
-                input: { color: "var( --primary-text-color)" },
-              }}
+              sx={{ input: { color: "var(--primary-text-color)" } }}
               id="passaport"
               label="Passaporte"
               color="warning"
-              multilinemaxRows={4}
               variant="standard"
               required
             />
@@ -144,7 +139,8 @@ const SignUpPage = () => {
                 CADASTRAR
               </button>
             </div>
-          </form>
+
+          </div>
         </div>
       </div>
     </Box>

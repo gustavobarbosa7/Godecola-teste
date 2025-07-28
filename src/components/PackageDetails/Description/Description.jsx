@@ -20,9 +20,9 @@ const Description = ({ packageData }) => {
 
       <div className="TitlePackage">
         <p style={{ color: "gray" }}>
-          {packageData.amenities.numberGuests} hóspedes{" "}
-          {packageData.amenities.numberBaths} cama{" "}
-          {packageData.amenities.numberBeds} banheiro
+          {packageData.numberGuests} hóspedes{" "}
+          {packageData.accommodationDetails.numberBaths} cama{" "}
+          {packageData.accommodationDetails.numberBeds} banheiro
         </p>
       </div>
       <br></br>
@@ -38,50 +38,50 @@ const Description = ({ packageData }) => {
           padding: "70px",
         }}
       >
-        <h2 style={{ marginRight: "100%" }}>
+        <h2 className="Services" style={{ marginRight: "92%" }}>
           <i>Serviços</i>
         </h2>
 
         
         <ul style={{ listStyle: "none" }}>
-          {packageData.amenities.hasWifi && (
+          {packageData.accommodationDetails.hasWifi && (
             <li>
               {" "}
               <IoWifi style={{ marginRight: "5px" }} /> Wi-Fi
             </li>
           )}
-          {packageData.amenities.hasParking && (
+          {packageData.accommodationDetails.hasParking && (
             <li>
               <BiSolidCarGarage style={{ marginRight: "5px" }} /> Estacionamento
             </li>
           )}
-          {packageData.amenities.hasPool && (
+          {packageData.accommodationDetails.hasPool && (
             <li>
               <MdOutlinePool style={{ marginRight: "5px" }} /> Piscina
             </li>
           )}
-          {packageData.amenities.hasGym && (
+          {packageData.accommodationDetails.hasGym && (
             <li>
               <CgGym style={{ marginRight: "5px" }} /> Academia
             </li>
           )}
-          {packageData.amenities.hasRestaurant && (
+          {packageData.accommodationDetails.hasRestaurant && (
             <li>
               <IoRestaurant style={{ marginRight: "5px" }} /> Restaurante
             </li>
           )}
-          {packageData.amenities.hasPetFriendly && (
+          {packageData.accommodationDetails.hasPetFriendly && (
             <li>
               <MdOutlinePets style={{ marginRight: "5px" }} /> Pet
             </li>
           )}
-          {packageData.amenities.hasAirConditioning && (
+          {packageData.accommodationDetails.hasAirConditioning && (
             <li>
               <AcUnitIcon style={{ fontSize: "16px", marginRight: "5px" }} />{" "}
               Ar-condicionado
             </li>
           )}
-          {packageData.amenities.hasBreakfastIncluded && (
+          {packageData.accommodationDetails.hasBreakfastIncluded && (
             <li>
               <MdFreeBreakfast style={{ marginRight: "5px" }} /> Café da manhã
               incluso

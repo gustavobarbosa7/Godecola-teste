@@ -15,7 +15,9 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 50px;
     background-color: var(--background-color);
     transition: background-color 0.25s ease-in-out;
     flex-direction: column;

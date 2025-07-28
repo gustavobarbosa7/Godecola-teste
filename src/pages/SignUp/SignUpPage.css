@@ -1,80 +1,33 @@
 .SingUpcontainer {
-  height: auto;
   display: flex;
-  flex-direction: row;
   justify-content: center;
-  background-color: var(--background-color);
-  transition: background-color 0.25s ease-in-out;
+  align-items: center;
   flex-wrap: wrap;
-}
-
-.logo {
-  width: 280px;
-  margin-bottom: 0.5rem;
+  padding: 2%;
+  width: 100%;
+  min-height: 100vh;
+  background-color: var(--background-color);
+  box-sizing: border-box;
 }
 
 .formSing {
+  width: 100%;
   max-width: 600px;
-  margin: 1rem;
   padding: 2rem;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   background-color: var(--icons-login-hover);
-  border-radius: 5%;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  box-sizing: border-box;
 }
 
-.formText{
-    display: flex;
-    text-align: center;
+.formText {
+  display: flex;
   flex-direction: column;
   width: 100%;
-  scrollbar-width: thin; 
-  scrollbar-color: #f15a29 transparent;
   padding: 5%;
-
-}
-
-
-
-.registered {
-  align-self: center;
-  font-size: 0.85rem;
-  color: #f15a29;
-  margin-bottom: 1rem;
-  text-decoration: none;
-  transition: color 0.2s ease, text-decoration 0.2s ease;
-}
-
-.registered:hover {
-  color: #07449f;
-  cursor: pointer;
-}
-
-.Singup-between {
-  display: grid;
-  width: 95%;
-  grid-template-columns: 1fr 1fr;
-  place-items: center;
-  margin-top: 2.5rem;
-  gap: 1.5rem;
-  flex-wrap: wrap;
-}
-
-.singup-btn {
-  background: linear-gradient(to right, #f15a29, #e94e1b);
-  color: white;
-  border: none;
-  padding: 0.8rem 4rem;
-  border-radius: 15px;
-  cursor: pointer;
-  font-weight: bold;
-  margin-bottom: 1.5rem;
-  transition: transform 0.2s ease-in-out;
-}
-
-.singup-btn:hover {
-  transform: scale(1.02);
-  background: #c94113;
-  transition: transform 0.3s ease;
+  text-align: center;
+  scrollbar-width: thin;
+  scrollbar-color: #f15a29 transparent;
 }
 
 h2 {
@@ -83,58 +36,52 @@ h2 {
   margin-bottom: 1rem;
 }
 
-p {
-  padding: 0.5rem;
-}
-
-.divider {
-  width: 2px;
-  background: linear-gradient(to bottom, #fcc5ae, #f15a29, #5b2b82);
-  height: 60%;
-  border-radius: 10px;
-  align-self: center;
-}
-
-
-
-@media (max-width: 768px) {
-  .SingUpcontainer {
-    padding: 2%;
-  }
-
-  .formSing {
-  max-width: 600px;
-  border-radius: 20px;
-  margin: 1rem;
-  padding: 2rem;
-  box-shadow: none;
-  background-color: transparent;
-}
-
-.Singup-between{
+.Singup-between {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   width: 100%;
-  grid-template-columns: 1fr 1fr;
+  margin-top: 2rem;
+  gap: 1rem;
 }
 
 .singup-btn {
   width: 100%;
-}
-  .formSing {
-    margin: auto;
-    width: 100%;
-    height: auto;
-  }
-
-    .singup-btn {
+  max-width: 300px;
+  padding: 0.8rem;
   background: linear-gradient(to right, #f15a29, #e94e1b);
   color: white;
   border: none;
-  padding: 0.8rem 4rem;
   border-radius: 15px;
   cursor: pointer;
   font-weight: bold;
-  margin-bottom: 0.5rem;
   transition: transform 0.2s ease-in-out;
 }
 
+.singup-btn:hover {
+  transform: scale(1.02);
+  background: #c94113;
+}
+
+.registered {
+  font-size: 0.85rem;
+  color: #f15a29;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.registered:hover {
+  color: #07449f;
+}
+
+@media (max-width: 768px) {
+  .formSing {
+    box-shadow: none;
+    background-color: transparent;
+    padding: 1rem;
+  }
+
+  .singup-btn {
+    width: 100%;
+  }
 }

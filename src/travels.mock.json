@@ -5,48 +5,69 @@
     "description": "Desfrute de dias incríveis em uma casa aconchegante, a poucos metros da Praia Grande em Ubatuba/SP. Ideal para casais, com piscina, Wi-Fi, ar-condicionado e um ambiente pet friendly. O refúgio perfeito para relaxar com conforto e praticidade.",
     "price": 589,
     "destination": "Ubatuba/Sp",
-    "startDate" :"2025-08-09",
-    "endDate" :"2025-08-20",
-    "rating": 4.9,
-    "type": "nacional",
-    "isPromo": true,
-    "galleryImages": [
+    "startDate": "2025-08-09T18:29:04.439Z",
+    "endDate": "2025-08-20T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 2,
+       "galleryImages": [
       "https://hansenimoveis.com/wp-content/uploads/2022/02/CO653-3.jpg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://hansenimoveis.com/wp-content/uploads/2022/02/CO653-3.jpg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://hansenimoveis.com/wp-content/uploads/2022/02/CO653-3.jpg"
     ],
-    "amenities": {
-      "id":1,
+    "accommodationDetails": {
+      "id": 1,
+      "numberBaths": 2,
+      "numberBeds": 2,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
-      "hasGym": false,
-      "hasRestaurant": false,
+      "hasGym": true,
+      "hasRestaurant": true,
       "hasPetFriendly": true,
       "hasAirConditioning": true,
-      "hasBreakfastIncluded": false,
-      "numberGuests": 2,
-      "numberBaths": 2,
-      "numberBeds": 1
+      "hasBreakfastIncluded": true,
+      "address": {
+        "id": 0,
+        "addressLine1": " Rua da Prai",
+        "addressLine2": "123",
+        "zipCode": "string",
+        "country": "Brasil",
+        "state": "São Paulo",
+        "city": "Ubatuba",
+        "neighborhood": "Praia Grande",
+        "latitude": -23.4335,
+        "longitude": -45.0833
+      }
     },
-    "lat": -23.4335,
-    "lng": -45.0833
-
+    "mediasUrl": [
+      {
+        "id": 1,
+        "travelPackageId": 1,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 0,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
-  
-  {
+
+
+   {
     "id": 2,
     "title": "Chalé Aconchegante em Campos do Jordão",
     "description": "Experimente o charme da serra em um chalé intimista em Campos do Jordão. Perfeito para uma escapada romântica com lareira, conforto e fácil acesso ao centro turístico da cidade. Um refúgio tranquilo em meio às montanhas.",
     "price": 450,
     "destination": "Campos do Jordão/Sp",
-    "startDate": "2020-01-20",
-    "endDate": "2027-09-20",
-    "rating": 4.7,
-    "type": "nacional",
-    "isPromo": false,
+    "startDate": "2020-01-20T18:29:04.439Z",
+    "endDate": "2027-09-20T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 2,
     "galleryImages": [
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
@@ -54,62 +75,102 @@
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg"
     ],
-    "amenities": {
-      "id":2,
+    "accommodationDetails": {
+      "id": 2,
+      "numberBaths": 1,
+      "numberBeds": 1,
       "hasWifi": true,
       "hasParking": true,
-      "hasPool": false,
-      "hasGym": false,
-      "hasRestaurant": false,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
       "hasPetFriendly": true,
       "hasAirConditioning": true,
-      "hasBreakfastIncluded": false,
-      "numberGuests": 2,
-      "numberBaths": 1,
-      "numberBeds": 1
+      "hasBreakfastIncluded": true,
+      "address": {
+        "id": 2,
+        "addressLine1": "Rua das Flores",
+        "addressLine2": "456",
+        "zipCode": "12345-678",
+        "country": "Brasil",
+        "state": "São Paulo",
+        "city": "Campos do Jordão",
+        "neighborhood": "Capivari",
+        "latitude": -22.7383,
+        "longitude": -45.5920
+      }
     },
-    "lat": -22.7383,
-    "lng": -45.5920
+    "mediasUrl": [
+      {
+        "id": 2,
+        "travelPackageId": 2,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 0,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
-
-
   {
     "id": 3,
     "title": "Flat no Centro de São Paulo",
     "description": "Hospede-se no coração de São Paulo com todo o conforto de um flat completo. Próximo à Av. Paulista, com academia, piscina, café da manhã incluso e ideal para quem busca localização estratégica e estrutura moderna",
     "price": 320,
-     "destination": "São Paulo/Sp",
-    "startDate": "2025-11-22",
-    "endDate": "2026-03-23",
+    "destination": "São Paulo/Sp",
+    "startDate": "2025-11-22T18:29:04.439Z",
+    "endDate": "2026-03-23T18:29:04.439Z",
+    "isActive": true,
     "numberGuests": 2,
-    "numberBaths": 1,
-    "numberBeds": 1,
-    "rating": 4.5,
-    "type": "nacional",
-    "isPromo": true,
-    "galleryImages": [
+        "galleryImages": [
       "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
       "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
       "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
       "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
       "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706"
     ],
-    "amenities": {
-      "id":3,
+    "accommodationDetails": {
+      "id": 3,
+      "numberBaths": 1,
+      "numberBeds": 1,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
       "hasGym": true,
-      "hasRestaurant": false,
-      "hasPetFriendly": false,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
       "hasAirConditioning": true,
-      "hasBreakfastIncluded": true,
-      "numberGuests": 2,
-      "numberBaths": 1,
-      "numberBeds": 1
+      "hasBreakfastIncluded": false,
+      "address": {
+        "id": 3,
+        "addressLine1": "Avenida Paulista",
+        "addressLine2": "789",
+        "zipCode": "01311-000",
+        "country": "Brasil",
+        "state": "São Paulo",
+        "city": "São Paulo",
+        "neighborhood": "Bela Vista",
+        "latitude": -23.5505,
+        "longitude": -46.6333
+      }
     },
-    "lat": -23.5505,
-    "lng": -46.6333
+    "mediasUrl": [
+      {
+        "id": 3,
+        "travelPackageId": 3,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 0,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
 
 
@@ -119,11 +180,10 @@
     "description": "Relaxe em uma pousada encantadora próxima às praias e ao centro histórico de Paraty/RJ. Com piscina, restaurante e estrutura para toda a família, este é o destino ideal para quem busca cultura, natureza e charme colonial.",
     "price": 390,
     "destination": "Rio de Janeiro/RJ",
-    "startDate": "2025-12-10",
-    "endDate": "2026-04-20",
-    "rating": 4.8,
-    "type": "nacional",
-    "isPromo": false,
+    "startDate": "2025-12-10T18:29:04.439Z",
+    "endDate": "2026-04-20T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 4,
     "galleryImages": [
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
@@ -131,8 +191,10 @@
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
       "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1"
     ],
-    "amenities": {
-      "id":4,
+    "accommodationDetails": {
+      "id": 4,
+      "numberBaths": 2,
+      "numberBeds":  3,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
@@ -141,14 +203,34 @@
       "hasPetFriendly": true,
       "hasAirConditioning": true,
       "hasBreakfastIncluded": true,
-      "numberGuests": 4,
-      "numberBaths": 2,
-      "numberBeds": 3
+      "address": {
+        "id": 4,
+        "addressLine1": "Rua das Flores",
+        "addressLine2": " 456",
+        "zipCode": "",
+        "country": "Brasil",
+        "state": "Rio de Janeiro",
+        "city": "Paraty",
+        "neighborhood": "Centro Histórico",
+        "latitude": -23.2221,
+        "longitude": -44.7176
+      }
     },
-    "lat": -23.2221,
-    "lng": -44.7176
+    "mediasUrl": [
+      {
+        "id": 4,
+        "travelPackageId": 4,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 0,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
-
 
 
   {
@@ -157,11 +239,10 @@
     "description": "Curta o melhor do interior paulista em um hotel fazenda acolhedor em Socorro/SP. Cercado por natureza, com piscina, restaurante e atividades para todas as idades, é perfeito para quem deseja fugir da rotina em meio ao verde.",
     "price": 420,
     "destination": "Socorro/SP",
-    "startDate": "2025-12-29",
-    "endDate": "2026-12-30",
-    "rating": 4.6,
-    "type": "nacional",
-    "isPromo": false,
+    "startDate": "2025-12-29T18:29:04.439Z",
+    "endDate": "2026-12-30T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 3,
     "galleryImages": [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
@@ -169,8 +250,10 @@
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s"
     ],
-    "amenities": {
-      "id":5,
+    "accommodationDetails": {
+      "id": 5,
+      "numberBaths": 2,
+      "numberBeds": 3,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
@@ -179,128 +262,211 @@
       "hasPetFriendly": true,
       "hasAirConditioning": true,
       "hasBreakfastIncluded": true,
-      "numberGuests": 3,
-      "numberBaths": 2,
-      "numberBeds": 3
+      "address": {
+        "id": 5,
+        "addressLine1": "Rua do Campo",
+        "addressLine2": "123",
+        "zipCode": "13960-000",
+        "country": "Brasil",
+        "state": "São Paulo",
+        "city": "Socorro",
+        "neighborhood": "Centro",
+        "latitude": -22.5903,
+        "longitude": -46.5251
+      }
     },
-    "lat": -22.5903,
-    "lng": -46.5251
+    "mediasUrl": [
+      {
+        "id": 5,
+        "travelPackageId": 5,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 0,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
 
-
-
-  {
+   {
     "id": 6,
     "title": "Camping Luxo em Bonito - MS",
     "description": "Para os amantes da natureza com conforto, esse camping em Bonito oferece uma experiência única! Aproveite a infraestrutura moderna, localização privilegiada e viva dias de aventura cercado pelas belezas naturais do Mato Grosso do Sul.",
     "price": 280,
     "destination": "Bonito/MS",
     "startDate": "2025-12-30",
-    "endDate": "2027-12-31",
+    "endDate": "2025-07-28T18:29:04.439Z",
+    "isActive": true,
     "numberGuests": 4,
-    "numberBaths": 2,
-    "numberBeds": 1,
-    "rating": 4.9,
-    "type": "nacional",
-    "isPromo": false,
-    "galleryImages": [
+     "galleryImages": [
       "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
       "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
       "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
       "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
       "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg"
     ],
-    "amenities": {
-      "id":6,
+    "accommodationDetails": {
+      "id": 6,
+      "numberBaths": 2,
+      "numberBeds": 1,
       "hasWifi": true,
       "hasParking": true,
-      "hasPool": false,
-      "hasGym": true,
-      "hasRestaurant": false,
-      "hasPetFriendly": true,
-      "hasAirConditioning": false,
-      "hasBreakfastIncluded": false,
-      "numberGuests": 4,
-      "numberBaths": 2,
-      "numberBeds": 1
+      "hasPool": true,
+      "hasGym": false,
+      "hasRestaurant": true,
+      "hasPetFriendly": false,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "address": {
+        "id": 6,
+        "addressLine1": "'Rua do Campo'",
+        "addressLine2": "738",
+        "zipCode": "13960-000",
+        "country": "Brasil",
+        "state": "Mato Grosso do Sul",
+        "city": "Bonito",
+        "neighborhood": "Centro",
+        "latitude": -21.1261,
+        "longitude": -56.4844
+      }
     },
-    "lat": -21.1261,
-    "lng": -56.4844
+    "mediasUrl": [
+      {
+        "id":  6,
+        "travelPackageId": 6,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 0,
+    "isCurrentlyOnPromotion": false,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
 
-
-  {
+    {
     "id": 7,
     "title": "Apartamento de frente para o mar em Floripa",
     "description": "Acorde com o som do mar neste apartamento moderno em Florianópolis/SC. Com vista panorâmica, piscina, academia e fácil acesso às principais praias da ilha, é ideal para quem busca sofisticação e contato com a natureza.",
     "price": 650,
-     "destination": "Floripa/SC",
-    "startDate": "2025-02-10",
-    "endDate": "2028-07-02",
-    "rating": 4.9,
-    "type": "nacional",
-    "isPromo": false,
-    "galleryImages": [
+    "destination": "Floripa/SC",
+    "startDate": "2025-02-10T18:29:04.439Z",
+    "endDate": "2028-07-02T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 5,
+      "galleryImages": [
       "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
       "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
       "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
       "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
       "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true"
     ],
-    "amenities": {
-      "id":7,
+    "accommodationDetails": {
+      "id": 7,
+      "numberBaths": 2,
+      "numberBeds": 3,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
       "hasGym": true,
-      "hasRestaurant": false,
+      "hasRestaurant": true,
       "hasPetFriendly": true,
       "hasAirConditioning": true,
-      "hasBreakfastIncluded": false,
-      "numberGuests": 5,
-      "numberBaths": 2,
-      "numberBeds": 3
-      
+      "hasBreakfastIncluded": true,
+      "address": {
+        "id": 7,
+        "addressLine1": "Avenida Atlântica",
+        "addressLine2": "456",
+        "zipCode": "88058-000",
+        "country": "Brasil",
+        "state": "Santa Catarina",
+        "city": "Florianópolis",
+        "neighborhood": "Centro",
+        "latitude": -27.5954,
+        "longitude": -48.5480
+      }
     },
-    "lat": -27.5954,
-    "lng": -48.5480
+    "mediasUrl": [
+      {
+        "id": 7,
+        "travelPackageId": 7,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 0,
+    "isCurrentlyOnPromotion": false,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
 
-
-  {
+{
     "id": 8,
     "title": "Hostel Estilo Europeu em Ouro Preto",
     "description": "Sinta-se na Europa em pleno Brasil! Este hostel charmoso em Ouro Preto/MG oferece conforto, gastronomia local e uma arquitetura que remete ao velho continente. Uma opção econômica e elegante no coração histórico de Minas Gerais.",
     "price": 200,
-    "startDate": "2025-08-08",
-    "endDate": "2029-06-20",
-    "rating": 4.4,
-    "type": "nacional",
-    "isPromo": true,
-    "galleryImages": [
+    "destination": "Ouro Preto/MG",
+    "startDate": "2025-08-08T18:29:04.439Z",
+    "endDate": "2029-06-20T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 2,
+     "galleryImages": [
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1"
     ],
-    "amenities": {
-      "id":8,
-      "hasWifi": true,
-      "hasParking": false,
-      "hasPool": false,
-      "hasGym": false,
-      "hasRestaurant": true,
-      "hasPetFriendly": false,
-      "hasAirConditioning": true,
-      "hasBreakfastIncluded": false,
-      "numberGuests": 2,
+    "accommodationDetails": {
+      "id": 8,
       "numberBaths": 1,
-      "numberBeds": 2
+      "numberBeds": 2,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "address": {
+        "id": 8,
+        "addressLine1": "Rua do Ouro",
+        "addressLine2": "789",
+        "zipCode": "35400-000",
+        "country": "Brasil",
+        "state": "Minas Gerais",
+        "city": "Ouro Preto",
+        "neighborhood": "Centro Histórico",
+        "latitude": -20.3850,
+        "longitude": -43.5038
+      }
     },
-     "lat": -20.3850,
-     "lng": -43.5038
+    "mediasUrl": [
+      {
+        "id": 8,
+        "travelPackageId": 8,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 0,
+    "isCurrentlyOnPromotion": false,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
+
+
+
 
 
   {
@@ -308,47 +474,73 @@
     "title": "Sítio com Piscina em Atibaia",
     "description": "Ideal para famílias e grupos, este sítio em Atibaia/SP conta com piscina, áreas verdes e ambiente acolhedor para momentos inesquecíveis com quem você ama. A poucos quilômetros de São Paulo, oferece o descanso que você procura.",
     "price": 700,
-    "startDate": "2025-10-02",
-    "endDate": "2030-04-10",
-    "rating": 4.7,
-    "type": "nacional",
-    "isPromo": false,
-    "galleryImages": [
+    "destination": "Atibaia/SP",
+    "startDate": "2025-10-02T18:29:04.439Z",
+    "endDate": "2030-04-10T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 4,
+      "galleryImages": [
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
       "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1"
     ],
-     "amenities": {
-      "id":9,
+    "accommodationDetails": {
+      "id": 9,
+      "numberBaths": 3,
+      "numberBeds": 4,
       "hasWifi": true,
-      "hasParking": false,
+      "hasParking": true,
       "hasPool": true,
-      "hasGym": false,
-      "hasRestaurant": false,
+      "hasGym": true,
+      "hasRestaurant": true,
       "hasPetFriendly": true,
       "hasAirConditioning": true,
-      "hasBreakfastIncluded": false,
-      "numberGuests": 4,
-      "numberBaths": 3,
-      "numberBeds": 3
+      "hasBreakfastIncluded": true,
+      "address": {
+        "id": 9,
+        "addressLine1": "Rua do Sítio",
+        "addressLine2": "123",
+        "zipCode": "12940-000",
+        "country": "Brasil",
+        "state": "São Paulo",
+        "city": "Atibaia",
+        "neighborhood": "Centro",
+        "latitude": -23.1171,
+        "longitude": -46.5563
+      }
     },
-    "lat": -23.1171,
-    "lng": -46.5563
+    "mediasUrl": [
+      {
+        "id": 9,
+        "travelPackageId": 9,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 0,
+    "isCurrentlyOnPromotion": false,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
+
+
+
 
 
   {
     "id": 10,
     "title": "Suíte Master em resort em Natal",
-    "description": "Descubra o paraíso nordestino com conforto premium! Esta suíte master em resort em Natal/RN oferece café da manhã, piscina, ar-condicionado e localização privilegiada à beira-mar. Uma experiência única na Cidade do Sol.",
+    "description": " Descubra o paraíso nordestino com conforto premium! Esta suíte master em resort em Natal/RN oferece café da manhã, piscina, ar-condicionado e localização privilegiada à beira-mar. Uma experiência única na Cidade do Sol.",
     "price": 890,
-    "startDate": "2025-06-06",
-    "endDate": "2028-06-05",
-    "rating": 4.9,
-    "type": "nacional",
-    "isPromo": false,
+    "destination": "Natal/RN",
+    "startDate": "2025-06-06T18:29:04.439Z",
+    "endDate": "2028-06-05T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 4,
     "galleryImages": [
       "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg",
       "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg",
@@ -356,34 +548,59 @@
       "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg",
       "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg"
     ],
-    "amenities": {
-      "id":10,
+    "accommodationDetails": {
+      "id": 10,
+      "numberBaths": 2,
+      "numberBeds": 1,
       "hasWifi": true,
-      "hasParking": false,
+      "hasParking": true,
       "hasPool": true,
-      "hasGym": false,
-      "hasRestaurant": false,
+      "hasGym": true,
+      "hasRestaurant": true,
       "hasPetFriendly": true,
       "hasAirConditioning": true,
       "hasBreakfastIncluded": true,
-      "numberGuests": 4,
-      "numberBaths": 2,
-      "numberBeds": 3
+      "address": {
+        "id": 10,
+        "addressLine1": "Avenida Beira Mar",
+        "addressLine2": "4438",
+        "zipCode": "59090-001",
+        "country": "Brasil",
+        "state": "Rio Grande do Norte",
+        "city": "Natal",
+        "neighborhood": "Ponta Negra",
+        "latitude": -5.7945,
+        "longitude": -35.2110
+      }
     },
-    "lat": -5.7945,
-    "lng": -35.2110
+    "mediasUrl": [
+      {
+        "id": 10,
+        "travelPackageId": 10,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 0,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
+
+
 
   {
     "id": 11,
     "title": "Pacote Paris - França",
     "description": "Viva o romantismo da Cidade Luz! Este pacote inclui hospedagem com ar-condicionado, café da manhã e fácil acesso aos principais pontos turísticos como a Torre Eiffel, Champs-Élysées e o Louvre. Ideal para uma viagem inesquecível a dois.",
     "price": 1200,
-    "startDate": "2026-05-22",
-    "endDate": "2029-06-13",
-    "rating": 4.8,
-    "type": "internacional",
-    "isPromo": true,
+    "destination": "Paris, França",
+    "startDate": "2026-05-22T18:29:04.439Z",
+    "endDate": "2026-07-28T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 2,
     "galleryImages": [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
@@ -391,35 +608,59 @@
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s"
     ],
-    "amenities": {
-      "id":11,
+    "accommodationDetails": {
+      "id": 11,
+      "numberBaths": 2,
+      "numberBeds": 1,
       "hasWifi": true,
       "hasParking": true,
-      "hasPool": false,
-      "hasGym": false,
+      "hasPool": true,
+      "hasGym": true,
       "hasRestaurant": true,
       "hasPetFriendly": true,
       "hasAirConditioning": true,
       "hasBreakfastIncluded": true,
-      "numberGuests": 3,
-      "numberBaths": 2,
-      "numberBeds": 2
+      "address": {
+        "id": 11,
+        "addressLine1": "Avenue des Champs-Élysées",
+        "addressLine2": "123",
+        "zipCode": "75008",
+        "country": "França",
+        "state": "Île-de-France",
+        "city": "Paris",
+        "neighborhood": "Champs-Élysées",
+        "latitude": 48.8566,
+        "longitude": 2.3522
+      }
     },
-    "lat": 48.8566,
-    "lng": 2.3522
+    "mediasUrl": [
+      {
+        "id": 11,
+        "travelPackageId": 11,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 1,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
 
 
-  {
-    "id": 12,
-    "title": "Viagem para Cancún - México",
-    "description": "Aproveite as águas cristalinas do Caribe com este pacote exclusivo para Cancún. Hospedagem completa com estrutura para relaxar, restaurante e localização próxima às praias paradisíacas. Um paraíso tropical com muito conforto.",
-    "price": 1400,
-      "startDate": "2029-11-11",
-    "endDate": "2029-12-13",
-    "rating": 4.9,
-    "type": "internacional",
-    "isPromo": false,
+
+{
+  "id": 12,
+  "title": "Viagem para Cancún - México",
+  "description": "Aproveite as águas cristalinas do Caribe com este pacote exclusivo para Cancún. Hospedagem completa com estrutura para relaxar, restaurante e localização próxima às praias paradisíacas. Um paraíso tropical com muito conforto.",
+  "price": 1400,
+  "destination": "Cancún, México",
+  "startDate": "2029-11-11T18:29:04.439Z",
+    "endDate": "2025-07-28T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 2,
     "galleryImages": [
       "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp",
       "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp",
@@ -427,44 +668,10 @@
       "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp",
       "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp"
     ],
-    "amenities": {
-      "id":12,
-      "hasWifi": true,
-      "hasParking": true,
-      "hasPool": false,
-      "hasGym": false,
-      "hasRestaurant": true,
-      "hasPetFriendly": true,
-      "hasAirConditioning": true,
-      "hasBreakfastIncluded": true,
-      "numberGuests": 2,
+    "accommodationDetails": {
+      "id": 12,
       "numberBaths": 2,
-      "numberBeds": 2
-    },
-    "lat": 21.1619,
-    "lng": -86.8515
-  },
-
-
-  {
-    "id": 13,
-    "title": "Explorando Nova York - EUA",
-    "description": "Descubra a energia única da Big Apple! Com hospedagem bem localizada, estrutura completa e café da manhã incluso, você poderá explorar Manhattan, a Times Square e Central Park com estilo e conforto.",
-    "price": 1800,
-    "startDate": "2027-08-22",
-    "endDate": "2029-07-13",
-    "rating": 4.7,
-    "type": "internacional",
-    "isPromo": false,
-    "galleryImages": [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s"
-    ],
-    "amenities": {
-      "id":13,
+      "numberBeds": 1,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
@@ -473,24 +680,107 @@
       "hasPetFriendly": true,
       "hasAirConditioning": true,
       "hasBreakfastIncluded": true,
-      "numberGuests": 4,
-      "numberBaths": 2,
-      "numberBeds": 2
+      "address": {
+        "id":12,
+        "addressLine1": "Boulevard Kukulcan",
+        "addressLine2": "789",
+        "zipCode": "77500",
+        "country": "México",
+        "state": "Quintana Roo",
+        "city": "Cancún",
+        "neighborhood": "Zona Hotelera",
+        "latitude": 21.1619,
+        "longitude": -86.8515
+      }
     },
-    "lat": 40.7128,
-    "lng": -74.0060
+    "mediasUrl": [
+      {
+        "id": 12,
+        "travelPackageId": 12,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 1,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
+
+  
+
+  {
+    "id": 13,
+    "title": "Explorando Nova York - EUA",
+    "description": "Descubra a energia única da Big Apple! Com hospedagem bem localizada, estrutura completa e café da manhã incluso, você poderá explorar Manhattan, a Times Square e Central Park com estilo e conforto.",
+    "price": 1800,
+    "destination": "Nova York, EUA",
+    "startDate": "2027-08-22T18:29:04.439Z",
+    "endDate": "2029-07-13T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 4,
+     "galleryImages": [
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
+      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s"
+    ],
+    "accommodationDetails": {
+      "id": 13,
+      "numberBaths": 2,
+      "numberBeds": 2,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "address": {
+        "id": 13,
+        "addressLine1": "5th Avenue",
+        "addressLine2": "101",
+        "zipCode": "10010",
+        "country": "EUA",
+        "state": "Nova York",
+        "city": "Nova York",
+        "neighborhood": "Manhattan",
+        "latitude": 40.7128,
+        "longitude": -74.0060
+      }
+    },
+    "mediasUrl": [
+      {
+        "id": 13,
+        "travelPackageId": 13,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 1,
+    "isCurrentlyOnPromotion": false,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+  },
+
+
 
   {
     "id": 14,
     "title": "Aventura nas Cataratas do Iguaçu - Argentina",
     "description": "Mergulhe na natureza com este pacote para as Cataratas do Iguaçu, lado argentino. Ideal para aventureiros e apaixonados por paisagens exuberantes, com hospedagem próxima ao parque nacional e restaurante típico incluso.",
     "price": 900,
-    "startDate": "2028-05-12",
-    "endDate": "2029-05-12",
-    "rating": 4.6,
-    "type": "internacional",
-    "isPromo": false,
+    "destination": "Cataratas do Iguaçu, Argentina",
+    "startDate": "2028-05-12T18:29:04.439Z",
+    "endDate": "2029-05-12T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 4,
     "galleryImages": [
       "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg",
       "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg",
@@ -498,34 +788,58 @@
       "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg",
       "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg"
     ],
-    "amenities": {
-      "id":14,
-      "hasWifi": true,
-      "hasParking": false,
-      "hasPool": false,
-      "hasGym": false,
-      "hasRestaurant": true,
-      "hasPetFriendly": false,
-      "hasAirConditioning": false,
-      "hasBreakfastIncluded": true,
-      "numberGuests": 4,
+    "accommodationDetails": {
+      "id": 14,
       "numberBaths": 1,
-      "numberBeds": 3
+      "numberBeds": 2,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "address": {
+        "id": 14,
+        "addressLine1": "Avenida das Cataratas",
+        "addressLine2": "456",
+        "zipCode": "85855-750",
+        "country": "Argentina",
+        "state": "Misiones",
+        "city": "Puerto Iguazu",
+        "neighborhood": "Centro",
+        "latitude": -25.5972,
+        "longitude": -54.5781
+      }
     },
-    "lat": -25.5972,
-    "lng": -54.5781
-
+    "mediasUrl": [
+      {
+        "id": 14,
+        "travelPackageId": 14,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 1,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
+
+
   {
     "id": 15,
     "title": "Lua de mel em Bali - Indonésia",
-    "description": "Celebre o amor em um dos destinos mais românticos do mundo! Este pacote para Bali oferece luxo, paisagens de tirar o fôlego, piscina e estrutura ideal para casais. Um verdadeiro paraíso para lua de mel inesquecível. ",
+    "description": "Celebre o amor em um dos destinos mais românticos do mundo! Este pacote para Bali oferece luxo, paisagens de tirar o fôlego, piscina e estrutura ideal para casais. Um verdadeiro paraíso para lua de mel inesquecível.",
     "price": 2100,
-    "startDate": "2029-02-02",
-    "endDate": "2029-06-13",
-    "rating": 4.9,
-    "type": "internacional",
-    "isPromo": false,
+    "destination": "Bali, Indonésia",
+    "startDate": "2029-02-02T18:29:04.439Z",
+    "endDate": "2029-07-28T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 2,
     "galleryImages": [
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s",
@@ -533,33 +847,57 @@
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s",
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s"
     ],
-    "amenities": {
-      "id":15,
+    "accommodationDetails": {
+      "id": 15,
+      "numberBaths": 1,
+      "numberBeds":   3,
       "hasWifi": true,
-      "hasParking": false,
+      "hasParking": true,
       "hasPool": true,
       "hasGym": true,
       "hasRestaurant": true,
       "hasPetFriendly": true,
       "hasAirConditioning": true,
       "hasBreakfastIncluded": true,
-      "numberGuests": 2,
-      "numberBaths": 1,
-      "numberBeds": 3
+      "address": {
+        "id": 15,
+        "addressLine1": " Jalan Raya Ubud",
+        "addressLine2": "123",
+        "zipCode": "80571",
+        "country": "Indonésia",
+        "state": "Bali",
+        "city": "Ubud",
+        "neighborhood": "Centro",
+        "latitude": -8.3405,
+        "longitude": 115.0920
+      }
     },
-    "lat": -8.3405,
-    "lng": 115.0920
+    "mediasUrl": [
+      {
+        "id": 15,
+        "travelPackageId": 15,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 1,
+    "isCurrentlyOnPromotion": false,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
-  {
+  
+   {
     "id": 16,
     "title": "Tour pela Tailândia",
-    "description": "Explore templos exóticos, praias deslumbrantes e cultura vibrante neste tour completo pela Tailândia. Com hospedagem confortável e café da manhã incluso, prepare-se para uma jornada mágica no sudeste asiático", 
+    "description": "Explore templos exóticos, praias deslumbrantes e cultura vibrante neste tour completo pela Tailândia. Com hospedagem confortável e café da manhã incluso, prepare-se para uma jornada mágica no sudeste asiático.",
     "price": 1300,
-    "startDate": "2026-04-21",
-    "endDate": "2027-12-03",
-    "rating": 4.8,
-    "type": "internacional",
-    "isPromo": true,
+    "destination": "Tailândia",
+    "startDate": "2026-04-21T18:29:04.439Z",
+    "endDate": "2026-07-28T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 4,
     "galleryImages": [
       "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg",
       "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg",
@@ -567,44 +905,69 @@
       "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg",
       "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg"
     ],
-    "amenities": {
-      "id":16,
+    "accommodationDetails": {
+      "id": 16,
+      "numberBaths": 2,
+      "numberBeds": 3,
       "hasWifi": true,
-      "hasParking": false,
+      "hasParking": true,
       "hasPool": false,
       "hasGym": false,
       "hasRestaurant": true,
-      "hasPetFriendly": false,
+      "hasPetFriendly": true,
       "hasAirConditioning": true,
       "hasBreakfastIncluded": true,
-       "numberGuests": 4,
-       "numberBaths": 2,
-       "numberBeds": 3
+      "address": {
+        "id": 16,
+        "addressLine1": "Sukhumvit Road",
+        "addressLine2": "456",
+        "zipCode": "10110",
+        "country": "Tailândia",
+        "state": "Bangkok",
+        "city": "Bangkok",
+        "neighborhood": "Sukhumvit",
+        "latitude": 13.7563,
+        "longitude": 100.5018
+      }
     },
-    "lat": 13.7563,
-    "lng": 100.5018
+    "mediasUrl": [
+      {
+        "id": 16,
+        "travelPackageId": 16,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 1,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
-
+  
 
   {
     "id": 17,
     "title": "Férias em Roma - Itália",
-    "description": "Descubra o melhor da história, arte e gastronomia em Roma! Este pacote oferece acomodação no centro da capital italiana, perfeita para explorar o Coliseu, o Vaticano e degustar a autêntica culinária italiana.", 
+    "description": "Descubra o melhor da história, arte e gastronomia em Roma! Este pacote oferece acomodação no centro da capital italiana, perfeita para explorar o Coliseu, o Vaticano e degustar a autêntica culinária italiana.",
     "price": 1600,
-    "startDate": "2026-10-17",
-    "endDate": "2027-06-03",
-    "rating": 4.7,
-    "type": "internacional",
-    "isPromo": false,
-    "galleryImages": [
+    "destination": "Roma, Itália",
+    "startDate": "2026-10-17T18:29:04.439Z",
+    "endDate": "2027-06-03T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 4,
+     "galleryImages": [
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
       "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg"
     ],
-    "amenities": {
-      "id":17,
+    "accommodationDetails": {
+      "id": 17,
+      "numberBaths": 2,
+      "numberBeds":  3,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
@@ -613,34 +976,56 @@
       "hasPetFriendly": true,
       "hasAirConditioning": true,
       "hasBreakfastIncluded": true,
-      "numberGuests": 4,
-      "numberBaths": 2,
-      "numberBeds": 3
+      "address": {
+        "id": 17,
+        "addressLine1": "Via Roma",
+        "addressLine2": "123",
+        "zipCode": "00100",
+        "country": "Itália",
+        "state": "Lazio",
+        "city": "Roma",
+        "neighborhood": "Centro Histórico",
+        "latitude": 41.9028,
+        "longitude": 12.4964
+      }
     },
-    "lat": 41.9028,
-    "lng": 12.4964
+    "mediasUrl": [
+      {
+        "id": 17,
+        "travelPackageId": 17,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 1,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
-
-
+  
   {
     "id": 18,
     "title": "Deserto e luxo em Dubai",
-    "description": "Conheca uma das cidades mais famosas do mundo e em luxo", 
+    "description": "Conheça uma das cidades mais famosas do mundo e em luxo",
     "price": 2500,
-    "startDate": "2025-09-22",
-    "endDate": "2026-08-05",
-    "rating": 4.9,
-    "type": "internacional",
-    "isPromo": false,
-    "galleryImages": [
+    "destination": "Dubai, Emirados Árabes Unidos",
+    "startDate": "2025-09-22T18:29:04.439Z",
+    "endDate": "2026-08-05T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 5,
+       "galleryImages": [
       "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
       "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
       "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
       "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
       "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg"   
        ],
-       "amenities": {
-      "id":18,
+    "accommodationDetails": {
+      "id": 18,
+      "numberBaths": 2,
+      "numberBeds": 3,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
@@ -649,58 +1034,104 @@
       "hasPetFriendly": true,
       "hasAirConditioning": true,
       "hasBreakfastIncluded": true,
-      "numberGuests": 5,
-      "numberBaths": 2,
-      "numberBeds": 3
+      "address": {
+        "id": 18,
+        "addressLine1": "Deserto de Dubai",
+        "addressLine2": "string",
+        "zipCode": "string",
+        "country": "Emirados Árabes Unidos",
+        "state": "Dubai",
+        "city": "Dubai",
+        "neighborhood": "Deserto",
+        "latitude": 25.2048,
+        "longitude": 55.2708
+      }
     },
-    "lat": 25.2048,
-    "lng": 55.2708
+    "mediasUrl": [
+      {
+        "id": 18,
+        "travelPackageId": 18,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 1,
+    "isCurrentlyOnPromotion": false,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
+
 
   {
     "id": 19,
     "title": "Cultura e gastronomia no Japão",
-    "description": "Uma das Gastronomia mais ricas no mundo", 
+    "description": "Uma das Gastronomia mais ricas no mundo",
     "price": 2200,
-    "startDate": "2027-11-12",
-    "endDate": "2028-07-09",
-    "rating": 4.8,
-    "type": "internacional",
-    "isPromo": true,
-    "galleryImages": [
+    "destination": "Japão",
+    "startDate": "2027-11-12T18:29:04.439Z",
+    "endDate": "2028-07-09T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 5,
+    "accommodationDetails": {
+      "id": 19,
+      "numberBaths": 1,
+      "numberBeds": 3,
+      "hasWifi": true,
+      "hasParking": true,
+      "hasPool": true,
+      "hasGym": true,
+      "hasRestaurant": true,
+      "hasPetFriendly": true,
+      "hasAirConditioning": true,
+      "hasBreakfastIncluded": true,
+      "galleryImages": [
       "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
       "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
       "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
       "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
       "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg"
     ],
-    "amenities": {
-      "id":19,
-      "hasWifi": true,
-      "hasParking": true,
-      "hasPool": true,
-      "hasGym": true,
-      "hasRestaurant": true,
-      "hasPetFriendly": true,
-      "hasAirConditioning": true,
-      "hasBreakfastIncluded": true,
-      "numberGuests": 5,
-      "numberBaths": 1,
-      "numberBeds": 3
+      "address": {
+        "id": 19,
+        "addressLine1": "Rua da Cultura",
+        "addressLine2": "456",
+        "zipCode": "12345-678",
+        "country": "Japão",
+        "state": "Tokyo",
+        "city": "Tokyo",
+        "neighborhood": "Shibuya",
+        "latitude": 35.6895,
+        "longitude": 139.6917
+      }
     },
-    "lat": 34.6694,
-    "lng": 135.5012
+    "mediasUrl": [
+      {
+        "id": 19,
+        "travelPackageId": 19,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 1,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   },
+
   {
     "id": 20,
     "title": "Road trip pela Califórnia - EUA",
-    "description": "Uma trip incrivel te aguarda na California - EUA",
+    "description": "Uma trip incrível te aguarda na Califórnia - EUA",
     "price": 1700,
-    "startDate": "2025-12-12",
-    "endDate": "2029-11-28",
-    "rating": 4.7,
-    "type": "internacional",
-    "isPromo": false,
+    "destination": "Califórnia - EUA",
+    "startDate": "2025-12-12T18:29:04.439Z",
+    "endDate": "2026-12-28T18:29:04.439Z",
+    "isActive": true,
+    "numberGuests": 4,
     "galleryImages": [
       "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg",
       "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg",
@@ -708,22 +1139,45 @@
       "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg",
       "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg"
     ],
-    "amenities": {
-      "id":20,
+    "accommodationDetails": {
+      "id": 20,
+      "numberBaths": 3,
+      "numberBeds":  2,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
-      "hasGym": false,
+      "hasGym": true,
       "hasRestaurant": true,
       "hasPetFriendly": true,
       "hasAirConditioning": true,
-      "hasBreakfastIncluded": false,
-      "numberGuests": 4,
-      "numberBaths": 3,
-      "numberBeds": 2
+      "hasBreakfastIncluded": true,
+      "address": {
+        "id": 20,
+        "addressLine1": "Pacific Coast Highway",
+        "addressLine2": "46",
+        "zipCode": "93923",
+        "country": "Estados Unidos",
+        "state": "Califórnia",
+        "city": "Monterey",
+        "neighborhood": "Carmel-by-the-Sea",
+        "latitude": 36.3615,
+        "longitude": -121.8563
+      }
     },
-    "lat": 36.3615,
-    "lng": -121.8563
-  
+    "mediasUrl": [
+      {
+        "id": 20,
+        "travelPackageId": 20,
+        "mediaUrl": "string",
+        "mediaType": 0,
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      }
+    ],
+    "packageType": 1,
+    "isCurrentlyOnPromotion": true,
+    "discountPercentage": 0,
+    "promotionStartDate": "2025-07-28T18:29:04.439Z",
+    "promotionEndDate": "2025-07-28T18:29:04.439Z"
   }
+  
 ]

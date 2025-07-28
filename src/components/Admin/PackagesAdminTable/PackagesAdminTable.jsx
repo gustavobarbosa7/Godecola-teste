@@ -1,32 +1,69 @@
-import "./PackagesAdminTable.css";
-import Box from "@mui/material/Box";
-import Tab from "@mui/material/Tab";
-import TabContext from "@mui/lab/TabContext";
-import TabList from "@mui/lab/TabList";
-import TabPanel from "@mui/lab/TabPanel";
-import { useState } from "react";
-import { PackageEdit } from './PackageEdit/PackageEdit'
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { TabContext, TabList, TabPanel } from "@mui/lab";
+import { Box, Tab, Typography } from "@mui/material";
+import {
+  fetchTravelPackages,
+  fetchTravelPackageById,
+  createTravelPackage,
+  updateTravelPackageById,
+  deleteTravelPackageById,
+} from "../../../store/travelPackagesActions";
+import { clearPackageDetails } from "../../../store/travelPackagesSlice";
+import { PackageEdit } from "./PackageEdit/PackageEdit";
 import { PackageRegistration } from "./PackageRegistration/PackageRegistration";
-import  PackagesList  from "./PackagesList/PackagesList";
+import PackagesList from "./PackagesList/PackagesList";
+
+// PackagesAdminTable.jsx
+
 
 export const PackagesAdminTable = () => {
-  const [value, setValue] = useState("1");
+  const [value, setValue] = useState('1');
+  const [selectedPackageId, setSelectedPackageId] = useState(null);
+  const dispatch = useDispatch();
+  const { packages, loading, error } = useSelector((state) => state.travelPackages);
+  const { token } = useSelector((state) => state.auth);
 
   const handleChange = (event, newValue) => {
     setValue(newValue);
+    if (newValue !== '3') {
+      setSelectedPackageId(null);
+      dispatch(clearPackageDetails());
+    }
   };
 
+  const handleEdit = (id) => {
+    setSelectedPackageId(id);
+    setValue('3');
+  };
+
+  useEffect(() => {
+    if (token) {
+      dispatch(fetchTravelPackages());
+    }
+  }, [dispatch, token]);
+
+  if (!token) {
+    return (
+      <Typography color="error" sx={{ p: 2 }}>
+        Faça login para visualizar os pacotes.
+      </Typography>
+    );
+  }
+
   return (
-    <Box sx={{ width: "100%", typography: "body1" }}>
+    <Box sx={{ width: '100%', typography: 'body1', p: 2 }}>
+      {loading && <Typography>Carregando...</Typography>}
+      {error && <Typography color="error">Erro: {error}</Typography>}
       <TabContext value={value}>
-        <Box sx={{ borderBottom: 1, borderColor: "var(--no-active-tab)" }}>
+        <Box sx={{ borderBottom: 1, borderColor: 'var(--no-active-tab)' }}>
           <TabList
             onChange={handleChange}
             aria-label="tabs de Pacotes"
             slotProps={{
               indicator: {
                 sx: {
-                  backgroundColor: "var(--orange-avanade)",
+                  backgroundColor: 'var(--orange-avanade)',
                 },
               },
             }}
@@ -35,9 +72,9 @@ export const PackagesAdminTable = () => {
               label="Listar Pacotes"
               value="1"
               sx={{
-                color: "var(--text-footer)",
-                "&.Mui-selected": {
-                  color: "var(--orange-avanade)",
+                color: 'var(--text-footer)',
+                '&.Mui-selected': {
+                  color: 'var(--orange-avanade)',
                 },
               }}
             />
@@ -45,9 +82,9 @@ export const PackagesAdminTable = () => {
               label="Cadastrar Pacotes"
               value="2"
               sx={{
-                color: "var(--text-footer)",
-                "&.Mui-selected": {
-                  color: "var(--orange-avanade)",
+                color: 'var(--text-footer)',
+                '&.Mui-selected': {
+                  color: 'var(--orange-avanade)',
                 },
               }}
             />
@@ -55,17 +92,35 @@ export const PackagesAdminTable = () => {
               label="Editar Pacotes"
               value="3"
               sx={{
-                color: "var(--text-footer)",
-                "&.Mui-selected": {
-                  color: "var(--orange-avanade)",
+                color: 'var(--text-footer)',
+                '&.Mui-selected': {
+                  color: 'var(--orange-avanade)',
                 },
               }}
             />
           </TabList>
         </Box>
-        <TabPanel value="1"><PackagesList/></TabPanel>
-        <TabPanel value="2"><PackageRegistration/></TabPanel>
-        <TabPanel value="3"><PackageEdit/></TabPanel>
+        <TabPanel value="1">
+          <PackagesList
+            packages={packages}
+            loading={loading}
+            error={error}
+            onEdit={handleEdit}
+          />
+        </TabPanel>
+        <TabPanel value="2">
+          <PackageRegistration createTravelPackage={createTravelPackage} />
+        </TabPanel>
+        <TabPanel value="3">
+          <PackageEdit
+            packages={packages}
+            fetchTravelPackageById={fetchTravelPackageById}
+            updateTravelPackageById={updateTravelPackageById}
+            deleteTravelPackageById={deleteTravelPackageById}
+            clearPackageDetails={clearPackageDetails}
+            selectedPackageId={selectedPackageId}
+          />
+        </TabPanel>
       </TabContext>
     </Box>
   );

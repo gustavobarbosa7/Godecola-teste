@@ -1,10 +1,12 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import authReducer from './authSlice';
 import userReducer from './userSlice';
+import travelPackagesReducer from './travelPackagesSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
   user: userReducer,
+  travelPackages: travelPackagesReducer,
 });
 
 const loadToken = () => {
@@ -26,6 +28,12 @@ const preloadedState = {
   },
   user: {
     user: null,
+    loading: false,
+    error: null,
+  },
+  travelPackages: {
+    packages: [],
+    packageDetails: null,
     loading: false,
     error: null,
   },

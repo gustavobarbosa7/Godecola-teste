@@ -30,6 +30,7 @@ export const CustomPriceField = ({
       fixedDecimalScale={mask.fixedDecimalScale}
       prefix={mask.prefix}
       sx={{
+        width:'100%',
         input: { color: "var(--text-footer)" },
         "&:hover input": { color: "var(--icons-login-color)" },
         "&:hover .MuiInputLabel-root": { color: "var(--icons-login-color)" },

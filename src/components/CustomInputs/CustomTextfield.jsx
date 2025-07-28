@@ -9,6 +9,7 @@ export const CustomTextfield = ({ label, name, value, onChange }) => {
       onChange={onChange}
       required
       sx={{
+        width: '100%',
         input: {
           color: "var(--text-footer)",
         },

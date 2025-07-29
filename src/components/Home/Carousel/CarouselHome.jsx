@@ -34,7 +34,8 @@ const Carousel = forwardRef(({ packages }, ref) => {
                     title={item.title}
                     price={item.price}
                     rating={item.rating}
-                    imageSrc={item.galleryImages[0]}
+                    imageSrc={item.mediasUrl}
+                    
                 />
             ))}
         </Box>

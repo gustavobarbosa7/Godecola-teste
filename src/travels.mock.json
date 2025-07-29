@@ -9,13 +9,6 @@
     "endDate": "2025-08-20T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 2,
-       "galleryImages": [
-      "https://hansenimoveis.com/wp-content/uploads/2022/02/CO653-3.jpg",
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
-      "https://hansenimoveis.com/wp-content/uploads/2022/02/CO653-3.jpg",
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
-      "https://hansenimoveis.com/wp-content/uploads/2022/02/CO653-3.jpg"
-    ],
     "accommodationDetails": {
       "id": 1,
       "numberBaths": 2,
@@ -45,20 +38,40 @@
       {
         "id": 1,
         "travelPackageId": 1,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://hansenimoveis.com/wp-content/uploads/2022/02/CO653-3.jpg",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 2,
+        "travelPackageId": 1,
+        "mediaUrl": "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 3,
+        "travelPackageId": 1,
+        "mediaUrl": "https://hansenimoveis.com/wp-content/uploads/2022/02/CO653-3.jpg",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+            {
+        "id": 3,
+        "travelPackageId": 1,
+        "mediaUrl": "https://www.youtube.com/watch?v=4Du8kIqGK1k",
+        "mediaType": "video",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 0,
+    "packageType": "nacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.9
   },
-
-
-   {
+  {
     "id": 2,
     "title": "Chalé Aconchegante em Campos do Jordão",
     "description": "Experimente o charme da serra em um chalé intimista em Campos do Jordão. Perfeito para uma escapada romântica com lareira, conforto e fácil acesso ao centro turístico da cidade. Um refúgio tranquilo em meio às montanhas.",
@@ -68,13 +81,6 @@
     "endDate": "2027-09-20T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 2,
-    "galleryImages": [
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg"
-    ],
     "accommodationDetails": {
       "id": 2,
       "numberBaths": 1,
@@ -102,18 +108,33 @@
     },
     "mediasUrl": [
       {
-        "id": 2,
+        "id": 4,
+        "travelPackageId": 1,
+        "mediaUrl": "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 5,
         "travelPackageId": 2,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 6,
+        "travelPackageId": 2,
+        "mediaUrl": "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 0,
+    "packageType": "nacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.7
   },
   {
     "id": 3,
@@ -125,13 +146,6 @@
     "endDate": "2026-03-23T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 2,
-        "galleryImages": [
-      "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
-      "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
-      "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
-      "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
-      "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706"
-    ],
     "accommodationDetails": {
       "id": 3,
       "numberBaths": 1,
@@ -159,21 +173,20 @@
     },
     "mediasUrl": [
       {
-        "id": 3,
+        "id": 7,
         "travelPackageId": 3,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://s3.amazonaws.com/static.nidoimovel.com.br/05049e90fa4f5039a8cadc6acbb4b2cc/imovel/SF/SF30462/SF30462002.jpg?1685715706",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 0,
+    "packageType": "nacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.5
   },
-
-
   {
     "id": 4,
     "title": "Pousada Charmosa em Paraty",
@@ -184,17 +197,10 @@
     "endDate": "2026-04-20T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 4,
-    "galleryImages": [
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
-      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1"
-    ],
     "accommodationDetails": {
       "id": 4,
       "numberBaths": 2,
-      "numberBeds":  3,
+      "numberBeds": 3,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
@@ -220,19 +226,39 @@
       {
         "id": 4,
         "travelPackageId": 4,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 4,
+        "travelPackageId": 4,
+        "mediaUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 4,
+        "travelPackageId": 4,
+        "mediaUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 4,
+        "travelPackageId": 4,
+        "mediaUrl": "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/bc/99/54/pousada-do-principe.jpg?w=1200&h=-1&s=1",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 0,
+    "packageType": "nacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 3.5
   },
-
-
   {
     "id": 5,
     "title": "Hotel Fazenda em Socorro",
@@ -243,13 +269,6 @@
     "endDate": "2026-12-30T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 3,
-    "galleryImages": [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s"
-    ],
     "accommodationDetails": {
       "id": 5,
       "numberBaths": 2,
@@ -279,19 +298,47 @@
       {
         "id": 5,
         "travelPackageId": 5,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 5,
+        "travelPackageId": 5,
+        "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 5,
+        "travelPackageId": 5,
+        "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 5,
+        "travelPackageId": 5,
+        "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 5,
+        "travelPackageId": 5,
+        "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSacQlg6kYF4qTkWf80HRLnhvHSt6bvIWho8A&s",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 0,
+    "packageType": "nacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.0
   },
-
-   {
+  {
     "id": 6,
     "title": "Camping Luxo em Bonito - MS",
     "description": "Para os amantes da natureza com conforto, esse camping em Bonito oferece uma experiência única! Aproveite a infraestrutura moderna, localização privilegiada e viva dias de aventura cercado pelas belezas naturais do Mato Grosso do Sul.",
@@ -301,13 +348,6 @@
     "endDate": "2025-07-28T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 4,
-     "galleryImages": [
-      "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
-      "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
-      "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
-      "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
-      "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg"
-    ],
     "accommodationDetails": {
       "id": 6,
       "numberBaths": 2,
@@ -335,21 +375,28 @@
     },
     "mediasUrl": [
       {
-        "id":  6,
+        "id": 6,
         "travelPackageId": 6,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 6,
+        "travelPackageId": 6,
+        "mediaUrl": "https://www.acquaviagens.com.br/upload/blog/2024/8/3399/small/campings-em-bonito-3-.jpg",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 0,
+    "packageType": "nacional",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.7
   },
-
-    {
+  {
     "id": 7,
     "title": "Apartamento de frente para o mar em Floripa",
     "description": "Acorde com o som do mar neste apartamento moderno em Florianópolis/SC. Com vista panorâmica, piscina, academia e fácil acesso às principais praias da ilha, é ideal para quem busca sofisticação e contato com a natureza.",
@@ -359,13 +406,6 @@
     "endDate": "2028-07-02T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 5,
-      "galleryImages": [
-      "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
-      "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
-      "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
-      "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
-      "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true"
-    ],
     "accommodationDetails": {
       "id": 7,
       "numberBaths": 2,
@@ -395,19 +435,33 @@
       {
         "id": 7,
         "travelPackageId": 7,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 7,
+        "travelPackageId": 7,
+        "mediaUrl": "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 7,
+        "travelPackageId": 7,
+        "mediaUrl": "https://imgbr.imovelwebcdn.com/avisos/2/30/00/66/21/19/360x266/4552865541.jpg?isFirstImage=true",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 0,
+    "packageType": "nacional",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 3.0
   },
-
-{
+  {
     "id": 8,
     "title": "Hostel Estilo Europeu em Ouro Preto",
     "description": "Sinta-se na Europa em pleno Brasil! Este hostel charmoso em Ouro Preto/MG oferece conforto, gastronomia local e uma arquitetura que remete ao velho continente. Uma opção econômica e elegante no coração histórico de Minas Gerais.",
@@ -417,13 +471,6 @@
     "endDate": "2029-06-20T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 2,
-     "galleryImages": [
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1"
-    ],
     "accommodationDetails": {
       "id": 8,
       "numberBaths": 1,
@@ -453,22 +500,32 @@
       {
         "id": 8,
         "travelPackageId": 8,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 8,
+        "travelPackageId": 8,
+        "mediaUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 8,
+        "travelPackageId": 8,
+        "mediaUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/515048256.jpg?k=845f449914aefc185470b8d1d42f6b33fe03ba4e1106e7e09ae5c86bc9ce9426&o=&hp=1",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 0,
+    "packageType": "nacional",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.5
   },
-
-
-
-
-
   {
     "id": 9,
     "title": "Sítio com Piscina em Atibaia",
@@ -479,13 +536,6 @@
     "endDate": "2030-04-10T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 4,
-      "galleryImages": [
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
-      "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1"
-    ],
     "accommodationDetails": {
       "id": 9,
       "numberBaths": 3,
@@ -515,22 +565,18 @@
       {
         "id": 9,
         "travelPackageId": 9,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://cf.bstatic.com/xdata/images/hotel/max1024x768/440485727.jpg?k=c6b85a2ac4de5d497355556209c679855453cf73775ac268cb82e1ef213b4d7a&o=&hp=1",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 0,
+    "packageType": "nacional",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 3.5
   },
-
-
-
-
-
   {
     "id": 10,
     "title": "Suíte Master em resort em Natal",
@@ -541,13 +587,6 @@
     "endDate": "2028-06-05T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 4,
-    "galleryImages": [
-      "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg",
-      "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg",
-      "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg",
-      "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg",
-      "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg"
-    ],
     "accommodationDetails": {
       "id": 10,
       "numberBaths": 2,
@@ -577,20 +616,18 @@
       {
         "id": 10,
         "travelPackageId": 10,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://media-cdn.tripadvisor.com/media/photo-s/04/c7/f5/06/varanda-suite-master.jpg",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 0,
+    "packageType": "nacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.7
   },
-
-
-
   {
     "id": 11,
     "title": "Pacote Paris - França",
@@ -601,13 +638,6 @@
     "endDate": "2026-07-28T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 2,
-    "galleryImages": [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s"
-    ],
     "accommodationDetails": {
       "id": 11,
       "numberBaths": 2,
@@ -637,37 +667,35 @@
       {
         "id": 11,
         "travelPackageId": 11,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
+        "mediaType": "imagem",
+        "uploadDate": "2025-07-28T18:29:04.439Z"
+      },
+      {
+        "id": 11,
+        "travelPackageId": 11,
+        "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS5KQ4Q4CotO-iPcGZnk4Guk0NK7bvxz-L2_Q&s",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 1,
+    "packageType": "internacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 3.5
   },
-
-
-
-{
-  "id": 12,
-  "title": "Viagem para Cancún - México",
-  "description": "Aproveite as águas cristalinas do Caribe com este pacote exclusivo para Cancún. Hospedagem completa com estrutura para relaxar, restaurante e localização próxima às praias paradisíacas. Um paraíso tropical com muito conforto.",
-  "price": 1400,
-  "destination": "Cancún, México",
-  "startDate": "2029-11-11T18:29:04.439Z",
+  {
+    "id": 12,
+    "title": "Viagem para Cancún - México",
+    "description": "Aproveite as águas cristalinas do Caribe com este pacote exclusivo para Cancún. Hospedagem completa com estrutura para relaxar, restaurante e localização próxima às praias paradisíacas. Um paraíso tropical com muito conforto.",
+    "price": 1400,
+    "destination": "Cancún, México",
+    "startDate": "2029-11-11T18:29:04.439Z",
     "endDate": "2025-07-28T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 2,
-    "galleryImages": [
-      "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp",
-      "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp",
-      "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp",
-      "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp",
-      "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp"
-    ],
     "accommodationDetails": {
       "id": 12,
       "numberBaths": 2,
@@ -681,7 +709,7 @@
       "hasAirConditioning": true,
       "hasBreakfastIncluded": true,
       "address": {
-        "id":12,
+        "id": 12,
         "addressLine1": "Boulevard Kukulcan",
         "addressLine2": "789",
         "zipCode": "77500",
@@ -697,20 +725,18 @@
       {
         "id": 12,
         "travelPackageId": 12,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://atmbr.com.br/wp-content/uploads/2022/07/quanto-custa-em-media-ir-viajar-para-cancun-como-viajar-para-cancun-gastando-pouco.webp",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 1,
+    "packageType": "internacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.5
   },
-
-  
-
   {
     "id": 13,
     "title": "Explorando Nova York - EUA",
@@ -721,13 +747,6 @@
     "endDate": "2029-07-13T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 4,
-     "galleryImages": [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s"
-    ],
     "accommodationDetails": {
       "id": 13,
       "numberBaths": 2,
@@ -757,20 +776,18 @@
       {
         "id": 13,
         "travelPackageId": 13,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRJv_-42Ds-oetFLMQ7-g9WDMq_eBdirG2akw&s",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 1,
+    "packageType": "internacional",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.5
   },
-
-
-
   {
     "id": 14,
     "title": "Aventura nas Cataratas do Iguaçu - Argentina",
@@ -781,13 +798,6 @@
     "endDate": "2029-05-12T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 4,
-    "galleryImages": [
-      "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg",
-      "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg",
-      "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg",
-      "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg",
-      "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg"
-    ],
     "accommodationDetails": {
       "id": 14,
       "numberBaths": 1,
@@ -817,19 +827,18 @@
       {
         "id": 14,
         "travelPackageId": 14,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://tourcataratas.com.br/wp-content/uploads/2023/08/Gran-Aventura-2.jpg",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 1,
+    "packageType": "internacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.0
   },
-
-
   {
     "id": 15,
     "title": "Lua de mel em Bali - Indonésia",
@@ -840,17 +849,10 @@
     "endDate": "2029-07-28T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 2,
-    "galleryImages": [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s",
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s"
-    ],
     "accommodationDetails": {
       "id": 15,
       "numberBaths": 1,
-      "numberBeds":   3,
+      "numberBeds": 3,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
@@ -876,19 +878,19 @@
       {
         "id": 15,
         "travelPackageId": 15,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQeUMM3RwlHM_4spfY1CxOwF9qR1zqs89jnug&s",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 1,
+    "packageType": "internacional",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 5.0
   },
-  
-   {
+  {
     "id": 16,
     "title": "Tour pela Tailândia",
     "description": "Explore templos exóticos, praias deslumbrantes e cultura vibrante neste tour completo pela Tailândia. Com hospedagem confortável e café da manhã incluso, prepare-se para uma jornada mágica no sudeste asiático.",
@@ -898,13 +900,6 @@
     "endDate": "2026-07-28T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 4,
-    "galleryImages": [
-      "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg",
-      "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg",
-      "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg",
-      "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg",
-      "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg"
-    ],
     "accommodationDetails": {
       "id": 16,
       "numberBaths": 2,
@@ -934,19 +929,18 @@
       {
         "id": 16,
         "travelPackageId": 16,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://www.deferias.pt/wp-content/uploads/2024/07/guia_viagem_tailandia.jpg",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 1,
+    "packageType": "internacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 3.5
   },
-  
-
   {
     "id": 17,
     "title": "Férias em Roma - Itália",
@@ -957,17 +951,10 @@
     "endDate": "2027-06-03T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 4,
-     "galleryImages": [
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
-      "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg"
-    ],
     "accommodationDetails": {
       "id": 17,
       "numberBaths": 2,
-      "numberBeds":  3,
+      "numberBeds": 3,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
@@ -993,18 +980,18 @@
       {
         "id": 17,
         "travelPackageId": 17,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://www.holmy.com.br/wp-content/uploads/2023/11/IMG_6818-2-1200x900.jpeg",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 1,
+    "packageType": "internacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.0
   },
-  
   {
     "id": 18,
     "title": "Deserto e luxo em Dubai",
@@ -1015,13 +1002,6 @@
     "endDate": "2026-08-05T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 5,
-       "galleryImages": [
-      "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
-      "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
-      "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
-      "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
-      "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg"   
-       ],
     "accommodationDetails": {
       "id": 18,
       "numberBaths": 2,
@@ -1051,19 +1031,18 @@
       {
         "id": 18,
         "travelPackageId": 18,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://s2-casaejardim.glbimg.com/h4yVAA2v2ll2h4UjWP7svXALb5w=/0x0:1200x870/924x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_a0b7e59562ef42049f4e191fe476fe7d/internal_photos/bs/2022/m/5/G0yVANSeARZ3DB4XOadg/cabana-de-luxo-no-deserto-de-dubai-promete-experiencia-unica-na-natureza3.jpg",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 1,
+    "packageType": "internacional",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.5
   },
-
-
   {
     "id": 19,
     "title": "Cultura e gastronomia no Japão",
@@ -1086,13 +1065,6 @@
       "hasPetFriendly": true,
       "hasAirConditioning": true,
       "hasBreakfastIncluded": true,
-      "galleryImages": [
-      "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
-      "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
-      "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
-      "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
-      "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg"
-    ],
       "address": {
         "id": 19,
         "addressLine1": "Rua da Cultura",
@@ -1110,18 +1082,18 @@
       {
         "id": 19,
         "travelPackageId": 19,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://thumbs.dreamstime.com/b/vida-noturna-em-dotonbori-osaka-kansai-japan-267022014.jpg",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 1,
+    "packageType": "internacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 5.0
   },
-
   {
     "id": 20,
     "title": "Road trip pela Califórnia - EUA",
@@ -1132,17 +1104,10 @@
     "endDate": "2026-12-28T18:29:04.439Z",
     "isActive": true,
     "numberGuests": 4,
-    "galleryImages": [
-      "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg",
-      "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg",
-      "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg",
-      "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg",
-      "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg"
-    ],
     "accommodationDetails": {
       "id": 20,
       "numberBaths": 3,
-      "numberBeds":  2,
+      "numberBeds": 2,
       "hasWifi": true,
       "hasParking": true,
       "hasPool": true,
@@ -1168,16 +1133,16 @@
       {
         "id": 20,
         "travelPackageId": 20,
-        "mediaUrl": "string",
-        "mediaType": 0,
+        "mediaUrl": "https://www.travelandleisure.com/thmb/flyoiHUr0e_kjpghvM_fRcTNLFQ=/1500x0/filters:no_upscale():max_bytes(150000):strip_icc()/TAL-viewpoint-pacific-coast-highway-california-NO1RT0824-0cef3f8952b84f02b586461f5076c7b3.jpg",
+        "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": 1,
+    "packageType": "internacional",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
-    "promotionEndDate": "2025-07-28T18:29:04.439Z"
+    "promotionEndDate": "2025-07-28T18:29:04.439Z",
+    "rating": 4.5
   }
-  
 ]

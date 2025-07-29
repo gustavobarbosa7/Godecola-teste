@@ -22,13 +22,13 @@ const HomePage = () => {
   const promoCarouselRef = useRef(null);
 
   const nationalPackages = useShuffledArray(
-    packagesData.filter((pkg) => pkg.type === "nacional")
+    packagesData.filter((pkg) => pkg.packageType === "nacional")
   );
   const internationalPackages = useShuffledArray(
-    packagesData.filter((pkg) => pkg.type === "internacional")
+    packagesData.filter((pkg) => pkg.packageType === "internacional")
   );
   const promoPackages = useShuffledArray(
-    packagesData.filter((pkg) => pkg.isPromo === true)
+    packagesData.filter((pkg) => pkg.isCurrentlyOnPromotion === true)
   );
 
   const nationalArrows = useScrollArrows(nationalCarouselRef);

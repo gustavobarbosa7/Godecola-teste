@@ -7,123 +7,124 @@ import { useNavigate } from 'react-router-dom'
 import { goBack } from '../../../routes/coordinator'
 import useIsMobile from "../../../hooks/useIsMobile";
 
+
 const GalleryImages = ({ packageData }) => {
-    const isMobile = useIsMobile()
-    const [currentIndex, setCurrentIndex] = useState(0);
-    const [isFavorited, setIsFavorited] = useState(false)
-    const navigate = useNavigate()
+  const isMobile = useIsMobile();
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const [isFavorited, setIsFavorited] = useState(false);
+  const navigate = useNavigate();
 
-    const toggleFavorite = () => {
-        setIsFavorited(!isFavorited)
-    }
+  const toggleFavorite = () => {
+    setIsFavorited(!isFavorited);
+  };
 
-    const arrowsRef = useRef(null);
-    const arrows = useScrollArrows(arrowsRef);
+  const arrowsRef = useRef(null);
+  const arrows = useScrollArrows(arrowsRef);
 
-    const scrollCarousel = (direction, ref) => {
-        if (!ref.current) return;
+  const scrollCarousel = (direction, ref) => {
+    if (!ref.current) return;
 
-        const scrollAmount = isMobile ? 300 : 400;
+    const scrollAmount = isMobile ? 300 : 400;
 
-        ref.current.scrollBy({
-            left: direction === "right" ? scrollAmount : -scrollAmount,
-            behavior: "smooth",
-        });
+    ref.current.scrollBy({
+      left: direction === "right" ? scrollAmount : -scrollAmount,
+      behavior: "smooth",
+    });
+  };
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (!arrowsRef.current) return;
+
+      const container = arrowsRef.current;
+      const imageWidth = container.clientWidth;
+      const index = Math.round(container.scrollLeft / imageWidth);
+
+      setCurrentIndex(index);
     };
 
-    useEffect(() => {
-        const handleScroll = () => {
-            if (!arrowsRef.current) return;
+    const refCopy = arrowsRef.current;
+    refCopy.addEventListener("scroll", handleScroll);
 
-            const container = arrowsRef.current;
-            const imageWidth = container.clientWidth;
-            const index = Math.round(container.scrollLeft / imageWidth);
-
-            setCurrentIndex(index);
-        };
-
-        const refCopy = arrowsRef.current;
-        refCopy.addEventListener("scroll", handleScroll);
-
-        return () => {
-            refCopy.removeEventListener("scroll", handleScroll);
-        };
-    }, []);
-
-    const scrollToIndex = (index) => {
-        if (!arrowsRef.current) return;
-
-        const container = arrowsRef.current;
-        const imageWidth = container.clientWidth;
-        const targetScrollLeft = index * imageWidth;
-
-        container.scrollTo({
-            left: targetScrollLeft,
-            behavior: "smooth",
-        });
-
-        setCurrentIndex(index);
+    return () => {
+      refCopy.removeEventListener("scroll", handleScroll);
     };
+  }, []);
 
-    return (
-        <div className='galleryImages-container'>
-            {packageData?.galleryImages?.length > 0 && (
-                <div className="galleryCarousel-wrapper">
-                    {isMobile && (
-                        <div className="FaArrowLeft" onClick={() => goBack(navigate)}>
-                            <FaArrowLeft />
-                        </div>
-                    )}
-                    <div
-                        onClick={e => {
-                            e.stopPropagation()
-                            toggleFavorite()
-                        }}
-                        style={{ cursor: 'pointer' }}
-                    >
-                        {isFavorited ? (
-                            <FaHeart className='hearthIconGI' />
-                        ) : (
-                            <FaRegHeart className='hearthIconGI2' />
-                        )}
-                    </div>
-                    <div className="galleryCarousel-container">
-                        <CarouselPackageDetails packageData={packageData} ref={arrowsRef} />
-                    </div>
-                    {!isMobile && (
-                        <div className="galleryArrowsDots">
-                            {arrows.left && (
-                                <div
-                                    className="galleryCarousel-arrow-left"
-                                    onClick={() => scrollCarousel("left", arrowsRef)}
-                                >
-                                    <FaArrowAltCircleLeft />
-                                </div>
-                            )}
-                            {arrows.right && (
-                                <div
-                                    className="galleryCarousel-arrow-right"
-                                    onClick={() => scrollCarousel("right", arrowsRef)}
-                                >
-                                    <FaArrowAltCircleRight />
-                                </div>
-                            )}
-                            <div className="galleryPaginationDots">
-                                {packageData.galleryImages.map((_, index) => (
-                                    <button
-                                        key={index}
-                                        className={`dot ${index === currentIndex ? "active" : ""}`}
-                                        onClick={() => scrollToIndex(index)}
-                                        aria-label={`Ir para imagem ${index + 1}`}
-                                    />
-                                ))}
-                            </div>
-                        </div>
-                    )}
-                </div>
+  const scrollToIndex = (index) => {
+    if (!arrowsRef.current) return;
+
+    const container = arrowsRef.current;
+    const imageWidth = container.clientWidth;
+    const targetScrollLeft = index * imageWidth;
+
+    container.scrollTo({
+      left: targetScrollLeft,
+      behavior: "smooth",
+    });
+
+    setCurrentIndex(index);
+  };
+
+  return (
+    <div className="galleryImages-container">
+      {packageData?.mediasUrl?.length > 0 && (
+        <div className="galleryCarousel-wrapper">
+          {isMobile && (
+            <div className="FaArrowLeft" onClick={() => goBack(navigate)}>
+              <FaArrowLeft />
+            </div>
+          )}
+          <div
+            onClick={(e) => {
+              e.stopPropagation();
+              toggleFavorite();
+            }}
+            style={{ cursor: "pointer" }}
+          >
+            {isFavorited ? (
+              <FaHeart className="hearthIconGI" />
+            ) : (
+              <FaRegHeart className="hearthIconGI2" />
             )}
+          </div>
+          <div className="galleryCarousel-container">
+            <CarouselPackageDetails packageData={packageData} ref={arrowsRef} />
+          </div>
+          {!isMobile && (
+            <div className="galleryArrowsDots">
+              {arrows.left && (
+                <div
+                  className="galleryCarousel-arrow-left"
+                  onClick={() => scrollCarousel("left", arrowsRef)}
+                >
+                  <FaArrowAltCircleLeft />
+                </div>
+              )}
+              {arrows.right && (
+                <div
+                  className="galleryCarousel-arrow-right"
+                  onClick={() => scrollCarousel("right", arrowsRef)}
+                >
+                  <FaArrowAltCircleRight />
+                </div>
+              )}
+              <div className="galleryPaginationDots">
+                {packageData.mediasUrl.map((media, index) => (
+                  <button
+                    key={index}
+                    className={`dot ${index === currentIndex ? "active" : ""}`}
+                    onClick={() => scrollToIndex(index)}
+                    aria-label={`Ir para ${media.mediaType === "imagem" ? "imagem" : "vídeo"} ${index + 1}`}
+                  />
+                ))}
+              </div>
+            </div>
+          )}
         </div>
-    );
+      )}
+    </div>
+  );
 };
 
 export default GalleryImages;

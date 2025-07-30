@@ -7,16 +7,23 @@ import {
   InputAdornment,
   Typography,
 } from "@mui/material";
-import { Search, CalendarToday, AttachMoney } from "@mui/icons-material";
-import DatePicker from "react-datepicker";
-import "react-datepicker/dist/react-datepicker.css";
+import { Search } from "@mui/icons-material";
+import { useForm } from "../../hooks/useForm";
+import { CustomPriceField } from "../../components/CustomInputs/CustomPriceField";
+import { CustomLogicDate } from "../../components/CustomInputs/CustomLogicDate";
 
 export default function SearchPackagesPage() {
+  const today = new Date().toISOString().split("T")[0];
+  const { form, onChangeForm } = useForm({
+    Price: "",
+    InicialDate: "",
+    FinalDate: "",
+  });
   const [destination, setDestination] = useState("");
-  const [date, setDate] = useState(null);
+  const [date] = useState(null);
   const [adults, setAdults] = useState(1);
   const [children, setChildren] = useState(0);
-  const [budget, setBudget] = useState("");
+  const [budget] = useState("");
 
   const handleSearch = () => {
     console.log("Filtros selecionados:", {
@@ -29,9 +36,9 @@ export default function SearchPackagesPage() {
   };
 
   return (
-    <div className="container">
+    <div className="container-search">
       <Box className="search-container">
-        <Typography variant="h6" sx={{ mb: 2 }} className="title">
+        <Typography variant="h6" sx={{ mb: 2 }} className="title-packcage">
           Para onde?
         </Typography>
 
@@ -39,59 +46,85 @@ export default function SearchPackagesPage() {
           label="Buscar destino"
           value={destination}
           onChange={(e) => setDestination(e.target.value)}
-          Input={{
+          variant="outlined"
+          fullWidth
+          InputProps={{
+            style: {
+              color: "var(--primary-text-color)", // cor do texto digitado
+            },
             startAdornment: (
               <InputAdornment position="start">
-                <Search />
+                <Search sx={{ color: "var(--primary-text-color)" }} />
               </InputAdornment>
             ),
           }}
-          variant="outlined"
-          fullWidth
-          className="search-input"
           InputLabelProps={{
-            sx: { color: "var(--primary-text-color)" },
+            sx: {
+              color: "var(--primary-text-color)",
+              "&.Mui-focused": {
+                color: "var(--orange-avanade)",
+              },
+            },
+          }}
+          sx={{
+            backgroundColor: "var(--background-color)",
+            borderRadius: "8px",
+            "& .MuiOutlinedInput-root": {
+              borderRadius: "8px",
+              "& .MuiOutlinedInput-notchedOutline": {
+                borderColor: "var(--primary-text-color)",
+              },
+              "&:hover .MuiOutlinedInput-notchedOutline": {
+                borderColor: "var(--orange-avanade)",
+              },
+              "&.Mui-focused .MuiOutlinedInput-notchedOutline": {
+                borderColor: "var(--orange-avanade)",
+              },
+            },
           }}
         />
 
-        <DatePicker
-          selected={date}
-          onChange={(date) => setDate(date)}
-          placeholderText="Data"
-          customInput={
-            <TextField
-              label="Data"
-              variant="outlined"
-              fullWidth
-              className="search-input"
-              InputProps={{
-                startAdornment: (
-                  <InputAdornment position="start">
-                    <CalendarToday
-                      sx={{ color: "var(--primary-text-color)" }}
-                    />
-                  </InputAdornment>
-                ),
-                sx: {
-                  color: "var(--primary-text-color)",
-                  "& .MuiOutlinedInput-notchedOutline": {
-                    borderColor: "var(--primary-text-color)",
-                  },
-                },
-              }}
-              InputLabelProps={{
-                sx: {
-                  color: "var(--primary-text-color)",
-                },
-              }}
-            />
-          }
+        <CustomLogicDate
+          label="Data de início"
+          name="InicialDate"
+          value={form.InicialDate}
+          onChange={onChangeForm}
+          minDate={today}
         />
 
-        <Box className="search-input people-selector">
-          <Typography>Quem?</Typography>
+        <CustomLogicDate
+          label="Data final"
+          name="FinalDate"
+          value={form.FinalDate}
+          onChange={onChangeForm}
+          minDate={form.InicialDate || today}
+        />
+
+        <Box
+          className="search-input people-selector"
+          sx={{
+            alignItems: "center",
+            padding: "12px 16px",
+            border: "1px solid var(--primary-text-color)",
+            borderRadius: "8px",
+            backgroundColor: "transparent",
+            transition: "border-color 0.3s, box-shadow 0.3s",
+
+            "&:hover": {
+              borderColor: "var(--orange-avanade)",
+            },
+            "&:focus-within": {
+              borderColor: "var(--orange-avanade)",
+              boxShadow: "0 0 0 1px var(--orange-avanade)",
+            },
+          }}
+        >
+          <Typography sx={{ color: "var(--primary-text-color)" }}>
+            Quem?
+          </Typography>
+
           <Box className="people-group">
-            <span>Adultos</span>
+            <span className="texts">Adultos</span>
             <div>
               <button
                 onClick={() => setAdults(adults - 1)}
@@ -101,7 +134,7 @@ export default function SearchPackagesPage() {
                 {" "}
                 -{" "}
               </button>
-              <span>{adults}</span>
+              <span className="texts">{adults}</span>
               <button
                 onClick={() => setAdults(adults + 1)}
                 className="icon-value"
@@ -112,7 +145,7 @@ export default function SearchPackagesPage() {
             </div>
           </Box>
           <Box className="people-group">
-            <span>Crianças</span>
+            <span className="texts">Crianças</span>
             <div>
               <button
                 onClick={() => setChildren(children - 1)}
@@ -120,26 +153,24 @@ export default function SearchPackagesPage() {
               >
                 -
               </button>
-              <span>{children}</span>
+              <span className="texts">{children}</span>
               <button onClick={() => setChildren(children + 1)}>+</button>
             </div>
           </Box>
         </Box>
 
-        <TextField
-          label="Valor"
-          value={budget}
-          onChange={(e) => setBudget(e.target.value)}
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <AttachMoney />
-              </InputAdornment>
-            ),
+        <CustomPriceField
+          label="Preço"
+          name="Price"
+          value={form.Price}
+          onChange={onChangeForm}
+          mask={{
+            prefix: "R$ ",
+            thousandSeparator: ",",
+            decimalSeparator: ".",
+            decimalScale: 2,
+            fixedDecimalScale: true,
           }}
-          variant="outlined"
-          fullWidth
-          className="search-input"
         />
 
         <Button

@@ -1,5 +1,4 @@
 import { TextField } from "@mui/material";
-
 import React from "react";
 import { IMaskInput } from "react-imask";
 
@@ -9,19 +8,33 @@ export const MaskedInput = React.forwardRef(function MaskedInput(props, ref) {
   return (
     <IMaskInput
       {...other}
-      mask={mask}
+      mask={
+        mask ||
+        (name.includes("latitude") || name.includes("longitude")
+          ? Number
+          : undefined)
+      }
       definitions={{
         "#": /[0-9]/,
       }}
+      scale={
+        name.includes("latitude") || name.includes("longitude") ? 10 : undefined
+      } // Permitir até 10 casas decimais
+      radix={
+        name.includes("latitude") || name.includes("longitude")
+          ? "."
+          : undefined
+      } // Usar ponto como separador decimal
       inputRef={ref}
-      onAccept={(value) =>
+      onAccept={(value) => {
+        console.log("MaskedInput onAccept:", { name, value });
         onChange({
           target: {
             name,
             value,
           },
-        })
-      }
+        });
+      }}
       overwrite
     />
   );
@@ -39,7 +52,7 @@ export const CustomNumericField = ({
     <TextField
       label={label}
       name={name}
-      value={value}
+      value={value || ""}
       onChange={onChange}
       variant="standard"
       required={required}
@@ -50,11 +63,12 @@ export const CustomNumericField = ({
             name,
             onChange,
             mask,
+            value: value || "",
           },
         },
       }}
       sx={{
-        width: '100%',
+        width: "100%",
         input: { color: "var(--text-footer)" },
         "&:hover input": { color: "var(--icons-login-color)" },
         "&:hover .MuiInputLabel-root": { color: "var(--icons-login-color)" },

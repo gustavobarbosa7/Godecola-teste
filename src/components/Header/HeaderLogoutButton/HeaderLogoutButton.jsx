@@ -6,7 +6,8 @@ import { goToHome, goToProfile } from "../../../routes/coordinator";
 import Button from "@mui/material/Button";
 import Avatar from "@mui/joy/Avatar";
 import { useDispatch } from "react-redux";
-import { logout } from "../../../store/authSlice";
+import { logout as logoutAction } from "../../../store/authSlice";
+import { logout as logoutService } from "../../../services/authService";
 
 export const HeaderLogoutButton = ({ user }) => {
   const dispatch = useDispatch();
@@ -15,7 +16,17 @@ export const HeaderLogoutButton = ({ user }) => {
   if (!user) {
     return null;
   }
-
+  const handleLogout = async () => {
+    try {
+      await logoutService();
+    } catch (error) {
+      console.error("Erro ao fazer logout:", error);
+    } finally {
+      dispatch(logoutAction());
+      goToHome(navigate);
+    }
+  };
+  
   return (
     <PopupState variant="popover" popupId="demo-popup-menu">
       {(popupState) => (
@@ -43,8 +54,7 @@ export const HeaderLogoutButton = ({ user }) => {
             </MenuItem>
             <MenuItem
               onClick={() => {
-                goToHome(navigate);
-                dispatch(logout());
+                handleLogout();
                 popupState.close();
               }}
             >

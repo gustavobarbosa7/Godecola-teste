@@ -7,7 +7,7 @@ export const fetchCurrentUser = createAsyncThunk(
   'user/fetchCurrentUser',
   async (_, { rejectWithValue }) => {
     try {
-      const token = getToken(); // ou localStorage.getItem('token')
+      const token = getToken();
       if (!token) throw new Error('Token não encontrado');
       const decoded = parseJwt(token);
       const userId = decoded?.nameid || decoded?.sub;

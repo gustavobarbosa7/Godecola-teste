@@ -33,7 +33,7 @@ const CarouselPackageDetails = forwardRef(({ packageData }, ref) => {
         "& > *": {
           scrollSnapAlign: "start",
           flexShrink: 0,
-          minWidth: "100%",
+          flex: "0 0 100%",
         },
         "::-webkit-scrollbar": { display: "none" },
       }}
@@ -46,9 +46,9 @@ const CarouselPackageDetails = forwardRef(({ packageData }, ref) => {
               alt={`${packageData.title} - Mídia ${index + 1}`}
               style={{
                 width: "100%",
+                height: "auto",
                 maxHeight: "700px",
                 objectFit: "cover",
-                flexShrink: 0,
               }}
               loading="lazy"
             />
@@ -65,7 +65,7 @@ const CarouselPackageDetails = forwardRef(({ packageData }, ref) => {
               return (
                 <iframe
                   width="100%"
-                  height="700"
+                  height="100%"
                   src={`https://www.youtube.com/embed/${videoId}?rel=0`}
                   title={`${packageData.title} - Vídeo ${index + 1}`}
                   className="youtube-video"

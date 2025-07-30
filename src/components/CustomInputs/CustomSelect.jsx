@@ -12,30 +12,36 @@ export const CustomSelect = ({
   required,
 }) => (
   <FormControl
+    required={required}
     sx={{
       width: "100%",
+      "& .MuiInputLabel-root": {
+        color: "var(--icons-login-color)",
+      },
+      "&:hover .MuiInputLabel-root": {
+        color: "var(--icons-login-color)",
+      },
+      "& .MuiInputLabel-root.Mui-focused": {
+        color: "var(--orange-avanade)",
+      },
     }}
   >
-    <InputLabel
-      sx={{
-        color: "var(--no-active-tab)",
-        "&.Mui-focused": {
-          color: "var(--no-active-tab)",
-        },
-      }}
-    >
-      {label}
-    </InputLabel>
+    <InputLabel>{label}</InputLabel>
     <Select
       name={name}
       value={value}
       onChange={onChange}
-      required={required}
       label={label}
       sx={{
         color: "var(--text-footer)",
+        input: {
+          color: "var(--text-footer)",
+        },
+        "&:hover input": {
+          color: "var(--icons-login-color)",
+        },
         "& .MuiOutlinedInput-notchedOutline": {
-          borderColor: "var(--no-active-tab)",
+          borderColor: "var(--icons-login-color)",
         },
         "&:hover .MuiOutlinedInput-notchedOutline": {
           borderColor: "var(--orange-avanade)",
@@ -44,7 +50,7 @@ export const CustomSelect = ({
           borderColor: "var(--orange-avanade)",
         },
         "& .MuiSelect-icon": {
-          color: "var(--no-active-tab)",
+          color: "var(--icons-login-color)",
         },
         "&:hover .MuiSelect-icon": {
           color: "var(--orange-avanade)",

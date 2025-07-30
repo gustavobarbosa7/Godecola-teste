@@ -1,6 +1,7 @@
 import { FormControlLabel, Checkbox } from "@mui/material";
 
-export const CustomCheckbox = ({ label, name, value, onChange }) => {
+export const CustomCheckbox = ({ label, name, checked, onChange }) => {
+
   const handleChange = (event) => {
     onChange({
       target: {
@@ -14,7 +15,7 @@ export const CustomCheckbox = ({ label, name, value, onChange }) => {
     <FormControlLabel
       control={
         <Checkbox
-          checked={value}
+          checked={checked}
           onChange={handleChange}
           sx={{
             color: "var(--text-footer)",

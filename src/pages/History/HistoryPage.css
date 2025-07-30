@@ -1,0 +1,21 @@
+.journeys-container {
+    background-color: var(--background-color);
+    width: 100%;
+    height: auto;
+    padding: 2rem;
+}
+
+.edit-container-title {
+    text-align: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: var(--orange-avanade);;
+}
+
+span {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    color: rgb(179, 187, 195);
+}

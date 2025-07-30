@@ -2,8 +2,36 @@ import "./HistoryPage.css";
 
 const HistoryPage = () => {
   return (
-    <div className="container">
-      <h1 className="title">Histórico de Viagens</h1>
+    <div className="journeys-container">
+      <h1 className="edit-container-title">MINHAS VIAGENS</h1>
+
+      <section>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <span >Você ainda não realizou nenhuma viagem :(</span>
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        <br />
+        
+
+      </section>
     </div>
   );
 };

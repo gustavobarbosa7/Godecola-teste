@@ -1,0 +1,25 @@
+.container-profile {
+  padding: 2rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+}
+
+.title-profile {
+    color: var(--orange-avanade);
+}
+
+.subtitle-edit {
+    color: var(--primary-text-color);
+}
+
+.edit-subtitle {
+    width: 100%;
+    display: flex;
+    align-items: start;
+    justify-content: start;
+}

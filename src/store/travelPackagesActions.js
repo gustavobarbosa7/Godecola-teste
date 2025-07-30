@@ -38,7 +38,7 @@ export const createTravelPackage = createAsyncThunk(
             const { auth } = getState();
             const response = await travelPackageService.createTravelPackage(packageData, auth.token);
             console.log('Pacote criado:', response);
-            dispatch(fetchTravelPackages()); // Atualiza a lista após criar
+            dispatch(fetchTravelPackages());
             return response;
         } catch (error) {
             console.error('Erro ao criar pacote:', error.response?.data || error.message);

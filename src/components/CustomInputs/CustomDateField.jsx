@@ -1,6 +1,14 @@
 import TextField from "@mui/material/TextField";
 
-export const CustomDateField = ({ label, name, value, onChange, required }) => (
+export const CustomDateField = ({
+  label,
+  name,
+  value,
+  onChange,
+  required,
+  min,
+  max,
+}) => (
   <TextField
     label={label}
     name={name}
@@ -9,6 +17,10 @@ export const CustomDateField = ({ label, name, value, onChange, required }) => (
     value={value}
     onChange={onChange}
     required={required}
+    inputProps={{
+      min,
+      max,
+    }}
     slotProps={{
       inputLabel: {
         shrink: true,

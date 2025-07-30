@@ -1,5 +1,5 @@
 import "./PackageRegistration.css";
-import { useState } from "react";
+import { useState, useMemo } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Box,
@@ -25,7 +25,6 @@ import { fetchAddressByZipCode } from "../../../../services/addressService";
 export const PackageRegistration = () => {
   const dispatch = useDispatch();
   const isMobile = useIsMobile();
-
   const { loading, error } = useSelector((state) => state.travelPackages);
   const [formError, setFormError] = useState(null);
   const [isLoadingZipCode, setIsLoadingZipCode] = useState(false);
@@ -73,6 +72,11 @@ export const PackageRegistration = () => {
   const { form, setForm, onChangeForm, onChangeNestedForm, resetForm } =
     useForm(initialState);
 
+  const isInternational = useMemo(
+    () => parseInt(form.packageType, 10) === 1,
+    [form.packageType]
+  );
+
   const handleAddMedia = () => {
     setForm({
       ...form,
@@ -89,27 +93,46 @@ export const PackageRegistration = () => {
 
   const handleZipCodeChange = async (e) => {
     const { value } = e.target;
-    onChangeNestedForm(e); // Atualiza o campo zipCode
+    onChangeNestedForm(e);
     setFormError(null);
-    setIsLoadingZipCode(true);
 
-    try {
-      const addressData = await fetchAddressByZipCode(value);
-      setForm({
-        ...form,
+    if (isInternational) {
+      // Para pacotes internacionais, apenas atualiza o zipCode sem requisição
+      setForm((prev) => ({
+        ...prev,
         accommodationDetails: {
-          ...form.accommodationDetails,
+          ...prev.accommodationDetails,
           address: {
-            ...form.accommodationDetails.address,
-            ...addressData,
+            ...prev.accommodationDetails.address,
+            zipCode: value,
           },
         },
-      });
-    } catch (err) {
-      setFormError(err.message);
-      console.log("Erro ao consultar CEP:", err.message);
-    } finally {
-      setIsLoadingZipCode(false);
+      }));
+    } else {
+      // Para pacotes nacionais, faz a requisição à API
+      setIsLoadingZipCode(true);
+      try {
+        const addressData = await fetchAddressByZipCode(value);
+
+        setForm((prev) => {
+          const newForm = {
+            ...prev,
+            accommodationDetails: {
+              ...prev.accommodationDetails,
+              address: {
+                ...prev.accommodationDetails.address,
+                ...addressData,
+              },
+            },
+          };   
+          return newForm;
+        });
+      } catch (err) {
+        setFormError(err.message);
+        console.log("Erro ao consultar CEP:", err.message);
+      } finally {
+        setIsLoadingZipCode(false);
+      }
     }
   };
 
@@ -138,13 +161,30 @@ export const PackageRegistration = () => {
       !form.accommodationDetails.address.country ||
       !form.accommodationDetails.address.state ||
       !form.accommodationDetails.address.city ||
-      !form.accommodationDetails.address.neighborhood ||
-      !form.accommodationDetails.address.latitude ||
-      !form.accommodationDetails.address.longitude
+      !form.accommodationDetails.address.neighborhood
     ) {
       setFormError(
         "Campos de acomodação e endereço obrigatórios não preenchidos"
       );
+      return;
+    }
+    if (
+      isInternational &&
+      (!form.accommodationDetails.address.latitude ||
+        !form.accommodationDetails.address.longitude)
+    ) {
+      setFormError(
+        "Latitude e longitude são obrigatórios para pacotes internacionais"
+      );
+      return;
+    }
+    if (
+      (form.accommodationDetails.address.latitude &&
+        isNaN(parseFloat(form.accommodationDetails.address.latitude))) ||
+      (form.accommodationDetails.address.longitude &&
+        isNaN(parseFloat(form.accommodationDetails.address.longitude)))
+    ) {
+      setFormError("Latitude e longitude devem ser valores numéricos válidos");
       return;
     }
     if (form.mediasUrl.some((media) => !media.mediaUrl)) {
@@ -165,6 +205,15 @@ export const PackageRegistration = () => {
     const cleanedPrice = form.price.replace(/[^0-9,.]/g, "").replace(",", ".");
     if (isNaN(parseFloat(cleanedPrice))) {
       setFormError("Preço inválido");
+      return;
+    }
+
+    // Validar CEP
+    if (
+      isInternational &&
+      form.accommodationDetails.address.zipCode.length < 3
+    ) {
+      setFormError("CEP internacional muito curto");
       return;
     }
 
@@ -196,8 +245,8 @@ export const PackageRegistration = () => {
           state: form.accommodationDetails.address.state,
           city: form.accommodationDetails.address.city,
           neighborhood: form.accommodationDetails.address.neighborhood,
-          latitude: parseFloat(form.accommodationDetails.address.latitude),
-          longitude: parseFloat(form.accommodationDetails.address.longitude),
+          latitude: form.accommodationDetails.address.latitude,
+          longitude: form.accommodationDetails.address.longitude,
         },
       },
       mediasUrl: form.mediasUrl.map((media) => ({
@@ -219,11 +268,32 @@ export const PackageRegistration = () => {
     };
 
     try {
-      await dispatch(createTravelPackage(payload)).unwrap();
-      resetForm();
+      await dispatch(createTravelPackage(payload)).unwrap(); 
+      resetForm();    
     } catch (err) {
       setFormError(err.message || "Erro ao cadastrar pacote");
     }
+  };
+
+  const handlePackageTypeChange = (e) => {
+    onChangeForm(e);
+    setForm((prev) => ({
+      ...prev,
+      accommodationDetails: {
+        ...prev.accommodationDetails,
+        address: {
+          addressLine1: "",
+          addressLine2: "",
+          zipCode: "",
+          country: "",
+          state: "",
+          city: "",
+          neighborhood: "",
+          latitude: "",
+          longitude: "",
+        },
+      },
+    }));
   };
 
   return (
@@ -296,6 +366,7 @@ export const PackageRegistration = () => {
             name="startDate"
             value={form.startDate}
             onChange={onChangeForm}
+            max={form.endDate}
             required
           />
           <CustomDateField
@@ -303,6 +374,7 @@ export const PackageRegistration = () => {
             name="endDate"
             value={form.endDate}
             onChange={onChangeForm}
+            min={form.startDate}
             required
           />
           <CustomNumericField
@@ -317,7 +389,7 @@ export const PackageRegistration = () => {
             label="Tipo de Pacote"
             name="packageType"
             value={form.packageType}
-            onChange={onChangeForm}
+            onChange={handlePackageTypeChange}
             options={[
               { value: 0, label: "Nacional" },
               { value: 1, label: "Internacional" },
@@ -372,6 +444,7 @@ export const PackageRegistration = () => {
                 name="promotionStartDate"
                 value={form.promotionStartDate}
                 onChange={onChangeForm}
+                max={form.promotionEndDate}
                 required
               />
               <CustomDateField
@@ -379,6 +452,7 @@ export const PackageRegistration = () => {
                 name="promotionEndDate"
                 value={form.promotionEndDate}
                 onChange={onChangeForm}
+                min={form.promotionStartDate}
                 required
               />
             </Box>
@@ -487,22 +561,49 @@ export const PackageRegistration = () => {
             onChange={onChangeNestedForm}
             required
           />
-          <CustomNumericField
-            label="Número"
-            name="accommodationDetails.address.addressLine2"
-            value={form.accommodationDetails.address.addressLine2}
-            onChange={onChangeNestedForm}
-            mask="000000"
-          />
-          <CustomNumericField
-            label="CEP"
-            name="accommodationDetails.address.zipCode"
-            value={form.accommodationDetails.address.zipCode}
-            onChange={handleZipCodeChange}
-            required
-            disabled={isLoadingZipCode}
-            mask="XXXXX-XXX"
-          />
+
+          {isInternational ? (
+            <CustomTextfield
+              label="Complemento"
+              name="accommodationDetails.address.addressLine2"
+              value={form.accommodationDetails.address.addressLine2}
+              onChange={onChangeNestedForm}
+              disabled={
+                isLoadingZipCode || !form.accommodationDetails.address.country
+              }
+            />
+          ) : (
+            <CustomNumericField
+              label="Número"
+              name="accommodationDetails.address.addressLine2"
+              value={form.accommodationDetails.address.addressLine2}
+              onChange={onChangeNestedForm}
+              mask="000000"
+            />
+          )}
+
+          {isInternational ? (
+            <CustomTextfield
+              label="ZIP CODE"
+              name="accommodationDetails.address.zipCode"
+              value={form.accommodationDetails.address.zipCode}
+              onChange={handleZipCodeChange}
+              required
+              disabled={
+                isLoadingZipCode || !form.accommodationDetails.address.country
+              }
+            />
+          ) : (
+            <CustomNumericField
+              label="CEP"
+              name="accommodationDetails.address.zipCode"
+              value={form.accommodationDetails.address.zipCode}
+              onChange={handleZipCodeChange}
+              required
+              disabled={isLoadingZipCode}
+              mask="00000-000"
+            />
+          )}
         </Box>
         <Box
           sx={{
@@ -556,14 +657,12 @@ export const PackageRegistration = () => {
             name="accommodationDetails.address.latitude"
             value={form.accommodationDetails.address.latitude}
             onChange={onChangeNestedForm}
-            required
           />
           <CustomNumericField
             label="Longitude"
             name="accommodationDetails.address.longitude"
             value={form.accommodationDetails.address.longitude}
             onChange={onChangeNestedForm}
-            required
           />
         </Box>
         <Divider sx={{ my: 2 }} />

@@ -57,3 +57,7 @@ export const goToWishList = navigate => {
 export const goToHistory = navigate => {
   navigate('/history')
 }
+
+export const goToHomeSupport = navigate => {
+  navigate('/home-support')
+}

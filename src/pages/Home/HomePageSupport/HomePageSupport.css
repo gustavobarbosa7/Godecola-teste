@@ -1,0 +1,16 @@
+.homepageSupport-container {
+  width: 100%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--background-color);
+  transition: background-color 0.25s ease-in-out;
+}
+
+.SupportTitle {
+  color: var(--orange-avanade);  
+  margin-top: -40px;
+  font-size: 2rem;
+}

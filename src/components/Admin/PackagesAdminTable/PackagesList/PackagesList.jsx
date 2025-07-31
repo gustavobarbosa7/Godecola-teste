@@ -13,120 +13,116 @@ import {
   IconButton,
 } from "@mui/material";
 import { Edit, Delete, Visibility } from "@mui/icons-material";
-import { deleteTravelPackageById } from "../../../../store/travelPackagesActions";
+import { deleteTravelPackageById } from "../../../../store/actions/travelPackagesActions";
 import PackageModal from "./PackageModal";
 import { formatCurrency } from "../../../../utils/formatCurrency";
 
-const packageTypeMap = {
-  0: "Nacional",
-  1: "Internacional",
-};
+const PackagesList = ({ packages, loading, error, onEdit, role }) => {
+  const columns = [
+    { field: "id", headerName: "ID", minWidth: 70 },
+    { field: "title", headerName: "Título", minWidth: 218 },
+    {
+      field: "destination",
+      headerName: "Destino",
+      minWidth: 110,
+    },
+    {
+      field: "price",
+      headerName: "Preço em R$",
+      minWidth: 120,
 
-const mediaTypeMap = {
-  0: "Imagem",
-  1: "Vídeo",
-};
+      type: "number",
+      cellClassName: "align-left",
+      headerClassName: "align-left-header",
+    },
+    {
+      field: "type",
+      headerName: "Tipo",
+      minWidth: 120,
+    },
+    {
+      field: "startDate",
+      headerName: "Data de Início",
+      minWidth: 120,
+      valueFormatter: (value) =>
+        new Date(value).toLocaleDateString("pt-BR", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        }),
+    },
+    {
+      field: "endDate",
+      headerName: "Data de Término",
+      minWidth: 120,
+      valueFormatter: (value) =>
+        new Date(value).toLocaleDateString("pt-BR", {
+          day: "2-digit",
+          month: "2-digit",
+          year: "numeric",
+        }),
+    },
+    {
+      field: "rating",
+      headerName: "Avaliação",
+      migrants: { type: "number" },
+      minWidth: 90,
+      type: "number",
+      valueGetter: () => 0, // Placeholder até a API retornar
+    },
 
-const columns = [
-  { field: "id", headerName: "ID", minWidth: 70 },
-  { field: "title", headerName: "Título", minWidth: 218 },
-  {
-    field: "destination",
-    headerName: "Destino",
-    minWidth: 110,
-  },
-  {
-    field: "price",
-    headerName: "Preço",
-    minWidth: 120,
+    {
+      field: "isPromo",
+      headerName: "Promoção",
+      minWidth: 100,
+      renderCell: ({ value }) => (value ? "Sim" : "Não"),
+    },
 
-    type: "number",
-    cellClassName: "align-left",
-    headerClassName: "align-left-header",
-  },
-  {
-    field: "type",
-    headerName: "Tipo",
-    minWidth: 120,
-  },
-  {
-    field: "startDate",
-    headerName: "Data de Início",
-    minWidth: 120,
-    valueFormatter: (value) =>
-      new Date(value).toLocaleDateString("pt-BR", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-      }),
-  },
-  {
-    field: "endDate",
-    headerName: "Data de Término",
-    minWidth: 120,
-    valueFormatter: (value) =>
-      new Date(value).toLocaleDateString("pt-BR", {
-        day: "2-digit",
-        month: "2-digit",
-        year: "numeric",
-      }),
-  },
-  {
-    field: "rating",
-    headerName: "Avaliação",
-    migrants: { type: "number" },
-    minWidth: 90,
-    type: "number",
-    valueGetter: () => 0, // Placeholder até a API retornar
-  },
+    {
+      field: "isActive",
+      headerName: "Ativo",
+      minWidth: 80,
+      renderCell: ({ value }) => (value ? "Sim" : "Não"),
+    },
+    {
+      field: "actions",
+      headerName: role === "ADMIN" ? "Ações" : "Ação",
+      minWidth: 130,
+      renderCell: (params) => (
+        <Box>
+          <IconButton
+            onClick={() => params.row.onView(params.row.id)}
+            color="default"
+            aria-label="Visualizar pacote"
+            sx={{ color: "var(--icons-login-color)" }}
+          >
+            <Visibility />
+          </IconButton>
+          {role === "ADMIN" ? (
+            <>
+              <IconButton
+                onClick={() => params.row.onEdit(params.row.id)}
+                color="primary"
+                aria-label="Editar pacote"
+              >
+                <Edit />
+              </IconButton>
+              <IconButton
+                onClick={() => params.row.onDelete(params.row.id)}
+                color="error"
+                aria-label="Excluir pacote"
+              >
+                <Delete />
+              </IconButton>
+            </>
+          ) : (
+            <></>
+          )}
+        </Box>
+      ),
+    },
+  ];
 
-  {
-    field: "isPromo",
-    headerName: "Promoção",
-    minWidth: 100,
-    renderCell: ({ value }) => (value ? "Sim" : "Não"),
-  },
-
-  {
-    field: "isActive",
-    headerName: "Ativo",
-    minWidth: 80,
-    renderCell: ({ value }) => (value ? "Sim" : "Não"),
-  },
-  {
-    field: "actions",
-    headerName: "Ações",
-    minWidth: 130,
-    renderCell: (params) => (
-      <Box>
-        <IconButton
-          onClick={() => params.row.onView(params.row.id)}
-          color="default"
-          aria-label="Visualizar pacote"
-          sx={{ color: "var(--icons-login-color)" }}
-        >
-          <Visibility />
-        </IconButton>
-        <IconButton
-          onClick={() => params.row.onEdit(params.row.id)}
-          color="primary"
-          aria-label="Editar pacote"
-        >
-          <Edit />
-        </IconButton>
-        <IconButton
-          onClick={() => params.row.onDelete(params.row.id)}
-          color="error"
-          aria-label="Excluir pacote"
-        >
-          <Delete />
-        </IconButton>
-      </Box>
-    ),
-  },
-];
-
-const PackagesList = ({ packages, loading, error, onEdit }) => {
   const dispatch = useDispatch();
   const [openDetails, setOpenDetails] = useState(false);
   const [openDelete, setOpenDelete] = useState(false);
@@ -167,8 +163,8 @@ const PackagesList = ({ packages, loading, error, onEdit }) => {
     id: pkg.id,
     title: pkg.title,
     destination: pkg.destination,
-    price: formatCurrency(pkg.price),
-    type: packageTypeMap[pkg.packageType ?? 0] || "Nacional",
+    price: pkg.price / 100,
+    type: pkg.packageType,
     startDate: pkg.startDate,
     endDate: pkg.endDate,
     rating: 0,
@@ -249,9 +245,7 @@ const PackagesList = ({ packages, loading, error, onEdit }) => {
         open={openDetails}
         onClose={handleCloseDetails}
         selectedPackage={selectedPackage}
-        handleCloseDetails={handleCloseDetails}
-        packageTypeMap={packageTypeMap}
-        mediaTypeMap={mediaTypeMap}
+        handleCloseDetails={handleCloseDetails}                
         formatCurrency={formatCurrency}
       />
       {/* Modal de Confirmação de Exclusão */}

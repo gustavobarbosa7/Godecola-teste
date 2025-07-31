@@ -1,4 +1,5 @@
 import "./App.css";
+import { BrowserRouter } from "react-router-dom";
 import { Router } from "./routes/Router";
 import { Provider } from "react-redux";
 import ThemeProvider from "./context/Theme/ThemeProvider";
@@ -8,7 +9,9 @@ export default function App() {
   return (
     <Provider store={store}>
       <ThemeProvider>
-        <Router />
+        <BrowserRouter>
+          <Router />
+        </BrowserRouter>
       </ThemeProvider>
     </Provider>
   );

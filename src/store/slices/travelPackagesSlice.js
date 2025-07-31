@@ -5,7 +5,8 @@ import {
   createTravelPackage,
   updateTravelPackageById,
   deleteTravelPackageById,
-} from './travelPackagesActions';
+} from '../actions/travelPackagesActions';
+import { logout } from './authSlice';
 
 const travelPackagesSlice = createSlice({
   name: 'travelPackages',
@@ -22,7 +23,7 @@ const travelPackagesSlice = createSlice({
   },
   extraReducers: (builder) => {
     builder
-      // Fetch all packages
+      // fetchTravelPackages
       .addCase(fetchTravelPackages.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -35,7 +36,7 @@ const travelPackagesSlice = createSlice({
         state.loading = false;
         state.error = action.payload || 'Erro ao buscar pacotes';
       })
-      // Fetch package by ID
+      // fetchTravelPackageById
       .addCase(fetchTravelPackageById.pending, (state) => {
         state.loading = true;
         state.error = null;
@@ -48,44 +49,59 @@ const travelPackagesSlice = createSlice({
         state.loading = false;
         state.error = action.payload || 'Erro ao buscar detalhes do pacote';
       })
-      // Create package
+      // createTravelPackage
       .addCase(createTravelPackage.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(createTravelPackage.fulfilled, (state, action) => {
+      .addCase(createTravelPackage.fulfilled, (state, _) => {
+        // O parâmetro `action` não é usado, pois a lista de pacotes é atualizada
+        // pelo dispatch de `fetchTravelPackages` na ação `createTravelPackage`.
+        // Usamos `_` para indicar que o parâmetro é necessário pela API do Redux
+        // Toolkit, mas não é utilizado aqui.
         state.loading = false;
-        // A lista será atualizada por fetchTravelPackages
       })
       .addCase(createTravelPackage.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload || 'Erro ao criar pacote';
       })
-      // Update package
+      // updateTravelPackageById
       .addCase(updateTravelPackageById.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(updateTravelPackageById.fulfilled, (state, action) => {
+      .addCase(updateTravelPackageById.fulfilled, (state, _) => {
+        // O parâmetro `action` não é usado, pois a lista de pacotes é atualizada
+        // pelo dispatch de `fetchTravelPackages` na ação `updateTravelPackageById`.
+        // Usamos `_` para seguir a convenção do Redux Toolkit e indicar que o
+        // parâmetro é ignorado.
         state.loading = false;
-        // A lista será atualizada por fetchTravelPackages
       })
       .addCase(updateTravelPackageById.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload || 'Erro ao atualizar pacote';
       })
-      // Delete package
+      // deleteTravelPackageById
       .addCase(deleteTravelPackageById.pending, (state) => {
         state.loading = true;
         state.error = null;
       })
-      .addCase(deleteTravelPackageById.fulfilled, (state, action) => {
+      .addCase(deleteTravelPackageById.fulfilled, (state, _) => {
+        // O parâmetro `action` não é usado, pois a lista de pacotes é atualizada
+        // pelo dispatch de `fetchTravelPackages` na ação `deleteTravelPackageById`.
+        // Usamos `_` para manter a assinatura exigida pelo Redux Toolkit.
         state.loading = false;
-        // A lista será atualizada por fetchTravelPackages
       })
       .addCase(deleteTravelPackageById.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload || 'Erro ao excluir pacote';
+      })
+      // logout
+      .addCase(logout, (state) => {
+        state.packages = [];
+        state.packageDetails = null;
+        state.error = null;
+        state.loading = false;
       });
   },
 });

@@ -7,8 +7,13 @@ const userService = {
     return response.data;
   },
 
-  getUserById: async (id) => {
-    const response = await api.get(`/users/${id}`);
+  getUserByIdOrDocument: async (idOrDocument) => {
+    const response = await api.get(`/users/${idOrDocument}`);
+    return response.data;
+  },
+
+  getBookingByUserId: async (userId) => {
+    const response = await api.get(`/users/${userId}/reservations`);
     return response.data;
   },
 

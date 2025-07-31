@@ -8,14 +8,12 @@ import {
   createTravelPackage,
   updateTravelPackageById,
   deleteTravelPackageById,
-} from "../../../store/travelPackagesActions";
-import { clearPackageDetails } from "../../../store/travelPackagesSlice";
+} from "../../../store/actions/travelPackagesActions";
+import { clearPackageDetails } from "../../../store/slices/travelPackagesSlice";
 import { PackageEdit } from "./PackageEdit/PackageEdit";
 import { PackageRegistration } from "./PackageRegistration/PackageRegistration";
 import PackagesList from "./PackagesList/PackagesList";
-
-// PackagesAdminTable.jsx
-
+import { parseJwt } from '../../../utils/jwt'
 
 export const PackagesAdminTable = () => {
   const [value, setValue] = useState('1');
@@ -43,13 +41,9 @@ export const PackagesAdminTable = () => {
     }
   }, [dispatch, token]);
 
-  if (!token) {
-    return (
-      <Typography color="error" sx={{ p: 2 }}>
-        Faça login para visualizar os pacotes.
-      </Typography>
-    );
-  }
+const payload = parseJwt(token)
+
+
 
   return (
     <Box sx={{ width: '100%', typography: 'body1', p: 2 }}>
@@ -106,6 +100,7 @@ export const PackagesAdminTable = () => {
             loading={loading}
             error={error}
             onEdit={handleEdit}
+             role={payload.role}
           />
         </TabPanel>
         <TabPanel value="2">

@@ -18,7 +18,7 @@ import { CustomPriceField } from "../../../CustomInputs/CustomPriceField";
 import { useForm } from "../../../../hooks/useForm";
 import { CustomDateField } from "../../../CustomInputs/CustomDateField";
 import { CustomSelect } from "../../../CustomInputs/CustomSelect";
-import { createTravelPackage } from "../../../../store/travelPackagesActions";
+import { createTravelPackage } from "../../../../store/actions/travelPackagesActions";
 import useIsMobile from "../../../../hooks/useIsMobile";
 import { fetchAddressByZipCode } from "../../../../services/addressService";
 

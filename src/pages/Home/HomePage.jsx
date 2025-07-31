@@ -14,7 +14,7 @@ import useIsMobile from "../../hooks/useIsMobile";
 
 const HomePage = () => {
   const navigate = useNavigate();
-  const [activeTab, setActiveTab] = useState("nacional");
+  const [activeTab, setActiveTab] = useState("NATIONAL");
   const isMobile = useIsMobile();
 
   const nationalCarouselRef = useRef(null);
@@ -22,10 +22,10 @@ const HomePage = () => {
   const promoCarouselRef = useRef(null);
 
   const nationalPackages = useShuffledArray(
-    packagesData.filter((pkg) => pkg.packageType === "nacional")
+    packagesData.filter((pkg) => pkg.packageType === "NATIONAL")
   );
   const internationalPackages = useShuffledArray(
-    packagesData.filter((pkg) => pkg.packageType === "internacional")
+    packagesData.filter((pkg) => pkg.packageType === "INTERNATIONAL")
   );
   const promoPackages = useShuffledArray(
     packagesData.filter((pkg) => pkg.isCurrentlyOnPromotion === true)
@@ -77,22 +77,22 @@ const HomePage = () => {
 
       <div className="tab-navigation-container">
         <h2
-          className={`tab-h2 ${activeTab === "nacional" ? "active" : ""}`}
-          onClick={() => setActiveTab("nacional")}
+          className={`tab-h2 ${activeTab === "NATIONAL" ? "active" : ""}`}
+          onClick={() => setActiveTab("NATIONAL")}
         >
           {isMobile ? "Nacionais" : "Viagens Nacionais"}
         </h2>
         <span className="tab-separator">|</span>
         <h2
-          className={`tab-h2 ${activeTab === "internacional" ? "active" : ""}`}
-          onClick={() => setActiveTab("internacional")}
+          className={`tab-h2 ${activeTab === "INTERNATIONAL" ? "active" : ""}`}
+          onClick={() => setActiveTab("INTERNATIONAL")}
         >
           {isMobile ? "Internacionais" : "Viagens Internacionais"}
         </h2>
       </div>
 
       {/* --- Carrossel Nacional --- */}
-      {activeTab === "nacional" && nationalPackages.length > 0 && (
+      {activeTab === "NATIONAL" && nationalPackages.length > 0 && (
         <div className="carousel-wrapper">
           {!isMobile && (
             <>
@@ -121,7 +121,7 @@ const HomePage = () => {
       )}
 
       {/* --- Carrossel Internacional --- */}
-      {activeTab === "internacional" && internationalPackages.length > 0 && (
+      {activeTab === "INTERNATIONAL" && internationalPackages.length > 0 && (
         <div className="carousel-wrapper">
           {!isMobile && (
             <>

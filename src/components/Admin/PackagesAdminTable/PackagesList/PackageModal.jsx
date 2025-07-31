@@ -14,9 +14,7 @@ const PackageModal = ({
   onClose,
   selectedPackage,
   handleCloseDetails,
-  packageTypeMap,
-  mediaTypeMap,
-  formatCurrency
+  formatCurrency,
 }) => {
   return (
     <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
@@ -31,7 +29,7 @@ const PackageModal = ({
               <strong>Descrição:</strong> {selectedPackage.description}
             </Typography>
             <Typography variant="body2">
-               <strong>Preço:</strong> {formatCurrency(selectedPackage.price)}
+              <strong>Preço:</strong> {formatCurrency(selectedPackage.price)}
             </Typography>
             <Typography variant="body2">
               <strong>Destino:</strong> {selectedPackage.destination}
@@ -60,8 +58,7 @@ const PackageModal = ({
               {selectedPackage.numberGuests}
             </Typography>
             <Typography variant="body2">
-              <strong>Tipo:</strong>{" "}
-              {packageTypeMap[selectedPackage.packageType ?? 0] || "Nacional"}
+              <strong>Tipo:</strong> {selectedPackage.packageType}
             </Typography>
             <Typography variant="body2">
               <strong>Em Promoção:</strong>{" "}
@@ -98,13 +95,34 @@ const PackageModal = ({
             {selectedPackage.mediasUrl &&
             selectedPackage.mediasUrl.length > 0 ? (
               selectedPackage.mediasUrl.map((media, index) => (
-                <Typography key={index} variant="body2">
-                  <strong>Mídia {index + 1}:</strong> {media.MediaUrl} (
-                  {mediaTypeMap[media.MediaType ?? 0] || "Imagem"})
-                </Typography>
+                <Box key={media.id || index} sx={{ mb: 1 }}>
+                  {" "}
+                  {/* Usar media.id para key, fallback para index */}
+                  <Typography variant="body2" sx={{ fontWeight: "bold" }}>
+                    Mídia {index + 1}:
+                  </Typography>
+                  <Typography variant="body2">
+                    URL:{" "}
+                    <a
+                      href={media.mediaUrl}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      {media.mediaUrl}
+                    </a>
+                  </Typography>
+                  <Typography variant="body2">
+                    Tipo: {media.mediaType}
+                  </Typography>
+                </Box>
               ))
             ) : (
-              <Typography variant="body2">Nenhuma mídia disponível.</Typography>
+              <Typography
+                variant="body2"
+                sx={{ fontStyle: "italic", color: "text.secondary" }}
+              >
+                Nenhuma mídia disponível para este pacote.
+              </Typography>
             )}
             <Divider sx={{ my: 2 }} />
             <Typography variant="subtitle1">Detalhes da Acomodação</Typography>

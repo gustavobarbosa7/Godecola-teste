@@ -1,6 +1,6 @@
 import { configureStore, combineReducers } from "@reduxjs/toolkit";
 import thunk from "redux-thunk";
-import authReducer from "./authSlice";
+import authReducer from './slices/authSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,

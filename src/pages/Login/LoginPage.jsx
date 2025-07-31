@@ -15,8 +15,8 @@ import Input from "@mui/material/Input";
 import LockIcon from "@mui/icons-material/Lock";
 import { useForm } from "../../hooks/useForm";
 import { useDispatch } from "react-redux";
-import { loginSuccess } from "../../store/authSlice";
-import { fetchCurrentUser } from '../../store/userActions'
+import { loginSuccess } from "../../store/slices/authSlice";
+import { fetchCurrentUser } from '../../store/actions/userActions'
 import { login } from "../../services/authService";
 import { parseJwt } from "../../utils/jwt";
 

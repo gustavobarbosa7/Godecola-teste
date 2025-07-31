@@ -8,7 +8,7 @@ import logoMobile from "../../assets/go_decola_logo_01_v1.png";
 import { useSelector } from "react-redux";
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
-import { fetchCurrentUser } from "../../store/userActions";
+import { fetchCurrentUser } from "../../store/actions/userActions";
 import { HeaderLogoutButton } from "./HeaderLogoutButton/HeaderLogoutButton";
 import { FaHeart } from "react-icons/fa";
 import EventNoteIcon from "@mui/icons-material/EventNote";

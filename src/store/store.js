@@ -1,12 +1,16 @@
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
-import authReducer from './authSlice';
-import userReducer from './userSlice';
-import travelPackagesReducer from './travelPackagesSlice';
+import authReducer from './slices/authSlice';
+import userReducer from './slices/userSlice';
+import travelPackagesReducer from './slices/travelPackagesSlice';
+import bookingReducer from './slices/bookingSlice';
+import paymentReducer from './slices/paymentSlice';
 
 const rootReducer = combineReducers({
   auth: authReducer,
   user: userReducer,
   travelPackages: travelPackagesReducer,
+  bookings: bookingReducer,
+  payments: paymentReducer,
 });
 
 const loadToken = () => {

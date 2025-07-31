@@ -6,7 +6,7 @@ import { goToHome, goToProfile } from "../../../routes/coordinator";
 import Button from "@mui/material/Button";
 import Avatar from "@mui/joy/Avatar";
 import { useDispatch } from "react-redux";
-import { logout as logoutAction } from "../../../store/authSlice";
+import { logout as logoutAction } from "../../../store/slices/authSlice";
 import { logout as logoutService } from "../../../services/authService";
 
 export const HeaderLogoutButton = ({ user }) => {

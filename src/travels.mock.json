@@ -56,7 +56,7 @@
         "mediaType": "imagem",
         "uploadDate": "2025-07-28T18:29:04.439Z"
       },
-            {
+      {
         "id": 3,
         "travelPackageId": 1,
         "mediaUrl": "https://www.youtube.com/watch?v=4Du8kIqGK1k",
@@ -64,7 +64,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "nacional",
+    "packageType": "NATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -129,7 +129,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "nacional",
+    "packageType": "NATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -180,7 +180,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "nacional",
+    "packageType": "NATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -252,7 +252,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "nacional",
+    "packageType": "NATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -331,7 +331,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "nacional",
+    "packageType": "NATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -389,7 +389,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "nacional",
+    "packageType": "NATIONAL",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -454,7 +454,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "nacional",
+    "packageType": "NATIONAL",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -519,7 +519,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "nacional",
+    "packageType": "NATIONAL",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -570,7 +570,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "nacional",
+    "packageType": "NATIONAL",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -621,7 +621,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "nacional",
+    "packageType": "NATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -679,7 +679,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "internacional",
+    "packageType": "INTERNATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -730,7 +730,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "internacional",
+    "packageType": "INTERNATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -781,7 +781,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "internacional",
+    "packageType": "INTERNATIONAL",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -791,7 +791,7 @@
   {
     "id": 14,
     "title": "Aventura nas Cataratas do Iguaçu - Argentina",
-    "description": "Mergulhe na natureza com este pacote para as Cataratas do Iguaçu, lado argentino. Ideal para aventureiros e apaixonados por paisagens exuberantes, com hospedagem próxima ao parque nacional e restaurante típico incluso.",
+    "description": "Mergulhe na natureza com este pacote para as Cataratas do Iguaçu, lado argentino. Ideal para aventureiros e apaixonados por paisagens exuberantes, com hospedagem próxima ao parque NATIONAL e restaurante típico incluso.",
     "price": 900,
     "destination": "Cataratas do Iguaçu, Argentina",
     "startDate": "2028-05-12T18:29:04.439Z",
@@ -832,7 +832,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "internacional",
+    "packageType": "INTERNATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -883,7 +883,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "internacional",
+    "packageType": "INTERNATIONAL",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -934,7 +934,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "internacional",
+    "packageType": "INTERNATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -985,7 +985,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "internacional",
+    "packageType": "INTERNATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -1036,7 +1036,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "internacional",
+    "packageType": "INTERNATIONAL",
     "isCurrentlyOnPromotion": false,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -1087,7 +1087,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "internacional",
+    "packageType": "INTERNATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",
@@ -1138,7 +1138,7 @@
         "uploadDate": "2025-07-28T18:29:04.439Z"
       }
     ],
-    "packageType": "internacional",
+    "packageType": "INTERNATIONAL",
     "isCurrentlyOnPromotion": true,
     "discountPercentage": 0,
     "promotionStartDate": "2025-07-28T18:29:04.439Z",

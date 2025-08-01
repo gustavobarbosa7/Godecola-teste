@@ -15,6 +15,7 @@
 
 .subtitle-edit {
     color: var(--primary-text-color);
+    padding-left: 10px;
 }
 
 .edit-subtitle {

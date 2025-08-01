@@ -12,3 +12,21 @@
 .title {
   color: var(--primary-text-color);  
 }
+
+/* .payment-btn{
+  width: 100%;
+  max-width: 200px;
+  padding: 0.8rem;
+  background: linear-gradient(to right, #f15a29, #e94e1b);
+  color: white;
+  border: none;
+  border-radius: 15px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: transform 0.2s ease-in-out;
+}
+
+.payment-btn:hover {
+  transform: scale(1.02);
+  background: #c94113;
+} */

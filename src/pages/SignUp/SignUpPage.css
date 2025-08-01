@@ -36,6 +36,13 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.cpf-passaport-text{
+    color: #f15a29;
+  text-align: center;
+  margin-bottom: 1rem;
+  font-weight: bold;
+}
+
 .Singup-between {
   display: flex;
   flex-direction: column;
@@ -71,6 +78,7 @@ h2 {
 }
 
 .registered:hover {
+  cursor: pointer;
   color: #07449f;
 }
 

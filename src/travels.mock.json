@@ -23,7 +23,7 @@
       "hasBreakfastIncluded": true,
       "address": {
         "id": 0,
-        "addressLine1": " Rua da Prai",
+        "AddressLine1": "Rua da Praia",
         "addressLine2": "123",
         "zipCode": "string",
         "country": "Brasil",
@@ -580,7 +580,7 @@
   {
     "id": 10,
     "title": "Suíte Master em resort em Natal",
-    "description": " Descubra o paraíso nordestino com conforto premium! Esta suíte master em resort em Natal/RN oferece café da manhã, piscina, ar-condicionado e localização privilegiada à beira-mar. Uma experiência única na Cidade do Sol.",
+    "description": "Descubra o paraíso nordestino com conforto premium! Esta suíte master em resort em Natal/RN oferece café da manhã, piscina, ar-condicionado e localização privilegiada à beira-mar. Uma experiência única na Cidade do Sol.",
     "price": 890,
     "destination": "Natal/RN",
     "startDate": "2025-06-06T18:29:04.439Z",
@@ -863,7 +863,7 @@
       "hasBreakfastIncluded": true,
       "address": {
         "id": 15,
-        "addressLine1": " Jalan Raya Ubud",
+        "addressLine1": "Jalan Raya Ubud",
         "addressLine2": "123",
         "zipCode": "80571",
         "country": "Indonésia",

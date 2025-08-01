@@ -13,7 +13,7 @@ import { CustomPriceField } from "../../components/CustomInputs/CustomPriceField
 import { CustomLogicDate } from "../../components/CustomInputs/CustomLogicDate";
 
 export default function SearchPackagesPage() {
-  const today = new Date().toISOString().split("T")[0];
+  const today = new Date().toISOString().slice(0, 10);
   const { form, onChangeForm } = useForm({
     Price: "",
     InicialDate: "",
@@ -120,7 +120,7 @@ export default function SearchPackagesPage() {
           }}
         >
           <Typography sx={{ color: "var(--primary-text-color)" }}>
-            Quem?
+            Quantidade de hóspedes:
           </Typography>
 
           <Box className="people-group">
@@ -142,19 +142,6 @@ export default function SearchPackagesPage() {
                 {" "}
                 +{" "}
               </button>
-            </div>
-          </Box>
-          <Box className="people-group">
-            <span className="texts">Crianças</span>
-            <div>
-              <button
-                onClick={() => setChildren(children - 1)}
-                disabled={children <= 0}
-              >
-                -
-              </button>
-              <span className="texts">{children}</span>
-              <button onClick={() => setChildren(children + 1)}>+</button>
             </div>
           </Box>
         </Box>

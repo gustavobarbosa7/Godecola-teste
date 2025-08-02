@@ -1,4 +1,5 @@
 import "./SearchPackagesPage.css";
+import packagesData from "../../travels.mock.json";
 import { useState } from "react";
 import {
   Box,
@@ -11,6 +12,9 @@ import { Search } from "@mui/icons-material";
 import { useForm } from "../../hooks/useForm";
 import { CustomPriceField } from "../../components/CustomInputs/CustomPriceField";
 import { CustomLogicDate } from "../../components/CustomInputs/CustomLogicDate";
+// import axios from "axios";
+import { PackageCard } from "../../components/PackageCard/PackageCard";
+//import { Link } from "react-router-dom";
 
 export default function SearchPackagesPage() {
   const today = new Date().toISOString().slice(0, 10);
@@ -22,18 +26,103 @@ export default function SearchPackagesPage() {
   const [destination, setDestination] = useState("");
   const [date] = useState(null);
   const [adults, setAdults] = useState(1);
-  const [children, setChildren] = useState(0);
   const [budget] = useState("");
+  const [resultados, setResultados] = useState([]);
+  const [buscaRealizada, setBuscaRealizada] = useState(false);
 
-  const handleSearch = () => {
-    console.log("Filtros selecionados:", {
-      destino: destination,
-      data: date,
-      adultos: adults,
-      crianças: children,
-      valor: budget,
-    });
+  const handleSearch = async () => {
+    try {
+      // Passo 1: busca todos os pacotes
+      const todosPacotes = packagesData;
+
+      // const response = await axios.get(
+      //   "http://localhost:5071/api/travel-packages"
+      // );
+      //busca filtro pela API
+      // const todosPacotes = response.data;
+
+      // console.log("Pacotes recebidos da API:", todosPacotes);
+
+      // Passo 2: aplica os filtros no frontend
+      const pacotesFiltrados = todosPacotes.filter((pacote) => {
+        //teste
+        console.log("→ destino:", destination, "vs", pacote.destination);
+        console.log("→ adultos:", adults, "vs", pacote.numberGuests);
+
+        const normalize = (str) =>
+          str
+            ?.normalize("NFD")
+            .replace(/[\u0300-\u036f]/g, "")
+            .toLowerCase();
+
+        const destinoMatch =
+          !destination ||
+          (pacote.destination &&
+            pacote.destination
+              .toLowerCase()
+              .includes(destination.toLowerCase()));
+
+        const dataInicialMatch =
+          form.InicialDate === "" ||
+          (pacote.startDate &&
+            new Date(pacote.startDate) >= new Date(form.InicialDate));
+
+        const dataFinalMatch =
+          form.FinalDate === "" ||
+          (pacote.endDate &&
+            new Date(pacote.endDate) <= new Date(form.FinalDate));
+
+        const precoMaximoMatch =
+          form.Price === "" ||
+          (pacote.price &&
+            pacote.price <=
+              parseFloat(
+                form.Price.replace("R$", "")
+                  .replace(/\./g, "")
+                  .replace(",", ".")
+              ));
+
+        const adultosMatch =
+          adults === undefined ||
+          !pacote.numberGuests ||
+          pacote.numberGuests >= adults;
+
+        return (
+          destinoMatch &&
+          dataInicialMatch &&
+          dataFinalMatch &&
+          precoMaximoMatch &&
+          adultosMatch
+        );
+      });
+
+      setBuscaRealizada(true);
+      setResultados(pacotesFiltrados);
+
+      setResultados(pacotesFiltrados);
+      console.log("Pacotes filtrados:", pacotesFiltrados);
+    } catch (error) {
+      console.error("Erro ao buscar pacotes:", error);
+    }
   };
+
+  //   const handleSearch = async () => {
+  //     console.log("Filtros selecionados:", {
+  //       destino: destination,
+  //       data: date,
+  //       adultos: adults,
+  //       crianças: children,
+  //       valor: budget,
+  //     });
+
+  //   const response = await axios.get("http://localhost:5071/api/travel-packages"),
+
+  //   setResultados(response.data);
+  //     console.log("Pacotes encontrados:", response.data);
+  //     catch (error) {
+  //     console.error("Erro ao buscar pacotes:", error);
+  //   }
+  // };
 
   return (
     <div className="container-search">
@@ -120,11 +209,11 @@ export default function SearchPackagesPage() {
           }}
         >
           <Typography sx={{ color: "var(--primary-text-color)" }}>
-            Quantidade de hóspedes:
+            Quantidade:
           </Typography>
 
           <Box className="people-group">
-            <span className="texts">Adultos</span>
+            <span className="texts">Hóspedes</span>
             <div>
               <button
                 onClick={() => setAdults(adults - 1)}
@@ -168,6 +257,29 @@ export default function SearchPackagesPage() {
         >
           Buscar
         </Button>
+
+        {buscaRealizada && resultados.length === 0 && (
+          <Typography sx={{ mt: 2, color: "gray", textAlign: "center" }}>
+            Nenhuma reserva encontrada com os filtros selecionados.
+          </Typography>
+        )}
+
+        {resultados.length > 0 && (
+          <Box
+            className="resultados-box-edit"
+          >
+            {resultados.map((pacote) => (
+              <PackageCard
+                key={pacote.id}
+                id={pacote.id}
+                title={pacote.title}
+                price={pacote.price}
+                rating={pacote.rating}
+                imageSrc={pacote.mediasUrl}
+              />
+            ))}
+          </Box>
+        )}
       </Box>
     </div>
   );

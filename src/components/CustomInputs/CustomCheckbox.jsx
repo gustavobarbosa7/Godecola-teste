@@ -1,7 +1,6 @@
 import { FormControlLabel, Checkbox } from "@mui/material";
 
 export const CustomCheckbox = ({ label, name, checked, onChange }) => {
-
   const handleChange = (event) => {
     onChange({
       target: {
@@ -30,7 +29,9 @@ export const CustomCheckbox = ({ label, name, checked, onChange }) => {
       }
       label={label}
       sx={{
-        color: "var(--text-footer)",
+        "& .MuiFormControlLabel-label": {
+          color: checked ? "var(--orange-avanade)" : "var(--text-footer)",
+        },
       }}
     />
   );

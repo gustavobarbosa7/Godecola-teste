@@ -8,13 +8,13 @@ import {
   Box,
   Divider,
 } from "@mui/material";
+import { baseURLMedias } from "../../../../utils/baseURL";
 
 const PackageModal = ({
   open,
   onClose,
   selectedPackage,
   handleCloseDetails,
-  formatCurrency,
 }) => {
   return (
     <Dialog open={open} onClose={onClose} maxWidth="md" fullWidth>
@@ -29,7 +29,7 @@ const PackageModal = ({
               <strong>Descrição:</strong> {selectedPackage.description}
             </Typography>
             <Typography variant="body2">
-              <strong>Preço:</strong> {formatCurrency(selectedPackage.price)}
+              <strong>Preço:</strong> {`R$ ${selectedPackage.price}`}
             </Typography>
             <Typography variant="body2">
               <strong>Destino:</strong> {selectedPackage.destination}
@@ -62,16 +62,28 @@ const PackageModal = ({
             </Typography>
             <Typography variant="body2">
               <strong>Em Promoção:</strong>{" "}
-              {selectedPackage.isCurrentylOnPromotion ? "Sim" : "Não"}
+              {selectedPackage.isCurrentlyOnPromotion ? "Sim" : "Não"}
             </Typography>
-            {selectedPackage.isCurrentylOnPromotion && (
+            {selectedPackage.isCurrentlyOnPromotion && (
               <>
                 <Typography variant="body2">
                   <strong>Percentual de Desconto:</strong>{" "}
                   {selectedPackage.discountPercentage
-                    ? `${selectedPackage.discountPercentage}%`
+                    ? `${selectedPackage.discountPercentage * 100}%`
                     : "N/A"}
                 </Typography>
+
+                <Typography variant="body2">
+                  <strong>Preço com desconto:</strong>{" "}
+                  {selectedPackage.discountPercentage
+                    ? `R$ ${
+                        selectedPackage.price -
+                        selectedPackage.discountPercentage *
+                          selectedPackage.price
+                      }`
+                    : "N/A"}
+                </Typography>
+
                 <Typography variant="body2">
                   <strong>Início da Promoção:</strong>{" "}
                   {selectedPackage.promotionStartDate
@@ -96,19 +108,18 @@ const PackageModal = ({
             selectedPackage.mediasUrl.length > 0 ? (
               selectedPackage.mediasUrl.map((media, index) => (
                 <Box key={media.id || index} sx={{ mb: 1 }}>
-                  {" "}
-                  {/* Usar media.id para key, fallback para index */}
                   <Typography variant="body2" sx={{ fontWeight: "bold" }}>
                     Mídia {index + 1}:
                   </Typography>
                   <Typography variant="body2">
                     URL:{" "}
                     <a
-                      href={media.mediaUrl}
+                      href={`${baseURLMedias}${media.filePath}`}
                       target="_blank"
                       rel="noopener noreferrer"
                     >
-                      {media.mediaUrl}
+                      {baseURLMedias}
+                      {media.filePath}
                     </a>
                   </Typography>
                   <Typography variant="body2">
@@ -124,6 +135,7 @@ const PackageModal = ({
                 Nenhuma mídia disponível para este pacote.
               </Typography>
             )}
+
             <Divider sx={{ my: 2 }} />
             <Typography variant="subtitle1">Detalhes da Acomodação</Typography>
             <Typography variant="body2">

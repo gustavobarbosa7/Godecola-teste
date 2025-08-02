@@ -1,17 +1,7 @@
 import "./CarouselPackageDetails.css";
 import Box from "@mui/joy/Box";
 import { forwardRef } from "react";
-
-const getYouTubeVideoId = (url) => {
-  try {
-    const regex =
-      /(?:youtube\.com\/(?:[^/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?/\s]{11})/i;
-    const match = url.match(regex);
-    return match ? match[1] : null;
-  } catch {
-    return null;
-  }
-};
+import { baseURLMedias } from "../../../utils/baseURL";
 
 const CarouselPackageDetails = forwardRef(({ packageData }, ref) => {
   if (!packageData.mediasUrl || packageData.mediasUrl.length === 0) {
@@ -39,44 +29,38 @@ const CarouselPackageDetails = forwardRef(({ packageData }, ref) => {
       }}
     >
       {packageData.mediasUrl.map((media, index) => (
-        <div key={index} className="carousel-media-item">
+        <div key={index} style={{ overflow: "hidden" }}>
           {media.mediaType === "imagem" ? (
             <img
-              src={media.mediaUrl}
+              src={`${baseURLMedias}${media.filePath}`}
               alt={`${packageData.title} - Mídia ${index + 1}`}
               style={{
                 width: "100%",
-                height: "auto",
-                maxHeight: "700px",
+                height: "100%",
                 objectFit: "cover",
+                maxHeight: "750px",
+                maxWidth: "1500px",
               }}
               loading="lazy"
             />
           ) : media.mediaType === "video" ? (
-            (() => {
-              const videoId = getYouTubeVideoId(media.mediaUrl);
-              if (!videoId) {
-                return (
-                  <div className="PackageMediaNotFound">
-                    Vídeo do YouTube inválido
-                  </div>
-                );
-              }
-              return (
-                <iframe
-                  width="100%"
-                  height="100%"
-                  src={`https://www.youtube.com/embed/${videoId}?rel=0`}
-                  title={`${packageData.title} - Vídeo ${index + 1}`}
-                  className="youtube-video"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  referrerPolicy="strict-origin-when-cross-origin"
-                  allowFullScreen
-                  loading="lazy"
-                  frameborder="0"
-                />
-              );
-            })()
+            <video
+              width="100%"
+              height="100%"
+              maxHeight="750px"
+              maxWidth="1500px"
+              className="local-video"
+              controls
+              muted
+              autoPlay
+              playsInline
+              style={{ objectFit: "cover" }}
+            >
+              <source
+                src={`${baseURLMedias}${media.filePath}`}
+                type={media.mimeType}
+              />
+            </video>
           ) : (
             <div className="PackageMediaNotFound">Mídia não suportada</div>
           )}

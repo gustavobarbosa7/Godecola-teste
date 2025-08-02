@@ -1,17 +1,18 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect } from "react";
 
 const useShuffledArray = (arrayToShuffle) => {
+  const [shuffledArray, setShuffledArray] = useState([]);
 
-    const [shuffledArray, setShuffledArray] = useState([]);
+  useEffect(() => {
+    if (arrayToShuffle && Array.isArray(arrayToShuffle)) {
+      const shuffled = [...arrayToShuffle].sort(() => Math.random() - 0.5);
+      setShuffledArray(shuffled);
+    } else {
+      setShuffledArray([]);
+    }
+  }, [arrayToShuffle]);
 
-    useEffect(() => {
-        if (arrayToShuffle) {
-            const shuffled = [...arrayToShuffle].sort(() => Math.random() - 0.5);
-            setShuffledArray(shuffled);
-        }
-    }, []);
-
-    return shuffledArray;
+  return shuffledArray;
 };
 
 export default useShuffledArray;

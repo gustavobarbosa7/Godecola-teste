@@ -10,10 +10,7 @@ import { MdFreeBreakfast } from "react-icons/md";
 
 const Description = ({ packageData }) => {
   return (
-    <div
-      className="DescriptionPackage"
-      style={{ fontFamily: "Arial, sans-serif", padding: "20px" }}
-    >
+    <div className="DescriptionPackage">
       <div className="TitlePackage">
         <h2>{packageData.title}</h2>
       </div>
@@ -30,19 +27,11 @@ const Description = ({ packageData }) => {
         <p>{packageData.description}</p>
       </div>
 
-      <div
-        className="PackageService"
-        style={{
-          fontFamily: "Arial, sans-serif",
-          marginLeft: "50%",
-          padding: "70px",
-        }}
-      >
-        <h2 className="Services" style={{ marginRight: "92%" }}>
+      <div className="PackageService">
+        <h2>
           <i>Serviços</i>
         </h2>
 
-        
         <ul style={{ listStyle: "none" }}>
           {packageData.accommodationDetails.hasWifi && (
             <li>

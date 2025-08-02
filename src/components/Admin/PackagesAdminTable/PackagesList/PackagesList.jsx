@@ -15,9 +15,9 @@ import {
 import { Edit, Delete, Visibility } from "@mui/icons-material";
 import { deleteTravelPackageById } from "../../../../store/actions/travelPackagesActions";
 import PackageModal from "./PackageModal";
-import { formatCurrency } from "../../../../utils/formatCurrency";
 
 const PackagesList = ({ packages, loading, error, onEdit, role }) => {
+  console.log(packages);
   const columns = [
     { field: "id", headerName: "ID", minWidth: 70 },
     { field: "title", headerName: "Título", minWidth: 218 },
@@ -63,7 +63,7 @@ const PackagesList = ({ packages, loading, error, onEdit, role }) => {
         }),
     },
     {
-      field: "rating",
+      field: "averageRating",
       headerName: "Avaliação",
       migrants: { type: "number" },
       minWidth: 90,
@@ -72,10 +72,12 @@ const PackagesList = ({ packages, loading, error, onEdit, role }) => {
     },
 
     {
-      field: "isPromo",
+      field: "isCurrentlyOnPromotion",
       headerName: "Promoção",
       minWidth: 100,
-      renderCell: ({ value }) => (value ? "Sim" : "Não"),
+      renderCell: ({ value }) => {
+        return value ? "Sim" : "Não";
+      },
     },
 
     {
@@ -163,12 +165,12 @@ const PackagesList = ({ packages, loading, error, onEdit, role }) => {
     id: pkg.id,
     title: pkg.title,
     destination: pkg.destination,
-    price: pkg.price / 100,
+    price: pkg.price,
     type: pkg.packageType,
     startDate: pkg.startDate,
     endDate: pkg.endDate,
-    rating: 0,
-    isPromo: pkg.isCurrentylOnPromotion,
+    averageRating: 0,
+    isCurrentlyOnPromotion: pkg.isCurrentlyOnPromotion,
     isActive: pkg.isActive,
     onEdit,
     onDelete: handleDeleteClick,
@@ -245,8 +247,7 @@ const PackagesList = ({ packages, loading, error, onEdit, role }) => {
         open={openDetails}
         onClose={handleCloseDetails}
         selectedPackage={selectedPackage}
-        handleCloseDetails={handleCloseDetails}                
-        formatCurrency={formatCurrency}
+        handleCloseDetails={handleCloseDetails}
       />
       {/* Modal de Confirmação de Exclusão */}
       <Dialog open={openDelete} onClose={handleCloseDelete}>

@@ -13,7 +13,7 @@
   color: var(--primary-text-color);  
 }
 
-/* .payment-btn{
+.payment-btn{
   width: 100%;
   max-width: 200px;
   padding: 0.8rem;
@@ -29,4 +29,4 @@
 .payment-btn:hover {
   transform: scale(1.02);
   background: #c94113;
-} */
+}

@@ -11,6 +11,10 @@ import PackageDetailsPage from '../pages/PackageDetails/PackageDetailsPage'
 import SearchPackagesPage from '../pages/SearchPackages/SearchPackagesPage'
 import AllReviewsPage from '../pages/Review/AllReviewsPage'
 import BookingPage from '../pages/Booking/BookingPage'
+import CheckoutPage from '../pages/Checkout/CheckoutPage'
+import PaymentSuccess from '../pages/Payment/PaymentSuccess'
+import PaymentFailure from '../pages/Payment/PaymentFailure'
+import PaymentPending from '../pages/Payment/PaymentPending'
 import ProfilePage from '../pages/Profile/ProfilePage'
 import WishListPage from '../pages/WishList/WishListPage'
 import HistoryPage from '../pages/History/HistoryPage'
@@ -29,6 +33,11 @@ export const Router = () => {
         <Route path="search-packages" element={<SearchPackagesPage />} />
         <Route path="all-reviews" element={<AllReviewsPage />} />
         <Route path="booking" element={<BookingPage />} />
+        <Route path="checkout" element={<CheckoutPage />} />
+        <Route path="payment/success/:paymentId" element={<PaymentSuccess />} />
+        <Route path="payment/pending/:paymentId" element={<PaymentPending />} />
+        <Route path="payment/failure/:paymentId" element={<PaymentFailure />} />
+        <Route path="payment/failure" element={<PaymentFailure />} />
         <Route path="profile" element={<ProfilePage />} />
         <Route path="wishlist" element={<WishListPage />} />
         <Route path="history" element={<HistoryPage />} />
@@ -37,5 +46,6 @@ export const Router = () => {
         <Route path="*" element={<ErrorPage />} />
       </Route>
     </Routes>
+    
   );
 };

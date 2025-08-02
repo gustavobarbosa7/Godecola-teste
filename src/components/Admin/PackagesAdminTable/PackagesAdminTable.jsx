@@ -43,8 +43,6 @@ export const PackagesAdminTable = () => {
 
 const payload = parseJwt(token)
 
-
-
   return (
     <Box sx={{ width: '100%', typography: 'body1', p: 2 }}>
       {loading && <Typography>Carregando...</Typography>}

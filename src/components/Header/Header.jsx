@@ -17,9 +17,9 @@ import { HeaderLoginButton } from "./HeaderLoginButton/HeaderLoginButton";
 import { getToken } from "../../utils/jwt";
 
 export const Header = () => {
-  const { isDark, toggleTheme } = useTheme();
-  const navigate = useNavigate();
+  const { isDark, toggleTheme } = useTheme(); 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   const user = useSelector((state) => state.user.user);
   const loading = useSelector((state) => state.user.loading);
   const error = useSelector((state) => state.user.error);

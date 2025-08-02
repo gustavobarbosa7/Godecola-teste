@@ -1,5 +1,5 @@
 import "./PackageRegistration.css";
-import { useState, useMemo } from "react";
+import { useState, useMemo, useCallback, useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import {
   Box,
@@ -8,9 +8,12 @@ import {
   Snackbar,
   Alert,
   Divider,
-  IconButton,
+  Dialog,
+  DialogTitle,
+  DialogContent,
+  DialogContentText,
+  DialogActions,
 } from "@mui/material";
-import { Add, Remove } from "@mui/icons-material";
 import { CustomTextfield } from "../../../CustomInputs/CustomTextfield";
 import { CustomCheckbox } from "../../../CustomInputs/CustomCheckbox";
 import { CustomNumericField } from "../../../CustomInputs/CustomNumericField";
@@ -18,16 +21,24 @@ import { CustomPriceField } from "../../../CustomInputs/CustomPriceField";
 import { useForm } from "../../../../hooks/useForm";
 import { CustomDateField } from "../../../CustomInputs/CustomDateField";
 import { CustomSelect } from "../../../CustomInputs/CustomSelect";
-import { createTravelPackage } from "../../../../store/actions/travelPackagesActions";
+import {
+  createTravelPackage,
+  uploadTravelPackageMedia,
+} from "../../../../store/actions/travelPackagesActions";
 import useIsMobile from "../../../../hooks/useIsMobile";
 import { fetchAddressByZipCode } from "../../../../services/addressService";
+import { useDropzone } from "react-dropzone";
 
 export const PackageRegistration = () => {
   const dispatch = useDispatch();
   const isMobile = useIsMobile();
-  const { loading, error } = useSelector((state) => state.travelPackages);
+  const { loading, error: reduxError } = useSelector(
+    (state) => state.travelPackages
+  );
   const [formError, setFormError] = useState(null);
   const [isLoadingZipCode, setIsLoadingZipCode] = useState(false);
+  const [mediaFiles, setMediaFiles] = useState([]);
+  const [openSuccessModal, setOpenSuccessModal] = useState(false);
 
   const initialState = {
     title: "",
@@ -60,7 +71,6 @@ export const PackageRegistration = () => {
         longitude: "",
       },
     },
-    mediasUrl: [{ mediaUrl: "", mediaType: 0 }],
     isActive: false,
     isPromo: false,
     discountPercentage: "",
@@ -77,18 +87,55 @@ export const PackageRegistration = () => {
     [form.packageType]
   );
 
-  const handleAddMedia = () => {
-    setForm({
-      ...form,
-      mediasUrl: [...form.mediasUrl, { mediaUrl: "", mediaType: 0 }],
-    });
-  };
+  const onDrop = useCallback((acceptedFiles, rejectedFiles) => {
+    /*     console.log(
+      "Accepted files:",
+      acceptedFiles.map((file) => file.name)
+    );
+    acceptedFiles.forEach((f) =>
+      console.log(f.name, typeof f, f instanceof File)
+    ); */
+
+    setMediaFiles((prev) => [
+      ...prev,
+      ...acceptedFiles.map((file) => ({ file })),
+    ]);
+
+    if (rejectedFiles.length > 0) {
+      const errorMessages = rejectedFiles.map((rejected) => {
+        const fileName = rejected.file.name;
+        const reasons = rejected.errors.map((e) => {
+          if (e.code === "file-invalid-type") return "tipo não permitido";
+          if (e.code === "file-too-large") return "tamanho excedido";
+          return e.message;
+        });
+        return `• ${fileName}: ${reasons.join(", ")}`;
+      });
+
+      setFormError(`Arquivos rejeitados:\n${errorMessages.join("\n")}`);
+      console.warn("Arquivos rejeitados:", errorMessages);
+    }
+  }, []);
+
+  const { getRootProps, getInputProps, isDragActive } = useDropzone({
+    onDrop,
+    accept: {
+      "image/jpeg": [".jpg", ".jpeg"],
+      "image/png": [".png"],
+      "image/gif": [".gif"],
+      "image/webp": [".webp"],
+      "image/avif": [".avif"],
+      "image/svg+xml": [".svg"],
+      "video/mp4": [".mp4"],
+      "video/webm": [".webm"],
+      "video/ogg": [".ogv"],
+    },
+    multiple: true,
+    maxSize: 100 * 1024 * 1024,
+  });
 
   const handleRemoveMedia = (index) => {
-    setForm({
-      ...form,
-      mediasUrl: form.mediasUrl.filter((_, i) => i !== index),
-    });
+    setMediaFiles((prev) => prev.filter((_, i) => i !== index));
   };
 
   const handleZipCodeChange = async (e) => {
@@ -97,7 +144,6 @@ export const PackageRegistration = () => {
     setFormError(null);
 
     if (isInternational) {
-      // Para pacotes internacionais, apenas atualiza o zipCode sem requisição
       setForm((prev) => ({
         ...prev,
         accommodationDetails: {
@@ -109,26 +155,23 @@ export const PackageRegistration = () => {
         },
       }));
     } else {
-      // Para pacotes nacionais, faz a requisição à API
       setIsLoadingZipCode(true);
       try {
         const addressData = await fetchAddressByZipCode(value);
-
-        setForm((prev) => {
-          const newForm = {
-            ...prev,
-            accommodationDetails: {
-              ...prev.accommodationDetails,
-              address: {
-                ...prev.accommodationDetails.address,
-                ...addressData,
-              },
+        setForm((prev) => ({
+          ...prev,
+          accommodationDetails: {
+            ...prev.accommodationDetails,
+            address: {
+              ...prev.accommodationDetails.address,
+              ...addressData,
             },
-          };   
-          return newForm;
-        });
+          },
+        }));
       } catch (err) {
-        setFormError(err.message);
+        setFormError(
+          "Não foi possível consultar o CEP, verifique o valor informado"
+        );
         console.log("Erro ao consultar CEP:", err.message);
       } finally {
         setIsLoadingZipCode(false);
@@ -140,7 +183,7 @@ export const PackageRegistration = () => {
     e.preventDefault();
     setFormError(null);
 
-    // Validação
+    // Validation
     if (
       !form.title ||
       !form.description ||
@@ -187,8 +230,14 @@ export const PackageRegistration = () => {
       setFormError("Latitude e longitude devem ser valores numéricos válidos");
       return;
     }
-    if (form.mediasUrl.some((media) => !media.mediaUrl)) {
-      setFormError("Todas as URLs de mídia devem ser preenchidas");
+    if (mediaFiles.length === 0) {
+      setFormError("Pelo menos uma mídia deve ser adicionada");
+      return;
+    }
+    if (
+      mediaFiles.some((media) => !media.file || !(media.file instanceof File))
+    ) {
+      setFormError("Alguns arquivos selecionados são inválidos");
       return;
     }
     if (
@@ -201,14 +250,14 @@ export const PackageRegistration = () => {
       return;
     }
 
-    // Validar preço
+    // Validate price
     const cleanedPrice = form.price.replace(/[^0-9,.]/g, "").replace(",", ".");
     if (isNaN(parseFloat(cleanedPrice))) {
       setFormError("Preço inválido");
       return;
     }
 
-    // Validar CEP
+    // Validate ZIP code
     if (
       isInternational &&
       form.accommodationDetails.address.zipCode.length < 3
@@ -217,7 +266,7 @@ export const PackageRegistration = () => {
       return;
     }
 
-    // Formatar payload
+    // Format payload
     const payload = {
       title: form.title,
       description: form.description,
@@ -245,18 +294,18 @@ export const PackageRegistration = () => {
           state: form.accommodationDetails.address.state,
           city: form.accommodationDetails.address.city,
           neighborhood: form.accommodationDetails.address.neighborhood,
-          latitude: form.accommodationDetails.address.latitude,
-          longitude: form.accommodationDetails.address.longitude,
+          latitude: form.accommodationDetails.address.latitude
+            ? parseFloat(form.accommodationDetails.address.latitude)
+            : null,
+          longitude: form.accommodationDetails.address.longitude
+            ? parseFloat(form.accommodationDetails.address.longitude)
+            : null,
         },
       },
-      mediasUrl: form.mediasUrl.map((media) => ({
-        mediaUrl: media.mediaUrl,
-        mediaType: parseInt(media.mediaType, 10),
-      })),
       isActive: form.isActive,
-      isCurrentylOnPromotion: form.isPromo,
+      isCurrentlyOnPromotion: form.isPromo,
       discountPercentage: form.isPromo
-        ? parseFloat(form.discountPercentage)
+        ? parseFloat(form.discountPercentage) / 100
         : null,
       promotionStartDate: form.isPromo
         ? new Date(form.promotionStartDate).toISOString()
@@ -268,12 +317,61 @@ export const PackageRegistration = () => {
     };
 
     try {
-      await dispatch(createTravelPackage(payload)).unwrap(); 
-      resetForm();    
+      //console.log("Submitting package creation:", payload);
+      const packageResponse = await dispatch(
+        createTravelPackage(payload)
+      ).unwrap();
+      //console.log("Package response:", packageResponse);
+
+      const packageId = packageResponse[0]?.id;
+      //console.log("Package ID:", packageId);
+
+      if (!packageId) {
+        throw new Error("Package ID not found in response");
+      }
+
+      // Step 2: Upload media files if package creation succeeds
+      if (mediaFiles.length > 0) {
+        const formData = new FormData();
+        mediaFiles.forEach((media, index) => {
+          if (media.file instanceof File) {
+            formData.append("files", media.file);
+            formData.append(`files[${index}]`, media.file);
+            /*             console.log(
+              `Adicionado: ${media.file.name}, Size: ${media.file.size} bytes`
+            ); */
+          }
+        });
+
+        /*         console.log("FormData prepared with", mediaFiles.length, "files");
+        console.log("Submitting media upload for packageId:", packageId); */
+        const mediaResponse = await dispatch(
+          uploadTravelPackageMedia({ packageId, formData })
+        ).unwrap();
+        console.log("Media upload response:", mediaResponse);
+      }
+
+      resetForm();
+      setMediaFiles([]);
+      setFormError("Pacote e mídias cadastrados com sucesso");
+      setOpenSuccessModal(true);
     } catch (err) {
-      setFormError(err.message || "Erro ao cadastrar pacote");
+      console.error("Submission error:", err);
+      setFormError(
+        reduxError || err.message || "Erro ao cadastrar pacote ou enviar mídias"
+      );
     }
   };
+
+  useEffect(() => {
+    if (openSuccessModal) {
+      const timer = setTimeout(() => {
+        setOpenSuccessModal(false);
+        setFormError(null);
+      }, 3000);
+      return () => clearTimeout(timer);
+    }
+  }, [openSuccessModal]);
 
   const handlePackageTypeChange = (e) => {
     onChangeForm(e);
@@ -296,6 +394,11 @@ export const PackageRegistration = () => {
     }));
   };
 
+  const handleCloseSuccessModal = () => {
+    setOpenSuccessModal(false);
+    setFormError(null);
+  };
+
   return (
     <Box sx={{ p: 2 }}>
       <Typography variant="h6" color="var(--primary-text-color)">
@@ -306,7 +409,9 @@ export const PackageRegistration = () => {
         onSubmit={handleSubmit}
         sx={{ display: "flex", flexDirection: "column", gap: 2, my: 2 }}
       >
-        <Typography variant="subtitle1">Dados Gerais</Typography>
+        <Typography variant="subtitle1" sx={{ color: "var(--text-footer)" }}>
+          Dados Gerais
+        </Typography>
         <CustomTextfield
           label="Título"
           name="title"
@@ -467,7 +572,9 @@ export const PackageRegistration = () => {
               : "var(--no-active-tab)",
           }}
         />
-        <Typography variant="subtitle1">Detalhes da Acomodação</Typography>
+        <Typography variant="subtitle1" sx={{ color: "var(--text-footer)" }}>
+          Detalhes da Acomodação
+        </Typography>
         <Box
           sx={{
             marginTop: 2,
@@ -544,7 +651,9 @@ export const PackageRegistration = () => {
         />
 
         <Divider sx={{ my: 2 }} />
-        <Typography variant="subtitle1">Endereço</Typography>
+        <Typography variant="subtitle1" sx={{ color: "var(--text-footer)" }}>
+          Endereço
+        </Typography>
         <Box
           sx={{
             marginTop: 2,
@@ -561,7 +670,6 @@ export const PackageRegistration = () => {
             onChange={onChangeNestedForm}
             required
           />
-
           {isInternational ? (
             <CustomTextfield
               label="Complemento"
@@ -581,7 +689,6 @@ export const PackageRegistration = () => {
               mask="000000"
             />
           )}
-
           {isInternational ? (
             <CustomTextfield
               label="ZIP CODE"
@@ -666,13 +773,31 @@ export const PackageRegistration = () => {
           />
         </Box>
         <Divider sx={{ my: 2 }} />
-        <Typography variant="subtitle1">
+        <Typography variant="subtitle1" sx={{ color: "var(--text-footer)" }}>
           Mídias
-          <IconButton onClick={handleAddMedia} aria-label="Adicionar mídia">
-            <Add />
-          </IconButton>
         </Typography>
-        {form.mediasUrl.map((media, index) => (
+        <Box
+          {...getRootProps()}
+          sx={{
+            border: "2px dashed var(--orange-avanade)",
+            borderRadius: "4px",
+            p: 2,
+            textAlign: "center",
+            backgroundColor: isDragActive
+              ? "rgba(255, 165, 0, 0.1)"
+              : "transparent",
+            cursor: "pointer",
+            mb: 2,
+          }}
+        >
+          <input {...getInputProps()} />
+          <Typography sx={{ color: "var(--text-footer)" }}>
+            {isDragActive
+              ? "Solte os arquivos aqui..."
+              : "Arraste e solte imagens ou vídeos aqui, ou clique para selecionar arquivos"}
+          </Typography>
+        </Box>
+        {mediaFiles.map((media, index) => (
           <Box
             key={index}
             sx={{
@@ -682,35 +807,21 @@ export const PackageRegistration = () => {
               flexDirection: isMobile ? "column" : "row",
             }}
           >
-            <CustomTextfield
-              label={`URL da Mídia ${index + 1}`}
-              name={`mediasUrl[${index}].mediaUrl`}
-              value={media.mediaUrl}
-              onChange={onChangeNestedForm}
-              required
-            />
-            <CustomSelect
-              label={`Tipo da Mídia ${index + 1}`}
-              name={`mediasUrl[${index}].mediaType`}
-              value={media.mediaType}
-              onChange={onChangeNestedForm}
-              options={[
-                { value: 0, label: "Imagem" },
-                { value: 1, label: "Vídeo" },
-              ]}
-              required
-            />
-            {form.mediasUrl.length > 1 && (
-              <IconButton
-                onClick={() => handleRemoveMedia(index)}
-                aria-label="Remover mídia"
-              >
-                <Remove />
-              </IconButton>
-            )}
+            <Typography>
+              {media.file ? media.file.name : "Nenhum arquivo selecionado"}
+            </Typography>
+            <Button
+              onClick={() => handleRemoveMedia(index)}
+              variant="outlined"
+              sx={{
+                borderColor: "var(--orange-avanade)",
+                color: "var(--orange-avanade)",
+              }}
+            >
+              Remover
+            </Button>
           </Box>
         ))}
-
         <Divider sx={{ my: 2 }} />
         <Box sx={{ display: "flex", gap: 2 }}>
           <Button
@@ -722,7 +833,10 @@ export const PackageRegistration = () => {
             Cadastrar
           </Button>
           <Button
-            onClick={resetForm}
+            onClick={() => {
+              resetForm();
+              setMediaFiles([]);
+            }}
             variant="outlined"
             sx={{
               borderColor: "var(--orange-avanade)",
@@ -734,14 +848,35 @@ export const PackageRegistration = () => {
         </Box>
       </Box>
       <Snackbar
-        open={!!formError || !!error}
+        open={!!formError && !formError.includes("sucesso")}
         autoHideDuration={6000}
         onClose={() => setFormError(null)}
       >
         <Alert severity="error" onClose={() => setFormError(null)}>
-          {formError || error}
+          {formError || reduxError}
         </Alert>
       </Snackbar>
+      <Dialog
+        open={openSuccessModal}
+        onClose={handleCloseSuccessModal}
+        aria-labelledby="success-dialog-title"
+      >
+        <DialogTitle id="success-dialog-title">Sucesso</DialogTitle>
+        <DialogContent>
+          <DialogContentText>
+            Pacote e mídias cadastrados com sucesso!
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button
+            onClick={handleCloseSuccessModal}
+            variant="contained"
+            sx={{ backgroundColor: "var(--orange-avanade)", color: "white" }}
+          >
+            OK
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Box>
   );
 };

@@ -33,7 +33,7 @@ const Carousel = forwardRef(({ packages }, ref) => {
                     id={item.id}
                     title={item.title}
                     price={item.price}
-                    rating={item.rating}
+                    averageRating={item.averageRating}
                     imageSrc={item.mediasUrl}
                     
                 />

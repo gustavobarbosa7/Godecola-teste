@@ -46,6 +46,21 @@ const preloadedState = {
 const store = configureStore({
   reducer: rootReducer,
   preloadedState,
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware({
+      serializableCheck: {
+        ignoredActions: [
+          'travelPackages/uploadTravelPackageMedia/pending',
+          'travelPackages/uploadTravelPackageMedia/fulfilled',
+          'travelPackages/uploadTravelPackageMedia/rejected',
+        ],
+        ignoredPaths: [
+          'payload.formData',
+          'travelPackages.formData',
+          'meta.arg.formData',
+        ],
+      },
+    }),
   devTools: import.meta.env.MODE !== 'production',
 });
 

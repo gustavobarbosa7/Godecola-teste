@@ -1,7 +1,6 @@
 import "./HomePage.css";
 import Carousel from "../../components/Home/Carousel/CarouselHome";
-import packagesData from "../../travels.mock.json";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useMemo } from "react";
 import { FaArrowAltCircleLeft } from "react-icons/fa";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import useScrollArrows from "../../hooks/useScrollArrows";
@@ -11,25 +10,44 @@ import { goToSearchPackages } from "../../routes/coordinator";
 import { IoSearch } from "react-icons/io5";
 import useShuffledArray from "../../hooks/useShuffledArray";
 import useIsMobile from "../../hooks/useIsMobile";
+import { useDispatch, useSelector, shallowEqual } from "react-redux";
+import { fetchTravelPackages } from "../../store/actions/travelPackagesActions";
 
 const HomePage = () => {
+  const dispatch = useDispatch();
   const navigate = useNavigate();
   const [activeTab, setActiveTab] = useState("NATIONAL");
   const isMobile = useIsMobile();
+  const { packages, loading, error } = useSelector(
+    (state) => state.travelPackages,
+    shallowEqual
+  );
+
+  useEffect(() => {
+    dispatch(fetchTravelPackages());
+  }, [dispatch]);
+
+  const nationalFiltered = useMemo(
+    () => packages?.filter((pkg) => pkg.packageType === "Nacional") || [],
+    [packages]
+  );
+  const internationalFiltered = useMemo(
+    () => packages?.filter((pkg) => pkg.packageType === "Internacional") || [],
+    [packages]
+  );
+  const promoFiltered = useMemo(
+    () => packages?.filter((pkg) => pkg.isCurrentlyOnPromotion === true) || [],
+    [packages]
+  );
+
+  // Shuffle filtered arrays
+  const nationalPackages = useShuffledArray(nationalFiltered);
+  const internationalPackages = useShuffledArray(internationalFiltered);
+  const promoPackages = useShuffledArray(promoFiltered);
 
   const nationalCarouselRef = useRef(null);
   const internationalCarouselRef = useRef(null);
   const promoCarouselRef = useRef(null);
-
-  const nationalPackages = useShuffledArray(
-    packagesData.filter((pkg) => pkg.packageType === "NATIONAL")
-  );
-  const internationalPackages = useShuffledArray(
-    packagesData.filter((pkg) => pkg.packageType === "INTERNATIONAL")
-  );
-  const promoPackages = useShuffledArray(
-    packagesData.filter((pkg) => pkg.isCurrentlyOnPromotion === true)
-  );
 
   const nationalArrows = useScrollArrows(nationalCarouselRef);
   const internationalArrows = useScrollArrows(internationalCarouselRef);
@@ -73,117 +91,138 @@ const HomePage = () => {
         <IoSearch />
         <p>Inicie sua busca</p>
       </Card>
-      {/* --- Navegação Tabs --- */}
 
-      <div className="tab-navigation-container">
-        <h2
-          className={`tab-h2 ${activeTab === "NATIONAL" ? "active" : ""}`}
-          onClick={() => setActiveTab("NATIONAL")}
-        >
-          {isMobile ? "Nacionais" : "Viagens Nacionais"}
-        </h2>
-        <span className="tab-separator">|</span>
-        <h2
-          className={`tab-h2 ${activeTab === "INTERNATIONAL" ? "active" : ""}`}
-          onClick={() => setActiveTab("INTERNATIONAL")}
-        >
-          {isMobile ? "Internacionais" : "Viagens Internacionais"}
-        </h2>
-      </div>
+      {/* Loading and Error States */}
+      {loading && <div className="loading-message">Carregando pacotes...</div>}
+      {error && <div className="error-message">Erro: {error}</div>}
+      {!loading && !error && packages?.length === 0 && (
+        <div className="no-packages-message">
+          Nenhum pacote disponível no momento.
+        </div>
+      )}
+
+      {/* --- Navegação Tabs --- */}
+      {!loading && !error && packages?.length > 0 && (
+        <div className="tab-navigation-container">
+          <h2
+            className={`tab-h2 ${activeTab === "NATIONAL" ? "active" : ""}`}
+            onClick={() => setActiveTab("NATIONAL")}
+          >
+            {isMobile ? "Nacionais" : "Viagens Nacionais"}
+          </h2>
+          <span className="tab-separator">|</span>
+          <h2
+            className={`tab-h2 ${
+              activeTab === "INTERNATIONAL" ? "active" : ""
+            }`}
+            onClick={() => setActiveTab("INTERNATIONAL")}
+          >
+            {isMobile ? "Internacionais" : "Viagens Internacionais"}
+          </h2>
+        </div>
+      )}
 
       {/* --- Carrossel Nacional --- */}
-      {activeTab === "NATIONAL" && nationalPackages.length > 0 && (
-        <div className="carousel-wrapper">
-          {!isMobile && (
-            <>
-              {nationalArrows.left && (
-                <div
-                  className="carousel-arrow-left"
-                  onClick={() => scrollCarousel("left", nationalCarouselRef)}
-                >
-                  <FaArrowAltCircleLeft />
-                </div>
-              )}
-              {nationalArrows.right && (
-                <div
-                  className="carousel-arrow-right"
-                  onClick={() => scrollCarousel("right", nationalCarouselRef)}
-                >
-                  <FaArrowAltCircleRight />
-                </div>
-              )}
-            </>
-          )}
-          <div className="carousel-container">
-            <Carousel packages={nationalPackages} ref={nationalCarouselRef} />
+      {activeTab === "NATIONAL" &&
+        !loading &&
+        !error &&
+        nationalPackages.length > 0 && (
+          <div className="carousel-wrapper">
+            {!isMobile && (
+              <>
+                {nationalArrows.left && (
+                  <div
+                    className="carousel-arrow-left"
+                    onClick={() => scrollCarousel("left", nationalCarouselRef)}
+                  >
+                    <FaArrowAltCircleLeft />
+                  </div>
+                )}
+                {nationalArrows.right && (
+                  <div
+                    className="carousel-arrow-right"
+                    onClick={() => scrollCarousel("right", nationalCarouselRef)}
+                  >
+                    <FaArrowAltCircleRight />
+                  </div>
+                )}
+              </>
+            )}
+            <div className="carousel-container">
+              <Carousel packages={nationalPackages} ref={nationalCarouselRef} />
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
       {/* --- Carrossel Internacional --- */}
-      {activeTab === "INTERNATIONAL" && internationalPackages.length > 0 && (
-        <div className="carousel-wrapper">
-          {!isMobile && (
-            <>
-              {internationalArrows.left && (
-                <div
-                  className="carousel-arrow-left"
-                  onClick={() =>
-                    scrollCarousel("left", internationalCarouselRef)
-                  }
-                >
-                  <FaArrowAltCircleLeft />
-                </div>
-              )}
-              {internationalArrows.right && (
-                <div
-                  className="carousel-arrow-right"
-                  onClick={() =>
-                    scrollCarousel("right", internationalCarouselRef)
-                  }
-                >
-                  <FaArrowAltCircleRight />
-                </div>
-              )}
-            </>
-          )}
-          <div className="carousel-container">
-            <Carousel
-              packages={internationalPackages}
-              ref={internationalCarouselRef}
-            />
+      {activeTab === "INTERNATIONAL" &&
+        !loading &&
+        !error &&
+        internationalPackages.length > 0 && (
+          <div className="carousel-wrapper">
+            {!isMobile && (
+              <>
+                {internationalArrows.left && (
+                  <div
+                    className="carousel-arrow-left"
+                    onClick={() =>
+                      scrollCarousel("left", internationalCarouselRef)
+                    }
+                  >
+                    <FaArrowAltCircleLeft />
+                  </div>
+                )}
+                {internationalArrows.right && (
+                  <div
+                    className="carousel-arrow-right"
+                    onClick={() =>
+                      scrollCarousel("right", internationalCarouselRef)
+                    }
+                  >
+                    <FaArrowAltCircleRight />
+                  </div>
+                )}
+              </>
+            )}
+            <div className="carousel-container">
+              <Carousel
+                packages={internationalPackages}
+                ref={internationalCarouselRef}
+              />
+            </div>
           </div>
-        </div>
-      )}
+        )}
 
       {/* --- Pacotes em Promoção --- */}
-      <h2 className="h2Promo">Pacotes em Promoção</h2>
-      {promoPackages.length > 0 && (
-        <div className="carousel-wrapper">
-          {!isMobile && (
-            <>
-              {promoArrows.left && (
-                <div
-                  className="carousel-arrow-left"
-                  onClick={() => scrollCarousel("left", promoCarouselRef)}
-                >
-                  <FaArrowAltCircleLeft />
-                </div>
-              )}
-              {promoArrows.right && (
-                <div
-                  className="carousel-arrow-right"
-                  onClick={() => scrollCarousel("right", promoCarouselRef)}
-                >
-                  <FaArrowAltCircleRight />
-                </div>
-              )}
-            </>
-          )}
-          <div className="carousel-container">
-            <Carousel packages={promoPackages} ref={promoCarouselRef} />
+      {!loading && !error && promoPackages.length > 0 && (
+        <>
+          <h2 className="h2Promo">Pacotes em Promoção</h2>
+          <div className="carousel-wrapper">
+            {!isMobile && (
+              <>
+                {promoArrows.left && (
+                  <div
+                    className="carousel-arrow-left"
+                    onClick={() => scrollCarousel("left", promoCarouselRef)}
+                  >
+                    <FaArrowAltCircleLeft />
+                  </div>
+                )}
+                {promoArrows.right && (
+                  <div
+                    className="carousel-arrow-right"
+                    onClick={() => scrollCarousel("right", promoCarouselRef)}
+                  >
+                    <FaArrowAltCircleRight />
+                  </div>
+                )}
+              </>
+            )}
+            <div className="carousel-container">
+              <Carousel packages={promoPackages} ref={promoCarouselRef} />
+            </div>
           </div>
-        </div>
+        </>
       )}
     </div>
   );

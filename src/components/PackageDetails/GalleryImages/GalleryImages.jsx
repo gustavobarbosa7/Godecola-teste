@@ -1,19 +1,20 @@
 import "./GalleryImages.css";
 import CarouselPackageDetails from "../../../components/PackageDetails/Carousel/CarouselPackageDetails";
 import { useState, useEffect, useRef } from "react";
-import { FaArrowLeft, FaArrowAltCircleLeft, FaArrowAltCircleRight, FaHeart, FaRegHeart } from 'react-icons/fa'
+import {
+  FaArrowAltCircleLeft,
+  FaArrowAltCircleRight,
+  FaHeart,
+  FaRegHeart,
+} from "react-icons/fa";
 import useScrollArrows from "../../../hooks/useScrollArrows";
-import { useNavigate } from 'react-router-dom'
-import { goBack } from '../../../routes/coordinator'
 import useIsMobile from "../../../hooks/useIsMobile";
-
 
 const GalleryImages = ({ packageData }) => {
   const isMobile = useIsMobile();
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isFavorited, setIsFavorited] = useState(false);
-  const navigate = useNavigate();
-
+  
   const toggleFavorite = () => {
     setIsFavorited(!isFavorited);
   };
@@ -65,16 +66,11 @@ const GalleryImages = ({ packageData }) => {
 
     setCurrentIndex(index);
   };
-
+  
   return (
     <div className="galleryImages-container">
       {packageData?.mediasUrl?.length > 0 && (
         <div className="galleryCarousel-wrapper">
-          {isMobile && (
-            <div className="FaArrowLeft" onClick={() => goBack(navigate)}>
-              <FaArrowLeft />
-            </div>
-          )}
           <div
             onClick={(e) => {
               e.stopPropagation();
@@ -115,7 +111,9 @@ const GalleryImages = ({ packageData }) => {
                     key={index}
                     className={`dot ${index === currentIndex ? "active" : ""}`}
                     onClick={() => scrollToIndex(index)}
-                    aria-label={`Ir para ${media.mediaType === "imagem" ? "imagem" : "vídeo"} ${index + 1}`}
+                    aria-label={`Ir para ${
+                      media.mediaType === "imagem" ? "imagem" : "vídeo"
+                    } ${index + 1}`}
                   />
                 ))}
               </div>

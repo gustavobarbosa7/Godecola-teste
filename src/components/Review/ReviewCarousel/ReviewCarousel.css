@@ -34,12 +34,12 @@
     background-color: var(--footer-bg);
     height: auto;
     padding-bottom: 20px;
-    padding-top: 10px;
+    padding-top: 20px;
 }
 
 .ramo {
     position: absolute;
-    height: 60px;
+    height: 70px;
     top: 25px;
 }
 

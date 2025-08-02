@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 export default function useScrollArrows(ref) {
+    
     const [arrows, setArrows] = useState({ left: false, right: false });
     
     const checkScroll = () => {

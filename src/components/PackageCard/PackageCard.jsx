@@ -10,8 +10,9 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { goToPackageDetails } from "../../routes/coordinator";
 import imageUnavailable from "../../assets/imageUnavailable.jpg";
+import { baseURLMedias } from "../../utils/baseURL";
 
-export const PackageCard = ({ id, title, price, rating, imageSrc }) => {
+export const PackageCard = ({ id, title, price, averageRating, imageSrc }) => {
   const [isFavorited, setIsFavorited] = useState(false);
   const navigate = useNavigate();
 
@@ -19,10 +20,10 @@ export const PackageCard = ({ id, title, price, rating, imageSrc }) => {
     setIsFavorited(!isFavorited);
   };
   const imageUrl =
-    Array.isArray(imageSrc) && imageSrc.length > 0 && imageSrc[0].mediaUrl
-      ? imageSrc[0].mediaUrl
+    Array.isArray(imageSrc) && imageSrc.length > 0 && imageSrc[0].filePath
+      ? `${baseURLMedias}${imageSrc[0].filePath}`
       : imageUnavailable;
-
+ 
   return (
     <Card
       sx={{
@@ -84,7 +85,7 @@ export const PackageCard = ({ id, title, price, rating, imageSrc }) => {
               variant="body2"
               sx={{ color: "var(--text-card-package)" }}
             >
-              {rating}
+              {averageRating}
             </Typography>
           </div>
         </div>

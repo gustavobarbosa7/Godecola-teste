@@ -2,7 +2,11 @@ import "./LoginPage.css";
 import logo from "../../assets/go_decola_logo_01.png";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { goToRecPassMail, goToSignUp, goToHome } from "../../routes/coordinator";
+import {
+  goToRecPassMail,
+  goToSignUp,
+  goToHome,
+} from "../../routes/coordinator";
 import Box from "@mui/material/Box";
 import IconButton from "@mui/material/IconButton";
 import InputLabel from "@mui/material/InputLabel";
@@ -12,11 +16,12 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import AccountCircle from "@mui/icons-material/AccountCircle";
 import Input from "@mui/material/Input";
+import FormHelperText from "@mui/material/FormHelperText";
 import LockIcon from "@mui/icons-material/Lock";
 import { useForm } from "../../hooks/useForm";
 import { useDispatch } from "react-redux";
 import { loginSuccess } from "../../store/slices/authSlice";
-import { fetchCurrentUser } from '../../store/actions/userActions'
+import { fetchCurrentUser } from "../../store/actions/userActions";
 import { login } from "../../services/authService";
 import { parseJwt } from "../../utils/jwt";
 
@@ -26,8 +31,41 @@ export default function LoginPage() {
     email: "",
     password: "",
   });
-const handleSubmit = async (e) => {
+
+  const [errors, setErrors] = useState({ email: "", password: "" });
+  const navigate = useNavigate();
+  const [showPassword, setShowPassword] = useState(false);
+
+  const validateEmail = (email) => {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  };
+
+  const validatePassword = (password) => {
+    return password.length >= 6;
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
+
+    let tempErrors = { email: "", password: "" };
+    let valid = true;
+
+    if (!validateEmail(form.email)) {
+      tempErrors.email = "E-mail inválido.";
+      valid = false;
+    }
+
+    if (!validatePassword(form.password)) {
+      tempErrors.password = "Senha deve ter ao menos 6 caracteres.";
+      valid = false;
+    }
+
+    setErrors(tempErrors);
+
+    if (!valid) {
+      document.querySelector("form")?.scrollIntoView({ behavior: "smooth" });
+      return;
+    }
 
     try {
       const response = await login({
@@ -39,30 +77,31 @@ const handleSubmit = async (e) => {
       const payload = parseJwt(token);
       const userId = payload?.nameid || payload?.sub || null;
 
-      if (!userId) throw new Error('ID do usuário não encontrado no token');
+      if (!userId) throw new Error("ID do usuário não encontrado no token");
 
       dispatch(loginSuccess({ token, userId }));
       dispatch(fetchCurrentUser());
-      
+
       resetForm();
-      goToHome(navigate)
+      goToHome(navigate);
     } catch (error) {
-      console.error('Erro no login:', error);
-      return (
-        error.response?.data?.message ||
-        'Falha no login. Verifique suas credenciais.'
-      );
+      console.error("Erro no login:", error);
+      const errorMessage =
+        error.response?.data?.message || "E-mail ou senha incorretos.";
+      setErrors({
+        email: errorMessage,
+        password: errorMessage,
+      });
     }
   };
 
-  const navigate = useNavigate();
-  const [showPassword, setShowPassword] = useState(false);
   const handleClickShowPassword = () => setShowPassword((show) => !show);
   const handleMouseDownPassword = (event) => event.preventDefault();
   const handleMouseUpPassword = (event) => event.preventDefault();
+
   return (
     <div className="Logincontainer">
-      {/* lado direito(esquerdo) da tela */}
+      {/* Lado esquerdo */}
       <div className="left">
         <img src={logo} alt="Go Decola" className="logo" />
         <h2>GO Decola</h2>
@@ -72,15 +111,16 @@ const handleSubmit = async (e) => {
           Pacotes exclusivos, passagens baratas e experiências inesquecíveis.
         </p>
       </div>
-      <div className="divider"></div> {/**barra divisória da página*/}
-      {/* lado esquerdo(direito) da tela */}
+
+      <div className="divider"></div>
+
+      {/* Lado direito */}
       <div className="right">
         <h2>LOGIN</h2>
         <form onSubmit={handleSubmit}>
-          {/* Campo de e-mail com ícone */}
+          {/* Campo de e-mail */}
           <Box
             sx={{
-              label: { color: "var(--primary-text-color)" },
               display: "flex",
               alignItems: "flex-end",
               width: "94%",
@@ -89,21 +129,26 @@ const handleSubmit = async (e) => {
             }}
           >
             <AccountCircle sx={{ color: "black", mr: 1, my: 0.5 }} />
-            <FormControl sx={{ width: "100%" }} variant="standard">
+            <FormControl
+              sx={{ width: "100%" }}
+              variant="standard"
+              error={Boolean(errors.email)}
+            >
               <InputLabel htmlFor="input-email">E-mail</InputLabel>
               <Input
+                id="input-email"
                 name="email"
                 type="email"
                 value={form.email}
                 onChange={onChangeForm}
               />
+              {errors.email && <FormHelperText>{errors.email}</FormHelperText>}
             </FormControl>
           </Box>
 
-          {/* Campo de senha com ícone de visibilidade e ícone do cadeado */}
+          {/* Campo de senha */}
           <Box
             sx={{
-              label: { color: "var(--primary-text-color)" },
               display: "flex",
               alignItems: "flex-end",
               width: "94%",
@@ -112,14 +157,18 @@ const handleSubmit = async (e) => {
             }}
           >
             <LockIcon sx={{ color: "black", mr: 1, my: 0.5 }} />
-            <FormControl sx={{ width: "100%" }} variant="standard">
+            <FormControl
+              sx={{ width: "100%" }}
+              variant="standard"
+              error={Boolean(errors.password)}
+            >
               <InputLabel htmlFor="standard-adornment-password">
                 Senha
               </InputLabel>
               <Input
                 id="standard-adornment-password"
-                type={showPassword ? "text" : "password"}
                 name="password"
+                type={showPassword ? "text" : "password"}
                 value={form.password}
                 onChange={onChangeForm}
                 endAdornment={
@@ -135,11 +184,16 @@ const handleSubmit = async (e) => {
                   </InputAdornment>
                 }
               />
+              {errors.password && (
+                <FormHelperText>{errors.password}</FormHelperText>
+              )}
             </FormControl>
           </Box>
+
           <div onClick={() => goToRecPassMail(navigate)} className="forgot">
             Esqueci minha senha
           </div>
+
           <div className="login-between">
             <p className="text-end">
               <span className="highlight-orange">
@@ -153,6 +207,7 @@ const handleSubmit = async (e) => {
               LOGAR
             </button>
           </div>
+
           <div onClick={() => goToSignUp(navigate)} className="cadastro">
             Não possui cadastro? Cadastre-se
           </div>

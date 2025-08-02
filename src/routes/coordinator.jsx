@@ -61,3 +61,23 @@ export const goToHistory = navigate => {
 export const goToHomeSupport = navigate => {
   navigate('/home-support')
 }
+
+export const goToCheckout = navigate => {
+  navigate('/checkout')
+}
+
+export const goToPaymentSuccess = (navigate, paymentId) => {
+  navigate(`/payment/success/${paymentId}`)
+}
+
+export const goToPaymentPending = (navigate, paymentId) => {
+  navigate(`/payment/pending/${paymentId}`)
+}
+
+export const goToPaymentFailure = (navigate, paymentId = '') => {
+  if (paymentId) {
+    navigate(`/payment/failure/${paymentId}`)
+  } else {
+    navigate('/payment/failure')
+  }
+}

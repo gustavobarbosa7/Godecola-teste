@@ -89,7 +89,6 @@ export default function LoginPage() {
       const errorMessage =
         error.response?.data?.message || "E-mail ou senha incorretos.";
       setErrors({
-        email: errorMessage,
         password: errorMessage,
       });
     }

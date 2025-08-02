@@ -9,6 +9,13 @@
   background-color: var(--background-color);
 }
 
+.resultados-box-edit {
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
 .texts {
   color: var(--primary-text-color);
   margin-left: 0.5rem;

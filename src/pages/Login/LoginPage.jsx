@@ -80,7 +80,13 @@ export default function LoginPage() {
       if (!userId) throw new Error("ID do usuário não encontrado no token");
 
       dispatch(loginSuccess({ token, userId }));
-      dispatch(fetchCurrentUser());
+
+      try {
+        const userData = await dispatch(fetchCurrentUser()).unwrap();
+        console.log("Usuário carregado:", userData);
+      } catch (err) {
+        console.error("Erro ao buscar usuário:", err);
+      }
 
       resetForm();
       goToHome(navigate);

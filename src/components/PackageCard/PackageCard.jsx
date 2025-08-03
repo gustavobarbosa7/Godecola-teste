@@ -12,18 +12,30 @@ import { goToPackageDetails } from "../../routes/coordinator";
 import imageUnavailable from "../../assets/imageUnavailable.jpg";
 import { baseURLMedias } from "../../utils/baseURL";
 
-export const PackageCard = ({ id, title, price, averageRating, imageSrc }) => {
+export const PackageCard = ({
+  id,
+  title,
+  price,
+  averageRating,
+  imageSrc,
+  isCurrentlyOnPromotion,
+  discountPercentage,
+}) => {
   const [isFavorited, setIsFavorited] = useState(false);
   const navigate = useNavigate();
 
   const toggleFavorite = () => {
     setIsFavorited(!isFavorited);
   };
+
+  const calculateDiscountedPrice = (price, discountPercentage) =>
+    price * (1 - discountPercentage);
+
   const imageUrl =
     Array.isArray(imageSrc) && imageSrc.length > 0 && imageSrc[0].filePath
       ? `${baseURLMedias}${imageSrc[0].filePath}`
       : imageUnavailable;
- 
+
   return (
     <Card
       sx={{
@@ -72,7 +84,41 @@ export const PackageCard = ({ id, title, price, averageRating, imageSrc }) => {
           </Typography>
         </Box>
         <div className="package-info">
-          <h3>R$ {price}</h3>
+          <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+            {isCurrentlyOnPromotion ? (
+              <>
+                <Typography
+                  variant="body2"
+                  sx={{
+                    textDecoration: "line-through",
+                    color: "var(--text-card-package)",
+                  }}
+                >
+                  R$ {price}
+                </Typography>
+                <Typography
+                  variant="h6"
+                  sx={{
+                    color: "var(--orange-avanade)",
+                    fontWeight: "bold",
+                    ml: -1,
+                  }}
+                >
+                  R${" "}
+                  {calculateDiscountedPrice(price, discountPercentage).toFixed(
+                    2
+                  )}
+                </Typography>
+              </>
+            ) : (
+              <Typography
+                variant="h6"
+                sx={{ color: "var(--primary-text-color)" }}
+              >
+                R$ {price}
+              </Typography>
+            )}
+          </Box>
           <div
             style={{
               display: "flex",

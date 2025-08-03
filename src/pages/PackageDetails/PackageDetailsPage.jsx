@@ -39,9 +39,7 @@ const PackageDetailsPage = () => {
       ) : (
         <>
           <GalleryImages packageData={packageDetails[0]} />
-          {/* descrição do serviço do pacote a baixo */}
           <Description packageData={packageDetails[0]} />
-          {/* Local do pacote*/}
           <Maps packageData={packageDetails[0]} />
           <ReviewCarousel packageId={numericId} />
           <BookButton packageData={packageDetails[0]} />.

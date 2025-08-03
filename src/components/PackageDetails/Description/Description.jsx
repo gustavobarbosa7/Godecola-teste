@@ -7,20 +7,22 @@ import { IoRestaurant } from "react-icons/io5";
 import { MdOutlinePets } from "react-icons/md";
 import AcUnitIcon from "@mui/icons-material/AcUnit";
 import { MdFreeBreakfast } from "react-icons/md";
+import { formatDate } from "../../../utils/formatDate";
 
 const Description = ({ packageData }) => {
   return (
     <div className="DescriptionPackage">
       <div className="TitlePackage">
         <h2>{packageData.title}</h2>
-      </div>
-
-      <div className="TitlePackage">
-        <p style={{ color: "gray" }}>
-          {packageData.numberGuests} hóspedes{" "}
-          {packageData.accommodationDetails.numberBaths} cama{" "}
+        <div style={{ color: "gray", marginTop: "-10px" }}>
+          {packageData.numberGuests} hóspedes •{" "}
+          {packageData.accommodationDetails.numberBaths} cama •{" "}
           {packageData.accommodationDetails.numberBeds} banheiro
-        </p>
+        </div>
+        <div style={{ color: "var(--text-footer)" }}>
+          Período: de {formatDate(packageData.startDate)} a{" "}
+          {formatDate(packageData.endDate)}
+        </div>
       </div>
       <br></br>
       <div className="Description" style={{ textAlign: "center" }}>

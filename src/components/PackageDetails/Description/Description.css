@@ -9,7 +9,13 @@
   width: 92%;
   max-width: 1330px;
   z-index: 1;
-  padding: 10px;
+}
+
+.TitlePackage {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
 .PackageService {

@@ -8,7 +8,7 @@ import logoImpacta from '../../assets/impacta_logo.png'
 import useIsOnRoute from '../../hooks/useIsOnRoute'
 
 export const Footer = () => {
-  const isOnPackageDetailsPage = useIsOnRoute('/package-details/:id');
+  const isOnPackageDetailsPage =  useIsOnRoute(['/package-details/:id', '/booking']);
 
   return (
     <div className='footerDesktop' style={{

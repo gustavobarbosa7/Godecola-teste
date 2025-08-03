@@ -1,8 +1,10 @@
-import { useMatch } from 'react-router-dom';
+import { useLocation, matchPath } from "react-router-dom";
 
-const useIsOnRoute = (pathPattern) => {
-    const match = useMatch(pathPattern);
-    return !!match;
+const useIsOnRoute = (pathPatterns) => {
+  const { pathname } = useLocation();
+  const patterns = Array.isArray(pathPatterns) ? pathPatterns : [pathPatterns];
+
+  return patterns.some((pattern) => matchPath(pattern, pathname));
 };
 
 export default useIsOnRoute;
